@@ -1,0 +1,102 @@
+%\pagewidth 210mm
+%\pageheight 297mm
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[bf,tiny]{titlesec}
+\usepackage{fancyhdr}
+
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcounter{problemno}
+\setcounter{problemno}{1}
+\newcommand{\problem}{\section*{\textbf{Problem \theproblemno}}\refstepcounter{problemno}}
+\newcounter{interludeno}
+\setcounter{interludeno}{1}
+\newcommand{\interlude}[1]{\par\noindent\\\fbox{\begin{minipage}{\linewidth}\textbf{Interlude \theinterludeno.\enspace}#1\end{minipage}}\\\refstepcounter{interludeno}}
+
+\newcounter{questionno}
+\setcounter{questionno}{1}
+\newcommand{\question}[1]{\par\noindent{\thequestionno.\enspace}#1\refstepcounter{questionno}\\}
+
+\newcommand{\thetitle}{Term 1 Week 8 Handout solutions}
+
+\renewcommand\thesection{\S{\arabic{section}}.}
+\renewcommand\thesubsection{\S{\arabic{section}.\arabic{subsection}}}
+
+\title{MEG 2023 Term 1 Week 8 Solutions}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{\thetitle}\\
+\begin{enumerate}
+\item The octagon is made of \(8\) congruent triangles each with
+two side lengths of \(1\) unit and angle \(45^\circ\) between them. Therefore the area of the
+		octagon is \(8\times(1/2)(\sqrt2/2)=2\sqrt2\). Similarly, the square is made up 
+		of four triangles, each with two side lengths of \(1\) unit. Therefore its area
+		is \(4\times(1/2)=2\). The ratio between the area of the square and the octagon is \(1/\sqrt2\).
+\item The circumference of the circle is \(9\pi\), so the angle subtended at the centre by arc \(BC\) is \(120^\circ\).
+	This is double the angle subtended by the same arc at the circumference, so \(\angle BAC=60^\circ\) and
+		\(\angle ABC=30^\circ\). Use the sine ratio to find that \(AC=9/2\), and then use the formula
+		for the area of a triangle to find that the area is \((81\sqrt3)/8\).
+\item The idea is to express \(\pi\) as a continued fraction. Begin by considering the fractional part of \(\pi\), which
+	is approximately \(0.14159\). This is approximately equal to \(1/7\), so \(\pi\approx 3+(1/7)=22/7\). This does
+		not give the required number of decimal places yet so we repeat the process; \(0.14159...\approx 7+0.625133...\) and \(0.625133^{-1}\approx16\). So \[
+			\pi\approx3+\frac{1}{7+\frac{1}{16}}\approx\frac{355}{113}.\]
+                      This fraction does approximate \(\pi\) to six decimal places.
+\item                      \begin{enumerate}
+\item We see that \[1+\frac{1}{2}\cdot\frac{1}{2}+\frac{1}{3}\cdot\frac{1}{3}+\frac{1}{4}\cdot\frac{1}{4}+\cdots<1+\frac{1}{1}\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{3}+\frac{1}{3}\cdot\frac{1}{4}+\cdots.\]
+	The RHS can be expressed as a telescoping that gets closer and closer to \(2\). Therefore
+		the LHS, the sum we're interested in, converges to a finite value less than \(2\).
+\item The solution is given in the question.
+\item Plugging in \(x=0\) to the RHS gives us \[1=a(-\pi^2)(-4\pi^2)(-9\pi^2)(-16\pi^2)\cdots.\]
+	Rearranging for \(a\), we get \[a=\frac{1}{(-\pi^2)(-4\pi^2)(-9\pi^2)(-16\pi^2)\cdots}.\]
+		Putting this back into the original equation and distributing each factor in the denominator
+		to the corresponding bracket we get
+		\[
+			\begin{split}
+				\frac{\sin x}{x}&=\frac{1}{-\pi^2}(x^2-\pi^2)\frac{1}{-4\pi^2}(x^2-4\pi^2)\frac{1}{-9\pi^2}(x^2-9\pi^2)\cdots\\
+				&=\left(1-\frac{x^2}{\pi^2}\right)\left(1-\frac{x^2}{4\pi^2}\right)\left(1-\frac{x^2}{9\pi^2}\right)\cdots.
+			\end{split}\]
+
+\item The coefficient of \(x^2\) is \[-\left(\frac{1}{\pi^2}+\frac{1}{4\pi^2}+\frac{1}{9\pi^2}+\cdots\right).\]
+\item The coefficient of the \(x^2\) term in the original expansion was \(-1/6\), so we have
+	\[\frac{1}{\pi^2}+\frac{1}{4\pi^2}+\frac{1}{9\pi^2}+\cdots=\frac{1}{6}.\]
+Multiplying both sides by \(\pi^2\) yields the desired result.
+\end{enumerate}
+\item
+  \begin{enumerate}
+
+\item Note that \[\frac{1}{2^s}\zeta(s)=\frac{1}{2^s}+\frac{1}{4^s}+\frac{1}{6^s}+\cdots\] and so \[\zeta(s)-\frac{1}{2^s}\zeta(s)=\left(1-\frac{1}{2^s}\right)\zeta(s)=1+\frac{1}{3^s}+\frac{1}{5^s}+\cdots.\]
+  Now apply the same process again: \[\frac{1}{3^s}\left(1-\frac{1}{2^s}\right)=\frac{1}{3^s}+\frac{1}{9^s}+\frac{1}{15^s}+\cdots\] and therefore
+  \[\left(1-\frac{1}{3^s}\right)\left(1-\frac{1}{2^s}\right)=1+\frac{1}{5^s}+\frac{1}{7^s}+\frac{1}{11^s}+\cdots.\]
+  If we repeat the process over all primes \(p\), we are left with only \(1\) on the RHS, and therefore
+  \[\left(1-\frac{1}{2^s}\right)\left(1-\frac{1}{3^s}\right)\left(1-\frac{1}{5^s}\right)\left(1-\frac{1}{7^s}\right)\cdots\zeta(s)=1.\]
+\item Rearranging for \(\zeta(s)\), we have \[\zeta(s)=\frac{1}{\left(1-\frac{1}{2^s}\right)\left(1-\frac{1}{3^s}\right)\left(1-\frac{1}{5^s}\right)\left(1-\frac{1}{7^s}\right)\cdots}.\] Plugging in \(s=2\) gives us the desired result.
+\item Two numbers are coprime if they share no common prime factors. The probability that two randomly chosen are not both divisible by a prime \(p\) is \(1-1/p^2\). Multiplying the product over all primes \(p\) gives us the a probability of \[\left(1-\frac{1}{2^s}\right)\left(1-\frac{1}{3^s}\right)\left(1-\frac{1}{5^s}\right)\left(1-\frac{1}{7^s}\right)\cdots.\]
+  This is just the reciprocal of \(\zeta(s)\), so the required probability is \(6/\pi^2\).
+\item This is the same as before except that \(s=4\), so the probability is the reciprocal of \(\zeta(4)=\pi^4/90\). Therefore the probability is \(90/\pi^4\).
+  \end{enumerate}
+  
+\end{enumerate}
+\end{document}
+

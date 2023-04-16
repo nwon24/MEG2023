@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+
+\usepackage[a4paper]{geometry}
+%\usepackage[margin=1in]{geometry}
+\usepackage[bf,tiny]{titlesec}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcounter{problemno}
+\setcounter{problemno}{1}
+\newcommand{\problem}{\section*{\textbf{Problem \theproblemno}}\refstepcounter{problemno}}
+\newcounter{interludeno}
+\setcounter{interludeno}{1}
+\newcommand{\interlude}[1]{\par\noindent\\\fbox{\parbox{\linewidth}{\textbf{Interlude \theinterludeno.\enspace}#1}}\\\refstepcounter{interludeno}}
+
+\newcounter{questionno}
+\setcounter{questionno}{1}
+\newcommand{\question}[1]{\par\noindent{\thequestionno.\enspace}#1\refstepcounter{questionno}\\}
+
+\newcommand{\thetitle}{Term 1 Week 7 Handout}
+\newcounter{solno}
+\setcounter{solno}{1}
+\newcommand{\sol}{\par\noindent\thesolno.\enspace\refstepcounter{solno}}
+
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{\thetitle}\\
+\input{sectionb_solutions.tex}
+\end{document}

@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[bf,tiny]{titlesec}
+\usepackage{fancyhdr}
+
+\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcounter{problemno}
+\setcounter{problemno}{1}
+\newcommand{\problem}{\section*{Problem \theproblemno}\refstepcounter{problemno}}
+\newcounter{questionno}
+\setcounter{questionno}{1}
+\newcommand{\question}{\par\noindent\thequestionno.\enspace\refstepcounter{questionno}}
+
+\newcommand{\thetitle}{First Meeting Problems}
+
+\pagestyle{empty}
+\begin{document}
+Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{\thetitle}\\
+
+\question
+Solve the equation \(4t/3+2=2(t-2)\).
+\question
+A square circumscribes a circle of radius \(a\). Find the probability that a randomly chosen
+point in the square is also in the circle.
+\question
+Find a number that is the same when added to \(5\) as when multiplied by \(5\).
+\question
+Evaluate
+\[
+\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\frac{1}{3\cdot4}+\frac{1}{4\cdot5}+\cdots+\frac{1}{99\cdot100}.
+\]
+\question
+Call an integer to be $gobbus$ if every digit is either \(0\) or \(2\) and it is divisible by \(15\). What is the smallest number that is gobbus?
+\question
+I have three jars of cookies. The product of the number of cookies in each jar is \(36\). Unfortunately, even
+if I tell you the sum of the number of cookies in each jar, you won't be able to determine how many there are
+in each jar, but I do know that the jar with the most cookies is currently open. How many cookies are there
+in each jar?
+\question
+If \(1/(a+b)=4\) and \(a^2+b^2=16\) find \(1/a+1/b.\)
+\question
+Find all primes less than \(100\) that are the sum of two squares.
+\question
+Find all solutions in positive integers \(x\) and \(y\) of the equation
+\(15x^2+2y^2=100+13xy.\)
+\question
+ Find the last digit of $2^{2023}$.
+\question
+If $a,b,c > 0$ and $a+b+c=1$, prove that $a^2+b^2+c^2+1\ge4(ab+bc+ca)$.
+\question
+Define the $alternating$ $sum$ of a set of positive integers as follows: List the elements of the set in decreasing order. Take the first number in the list, subtract the second, add the third, subtract the fourth, and so on. For example, the alternating sum of the set ${3,5,11,7}$ is $11-7+5-3=6$. Find the sum of the alternating sums of all the subsets of $\{1,2,3,4,5,6,7,8,9,10\}$.
+\question
+Evaluate \(5^{261}\pmod{397}\).
+\question
+Suppose $BP$ and $CQ$ are bisectors of the angles $B$, $C$ of triangle ABC and suppose $AH$, $AK$ are the perpendiculars from $A$ to $BP$, $CQ$. Prove that $KH$ is parallel to $BC$.
+\question
+The Fibonacci sequence is defined by the recurrence relation \(F_n=F_{n-1}+F_{n-2}\), where \(F_0=0\) and \(F_1=1\).
+Consider the power series
+\[
+\begin{split}
+G(x)&=\sum_{i=0}^\infty F_ix^i\\
+&=F_0x^0+F_1x^1+F_2x^2+F_3x^3+F_4x^4+F_5x^5+F_6x^6+\cdots.
+\end{split}
+\]
+Find a closed-form expression for \(G(x)\).
+\end{document}

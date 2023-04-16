@@ -8,3 +8,20 @@ fta
 /AMC Past Papers/
 /AMC Results 2022 CLASSIFIED/
 /example/
+/main.tex
+/handout.tex
+/MEG First meeting problems.zip:Zone.Identifier
+/MEG first meeting solutions.zip:Zone.Identifier
+/staging/
+*.aux
+*.aux
+*.out
+*Zone.Identifier
+*.pptx
+*.bak
+*.dvi
+*.nav
+*.snm
+*.toc
+*.ps
+*.png

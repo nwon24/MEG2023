@@ -1,0 +1,239 @@
+%\pagewidth 210mm
+%\pageheight 297mm
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[pdfusetitle]{hyperref}
+\usepackage[a4paper]{geometry}
+\usepackage[bf,tiny]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+%\setmainfont{TeX Gyre Termes}
+%\setmathfont{TeX Gyre Termes Math}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcounter{problemno}
+\setcounter{problemno}{1}
+\newcommand{\problem}{\section*{\textbf{Problem \theproblemno}}\refstepcounter{problemno}}
+\newcounter{interludeno}
+\setcounter{interludeno}{1}
+\newcommand{\interlude}[1]{\par\noindent\\\fbox{\begin{minipage}{\linewidth}\textbf{Interlude \theinterludeno.\enspace}#1\end{minipage}}\\\refstepcounter{interludeno}}
+
+\newcounter{questionno}
+\setcounter{questionno}{1}
+\newcommand{\question}[1]{\par\noindent{\thequestionno.\enspace}#1\refstepcounter{questionno}\\}
+
+\newcommand{\thetitle}{Some of Euler's Gems: Solutions}
+
+\renewcommand\thesection{\S{\arabic{section}}.}
+\renewcommand\thesubsection{\S{\arabic{section}.\arabic{subsection}}}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\title{MEG 2023 Euler's Gems: Solutions}
+\author{Nathan Wong}
+\date{2023}
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{\thetitle}\\
+\begin{enumerate}
+\item \begin{enumerate}
+\item Suppose that \(n\) is composite and write \(n=mp\) for some prime \(p\) and integer \(m\). From the formula
+  for the sum of a geometric series, the fraction \[\frac{2^{pm}-1}{2^m-1}\] is the sum of the first \(p\) terms of a geometric series
+  with first term \(1\) and common ratio \(2^m\). That is, \[\frac{2^{pm}-1}{2^m-1}=1+2^m+2^{2m}+\cdots+2^{(p-1)m}.\] Hence \(2^n-1\) is divisible
+  by \(2^m-1\) and therefore can only be prime if \(m=1\) and \(n=p\).
+\item
+  \begin{figure}[h]
+\begin{center}
+    \begin{tabular}{|c|c|}
+      \hline\(n\)&\(\sigma(n)\)\\
+      \hline
+       \(1\)&\(1\)\\
+       \(2\)&\(3\)\\
+      \(3\)&\(4\)\\
+      \(4\)&\(7\)\\
+      \(5\)&\(6\)\\
+      \(6\)&\(12\)\\
+      \(7\)&\(8\)\\
+      \(8\)&\(15\)\\
+      \(9\)&\(13\)\\
+      \(10\)&\(18\)\\
+      \(11\)&\(12\)\\
+      \(12\)&\(28\)\\
+      \(13\)&\(14\)\\
+      \(14\)&\(24\)\\
+      \(15\)&\(24\)\\
+      \(16\)&\(31\)\\
+      \(17\)&\(18\)\\
+      \(18\)&\(39\)\\
+      \(19\)&\(20\)\\
+      \(20\)&\(42\)\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \end{figure}
+\item Since \(m\) and \(n\) are coprime, the divisors of \(mn\)
+  are exactly \[a_1b_1,a_1b_2,\ldots,a_1b_{d(n)},a_2b_1,\ldots,a_2b_{d(n)},\ldots,a_{d(m)}b_1,\ldots,a_{d(m)}b_{d(n)}.\]
+  Hence \[
+    \begin{split}
+      \sigma(mn)&=a_1(b_1+b_2+\cdots+b_{d(n)})+a_2(b_1+b_2+\cdots+b_{d(n)})+\cdots+a_{d(m)}(b_1+b_2+\cdots+b_{d(n)})\\
+                &=(a_1+a_2+\cdots+a_{d(m)})(b_1+b_2+\cdots+b_{d(n)})\\
+      &=\sigma(m)\sigma(n)
+    \end{split}
+  \]
+\item The divisors of \(p_k\) are exactly \[1,p,p^2,\ldots,p^k.\]
+  Therefore \[\sigma(p^k)=1+p+p^2+\cdots+p^k=\frac{p^{k+1}-1}{p-1}.\]
+\item We know that \(\sigma(N)=\sigma(2^{p-1}(2^p-1))=\sigma(2^{p-1})\sigma(2^p-1)\), so we can do each separately. From the
+  preceding exercise we have \[\sigma(2^{p-1})=\frac{2^p-1}{2-1}=2^p-1.\]
+  Since \(2^p-1\) is prime, its only divisors are \(2^p-1\) and \(1\), so \[\sigma(2^p-1)=2^p-1+1=2^p.\]
+  Therefore \[\sigma(N)=\sigma(2^{p-1}(2^p-1))=(2^p-1)2^p=2(2^{p-1}(2^p-1))=2N.\]
+  Therefore \(2^{p-1}(2^p-1)\) is perfect.
+\item If \(N\) is even, it divides some power of \(2\). Let \(2^k\) be the highest power of \(2\) that divides \(N\); this
+  means \(k\ge 1\). Hence \(N/2^k\) must be odd; otherwise \(2^k\) would not be the highest power of \(2\) that divides \(N\).
+  Therefore \(N=2^km\) for \(k\ge 1\) and odd \(m\).
+\item We have \[\sigma(N)=\sigma(2^k)\sigma(m)=(2^{k+1}-1)\sigma(m).\]
+  But \(\sigma(N)=2N\) because \(N\) is a perfect number, so we have
+  \[ 2N=(2^{k+1}-1)\sigma(m).\]
+  Clearly \(2N=2^{k+1}m\). Substituting this in yields \[2^{k+1}m=(2^{k+1}-1)\sigma(m)\] as required.
+\item Substituting in \(\sigma(m)=2^{k+1}c\), we get \[2^{k+1}m=(2^{k+1}-1)2^{k+1}c.\]
+  Cancelling \(2^{k+1}\) from both sides we have \[m=(2^{k+1}-1)c.\]
+\item If \(c>1\), then \(m\) is at least divisible by \(1\), \(m\), and \(c\). (We note that \(m\not=c\) because \(k\ge 1\).)
+  Then \[\sigma(m)\ge 1+m+c=1+(2^{k+1}-1)c+c=1+2^{k+1}c.\]
+\item But \(\sigma(m)=2^{k+1}c\), so the preceding inequality implies \[2^{k+1}c\ge1+2^{k+1}c\] which implies \(0\ge1\). Clearly
+  this is a contradiction, so \(c=1\).
+\item If \(c=1\) then \(\sigma(m)=2^{k+1}=m+1\). The number \(m\) is at least divisible by itself and \(1\), so the sum of its
+  divisors is at least \(m+1\), but if \(\sigma(m)\) actually equals \(m+1\) then no other number can divide it except for \(1\) and \(m\);
+  hence \(m\) must be prime.
+\item From \(m=2^{k+1}-1\) we have \[N=2^k(2^{k+1}-1).\] We know that \(2^{k+1}-1\) is prime, so \(k+1\) must also be prime. If \(k+1\)
+  is prime, then \(k\) is one less than a prime, say \(p\). So if we put \(k=p-1\), then we get
+  \[N=2^{p-1}(2^p-1).\] This completes the proof.
+  
+\end{enumerate}
+\item
+  \begin{enumerate}
+  \item Starting from the \(1/3\) term, we note that \(1/3+1/4>1/4+1/4=1/2\), since \(1/3>1/4\). Similarly,
+    \(1/5+1/6+1/7+1/8>1/8+1/8+1/8+1/8=1/2.\) This can be repeated to infinity to show that
+    \[1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots>1+\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\cdots.\]
+    Clearly the RHS goes to infinity, and therefore the LHS must diverge too.
+  \item In the first graph, where the rectangles are underneath the graph, the first rectangle is excluded
+    because \(\ln(x)\) is the area under the graph of \(1/x\) from \(1\) to \(x\). So we get \(H_n-1<\ln(n)\).
+    From the second graph, \(H_n>\ln(n)\). Putting these two inequalities together yields \[\ln(n)<H_n<\ln(n)+1.\]
+  \item We have \[H_{kn}\approx\ln(kn)+\gamma_1\] and \[H_{n}\approx\ln(n)+\gamma_2.\]
+    As \(n\) approaches infinity, \(\gamma_1\) and \(\gamma_2\) will approach the same value, so we have
+    \[H_{kn}-H_{n}=\ln(kn)-\ln(n)=\ln(k).\]
+    \begin{enumerate}
+    \item From the preceding formula, \(\ln2=H_{2n}-H_{n}\) as \(n\) goes to infinity. At first, it's not obvious
+      how to subtract these two values because the first \(n\) terms will disappear. The trick is the same as
+      that of recognising that the even numbers and all the numbers are both still countable infinities even
+      though the even numbers seems to be an infinity that is half as small, in a sense. Countable infinity
+      means that there is a one-to-one correspondence with the positive integers, which the even numbers have.
+      We associate \(1\) with \(2\), \(2\) with \(4\), \(3\) with \(6\) and so on. The same principle applies
+      here. Instead of subtracting in order, we change the order of the series slightly (we're allowed to this
+      because the series is convergent) and subtract a term of \(H_n\) from every second term of \(H_{2n}\); in this
+      way an infinite number of terms can be subtracted without losing an infinite  number of terms at the beginning.
+      Hopefully this is clear:
+      \[
+        \begin{split}
+          \ln2&=1+\left(\frac{1}{2}-1\right)+\frac{1}{3}+\left(\frac{1}{4}-\frac{1}{2}\right)+\frac{1}{5}+\left(\frac{1}{6}-\frac{1}{3}\right)+\cdots\\
+                &=1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\frac{1}{6}+\cdots
+        \end{split}
+      \]
+    \item Apply the same method as for \(\ln2\).
+    \item Apply the same method as for \(\ln2\).
+    \end{enumerate}
+    The formula is simply a compact form of the algorithm we use to subtract the two infinite series. From the preceding examples
+    we note that the algorithm consists of doing the subtraction every \(n\)th term (if we're calculating \(\ln n\)). This subtraction
+    is equivalent to multiplying the fraction by \(1-n\). The combination of the floor and ceiling functions evaluate to either \(0\) or \(1\)
+    depending on whether \(k\) is a multiple of \(n\) and therefore determine which fractions to multiply by \(1-n\).
+  \item Let \[\ln(1+x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots.\]
+    Putting in \(x=0\) we get \(a_0=0\). Differentiating both sides yields \[\frac{1}{(1+x)}=a_1+2a_2x+3a_3x^2+\cdots.\]
+    Again putting in \(x=0\), we find that \(a_1=1\). We continue this process to find the other coefficients. Differentiating again
+    we have \[\frac{-1}{(1+x)^2}=2a_2+6a_3x+\cdots.\] Putting in \(x=0\) results in \(-1=2a_2\); hence \(a_2=-1/2\). Eventually
+    we find that \(a_3=1/3\), \(a_4=-1/4\), and so on, leaving us with \[\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots.\]
+  \item Put \(x=-1/t\) and substitute it in to get
+    \[\ln\left(\frac{t-1}{t}\right)=-\frac{1}{t}-\frac{1}{2t^2}-\frac{1}{3t^3}-\cdots.\]
+      Flip the fraction in the logarithm on the LHS to get rid of all the minus signs:
+      \[\ln\left(\frac{t}{t-1}\right)=\frac{1}{t}+\frac{1}{2t^2}+\frac{1}{3t^3}+\cdots.\]
+      Since the series only makes sense for \(|x|<1\), the restriction on \(t\) is that \(|-1/t|<1\). From this \(t<-1\) or \(t>1\).
+    \item \[ \sum_{k=2}^{n}\ln\left(\frac{k}{k-1}\right)=\sum_{k=2}^n\left(\frac{1}{k}+\frac{1}{2k^2}+\frac{1}{3k^3}+\cdots\right)\]
+          By adding the logarithms on the LHS, we get a telescoping product (or sum if we break the logarithms into the difference of two logarithms)
+          that leaves us with \(\ln(n)-\ln(1)=\ln(n)\). By expanding the sum on the RHS,  we get
+          \[\ln(n)=\left(\frac{1}{2}+\frac{1}{2\cdot4}+\frac{1}{3\cdot8}+\cdots+\right)+\left(\frac{1}{3}+\frac{1}{3\cdot9}+\frac{1}{3\cdot27}+\cdots\right)+\cdots+\left(\frac{1}{n}+\frac{1}{2n^2}+\frac{1}{3n^3}+\cdots\right).\]
+          If we take the first term of each bracket, we get the sum
+          \[\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\] which is just
+          \(H_n-1\). Similarly, if we take the second term of each bracket,
+          we get \[\frac{1}{2\cdot 4}+\frac{1}{2\cdot9}+\frac{1}{2\cdot16}+\cdots+\frac{1}{2n^2}=\frac{1}{2}(H^{(2)}_n-1).\]
+          The third term of each bracket gives us \[\frac{1}{3}(H^{(3)}_n-1).\]
+          
+          Continuing this rearrangement of the terms, we find that
+          \[\ln(n)=H_n-1+\frac{1}{2}(H^{(2)}_n-1)+\frac{1}{3}(H^{(3)}_n-1)+\frac{1}{4}(H^{(4)}_n-1)+\cdots.\]
+        \item The limit of the sum should a number around \(0.577216.\)
+        \end{enumerate}
+      \item
+        \begin{enumerate}
+        \item Each partition of \(n\) contributes a unit to the coefficient
+          of \(x^n\). Each infinite sum represents the number of times a particular number appears in the partition---the first bracket represents the number
+          of \(1\)s, the second the number of \(2\)s, the third the number
+          of \(3\)s, and so on. A partition of \(n\) is really just selecting
+          a term from each bracket such that the indices add to \(n\)
+          when the terms are multiplied. Multiplying out the brackets
+          results in an enumeration of all the possible ways of choosing
+          different terms from each bracket, and therefore each coefficient
+          will be all the ways to partition that number.
+        \item The first \(6\) values of \(p(n)\) seem to yield the prime
+          numbers. However, this would-be glorious theorem is destroyed
+          when we find that \(p(7)=15\).
+        \item Using the formula \[1+x+x^2+x^3+\cdots=\frac{1}{1-x}\] the result
+          follows immediately.
+        \item \(p_d(7)=5\).
+        \item \(p_o(7)=5\).
+        \item From each bracket now we can only choose \(x^i\) or \(1\); this is
+          equivalent to either including \(i\) in the partition or not.
+          Whereas before we could choose \(x^{2i}\), \(x^{3i}\), and so on to
+          include more than one of \(i\) in the partition, only being
+          able to choose \(x^i\) means only one of \(i\) ends up in the final
+          partition, and therefore the coefficients of the expanded product
+          are the number of partitions that use only unique numbers.
+
+          This generating function is equivalent to finding how many subsets
+          of a set \(\{1,2,3,\ldots,n\}\) sum to a particular number, since
+          a partition with distinct elements is the same as choosing elements
+          of that set that sum to that particular number.
+        \item This generating function can be written as
+          \[(1+x+x^2+x^3+\cdots)(1+x^3+x^6+x^9+\cdots)(1+x^5+x^{10}+x^{15}+\cdots)\cdots.\]
+          This is the same as the original generating function except
+          that the brackets determining which even numbers ended up
+          in the partition are missing. Therefore by expanding the brackets
+          only partitions that use odd numbers will be counted in the coefficient of each term.
+        \item This problem shows the power of generating functions. If we
+          can manipulate our generating functions so that they are equal,
+          we have completed the proof.
+
+          Euler's proof involves transforming each factor in \(F_d(x)\) into
+          a fraction using the difference of two squares, as follows.
+          \[
+            \begin{split}
+              F_d(x)&=\frac{(1+x)(1-x)}{1-x}\cdot\frac{(1+x^2)(1-x^2)}{1-x^2}\cdot\frac{(1+x^3)(1-x^3)}{1-x^3}\cdots\\
+                    &=\frac{(1-x^2)(1-x^4)(1-x^6)\cdots}{(1-x)(1-x^2)(1-x^3)(1-x^4)(1-x^5)\cdots}\\
+                    &=\frac{1}{(1-x)(1-x^3)(1-x^5)\cdots}\\
+              &=F_o(x)
+            \end{split}
+            \]
+        \end{enumerate}
+\end{enumerate}
+\end{document}

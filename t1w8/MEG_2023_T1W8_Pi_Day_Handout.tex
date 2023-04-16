@@ -1,0 +1,77 @@
+\input eplain
+\magnification\magstep1
+\hsize = 6.26 true in
+\vsize = 9.69 true in
+\footline={}
+
+{\obeylines
+\noindent Melbourne High School
+\noindent  Maths Extension Group
+\noindent  {\bf Term 1 Week 8 Handout}
+}
+\medskip
+\beginsection Problems
+
+\numberedlist
+\li Find the ratio between the areas of a square and an octagon that are both inscribed in the same
+circle.
+\li A circle of radius $9/2$ circumscribes a triangle $ABC$ such that one of the triangle's sides
+passes through the centre of the circle; let this side be $AB$. If the arc length of $BC$ is $3\pi$,
+find the area of the triangle.
+\li Given a rational number $x/y$, where $x$ and $y$ are positive integers, we define its {\it size}
+to be $x+y$. Find the rational number with smallest size that equals $\pi$ to six decimal places.
+\li (This problem requires calculus.) Now you will become Euler and prove the famous identity
+$${\pi^2\over6}={1\over1^2}+{1\over2^2}+{1\over3^2}+{1\over{4^2}}+\cdots.\eqdef{eq:basel}$$
+\numberedlist
+\li By instead considering the sum
+$$1+{1\over1}\cdot{1\over2}+{1\over2}\cdot{1\over3}+{1\over3}\cdot{1\over4}+\cdots$$
+show that the infinite sum on the RHS of \eqref{eq:basel} converges to a finite value less than $2$.
+\li Assume that $\sin x$ can be written as an infinite polynomial:
+$$\sin x=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4+a_5x^5+\cdots.$$
+Substitute in $x=0$ and we get $a_0=0$. Differentiating both sides yields
+$$\cos x=a_1+2a_2x+3a_3x^2+4a_4x^3+5a_5x^4+\cdots.$$
+Put in $x=0$ again and we have $a_1=1$.
+Repeat this process to find that $a_3=-1/3!$, $a_4=0$, $a_5=1/5!$, $a_6=0$, $a_6=-1/7!$ and so on.
+Hence show that
+$$\sin x=x-{x^3\over3!}+{x^5\over5!}-{x^7\over7!}+\cdots.\eqdef{eq:sinx}$$
+\li Divide both sides of \eqref{eq:sinx} by $x$ to get
+$${\sin x\over x}=1-{x^2\over3!}+{x^4\over5!}-{x^6\over7!}+\cdots.\eqdef{eq:sinxonx}$$
+The key thing to realise in \eqref{eq:sinxonx} is that the coefficient of the $x^2$ term is $-1/3!=-1/6.$
+
+Note that the roots of $\sin x/x$ are the same as $\sin x$ except that $x=0$ is excluded. Hence
+the roots of the LHS of \eqref{eq:sinxonx} are $x=\pm\pi,\pm2\pi,\pm3\pi,\ldots.$
+We know with normal polynomials that we can express them as a product of their roots with a
+scaling factor. Let's do the same with $\sin x/x$; we get the infinite product
+$${\sin x\over x}=a(x^2-\pi^2)(x^2-4\pi^2)(x^2-9\pi^2)(x^2-16\pi^2)\cdots.$$
+Now we just need to know what the scaling factor $a$ is.
+
+As with normal polynomials, we can find the scaling factor by plugging in another point that
+is not one of the roots. Let's choose $x=0$. Obviously the LHS is undefined, but we can use
+a interesting trick that is  generally not allowed when we are dealing with finite polynomials.
+Graphing $\sin x/x$, perhaps using Desmos, we see that
+$$\lim_{x\to0}{\sin x\over x}=1.$$
+(This might be the most important limit in calculus.) Use this limit to find $a$
+%So we can actually say that
+%$$a={1\over{(-\pi^2)(-4\pi^2)(-9\pi^2)(-16\pi^2)\cdots}}.$$
+and hence  show that
+$${\sin x\over x}=\left(1-{x^2\over\pi^2}\right)\left(1-{x^2\over4\pi^2}\right)\left(1-{x^2\over9\pi^2}\right)\cdots.$$
+\li If we expand the first two terms, we get
+$$\left(1-{x^2\over\pi^2}\right)\left(1-{x^2\over4\pi^2}\right)=1-\left({1\over\pi^2}+{1\over4\pi^2}\right)x^2+{x^4\over4\pi^4}.$$
+Keep expanding the product until you notice a pattern.
+%focusing only on the $x^2$ term. You will get the coefficient of the $x^2$ term to be
+%$$-\left({1\over\pi^2}+{1\over4\pi^2}+{1\over9\pi^2}+{1\over16\pi^2}+\cdots\right).$$
+\li Comparing coefficients with \eqref{eq:sinxonx}, complete Euler's proof of the Basel Problem.
+\endnumberedlist
+\li For this problem, we definite a particular function $\zeta(s)$ to be
+$$\zeta(s)={1\over1^s}+{1\over2^s}+{1\over3^s}+{1\over4^s}+{1\over5^s}+\cdots.$$
+\numberedlist
+\li Show that
+$$\left(1-{1\over2^s}\right)\left(1-{1\over3^s}\right)\left(1-{1\over5^s}\right)\left(1-{1\over7^s}\right)\cdots\zeta(s)=1.$$
+\li Hence show that
+$${1\over{\left(1-{1\over2^2}\right)\left(1-{1\over3^2}\right)\left(1-{1\over5^2}\right)\left(1-{1\over7^2}\right)\cdots}}={\pi^2\over6}.$$
+\li Finally, prove that the probability of two randomly chosen integers being coprime to each other is $6/\pi^2.$
+\li What is the probability that four randomly chosen integers are all coprime? (Here we mean that the GCD of the four
+numbers is $1$; we don't mean that every pair of those four integers is coprime.)
+\endnumberedlist
+\endnumberedlist
+\bye

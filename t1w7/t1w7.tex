@@ -1,0 +1,61 @@
+\documentclass[a4paper]{article}
+
+\usepackage[pdfusetitle]{hyperref}
+
+%\usepackage[a4paper]{geometry}
+\usepackage[margin=1in,a4paper]{geometry}
+\usepackage[bf,tiny]{titlesec}
+\usepackage{fancyhdr}
+
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcounter{problemno}
+\setcounter{problemno}{1}
+\newcommand{\problem}{\section*{\textbf{Problem \theproblemno}}\refstepcounter{problemno}}
+\newcounter{interludeno}
+\setcounter{interludeno}{1}
+\newcommand{\interlude}[1]{\par\noindent\\\fbox{\begin{minipage}{\linewidth}\textbf{Interlude \theinterludeno.\enspace}#1\end{minipage}}\\\refstepcounter{interludeno}}
+
+\newcounter{questionno}
+\setcounter{questionno}{1}
+\newcommand{\question}[1]{\par\noindent{\thequestionno.\enspace}#1\refstepcounter{questionno}\\}
+
+\newcommand{\thetitle}{Term 1 Week 7 Handout}
+
+\title{MEG 2023 Term 1 Week 7 Handout}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{\thetitle}\\
+\section*{Introductory note}
+As this is the first handout of the year in this style, a few notes
+are in order. The first section consists of problems generally
+related to the main topic of the meeting---in this handout's case,
+combinatorics. The second section will contain a range of topics I find
+interesting that are not directly related to competition problems. The
+problems in this section require some working knowledge of proof. It is
+up to you what you work on.
+\onecolumn
+\section*{Section A: Problems in combinatorics}
+\input{sectiona.tex}
+\twocolumn
+\include{sectionb.tex}
+\end{document}

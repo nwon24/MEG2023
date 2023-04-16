@@ -1,0 +1,161 @@
+\section*{Section B: The higher arithmetic}
+Number theory, or the higher arithmetic, is the
+branch of mathematics that studies the natural numbers.
+It is a wondrous and beautiful subject, full of
+amazing ideas that will make your study of it
+worthwhile.\footnote{Your mileage may vary.}
+
+Number theory investigates many different
+types of natural numbers and the relationships
+between them. Some are listed below.
+  \begin{itemize}
+  \item Prime numbers. They are the basic building
+    blocks of all the natural numbers, and thus
+    come up frequently in any arithmetic investigation.
+    Many of number theory's famous solved and unsolved problems
+    have to do with primes, including the Twin Prime Conjecture
+    and the Prime Number Theorem.
+  \item Shapely numbers. These are numbers like the familiar triangular and
+    square numbers. Shapely numbers
+    extend up to pentagonal numbers, hexagonal numbers, etc.
+  \item Powers of numbers. The most famous theorem involving
+    these numbers is \emph{Fermat's Last Theorem}, which asserts
+    that a number raised to a power greater than \(2\) is not
+    the sum of two like powers.
+  \item Perfect numbers. These are the numbers that are
+    the sum of their proper divisors (all of their divisors except for itself).
+    For example, \(6\) is a perfect number; its proper divisors, which are \(1\), \(2\),
+    and \(3\), have a sum of \(6\).
+    
+  \end{itemize}
+  Although number theory is primarily the study of natural numbers, we often
+  have to resort to other number systems, including the integers, rationals, reals,
+  and sometimes even the complex numbers. For the most part, however, we will
+  stick to the natural numbers, the integers, and sometimes the rationals.
+
+  For all the interesting numbers of number theory, there are just as many
+  interesting questions. Here are some about the primes; some have been solved
+  while others remain unsolved.
+  \begin{itemize}
+	  \item Which primes are the sum of two squares?
+	  \item The sequence \(3\), \(5\), \(7\) is a \emph{prime triplet}. Are
+		  there infinitely many prime triplets?
+	  \item Are there infinitely many primes of the form \(2^n-1\)?
+	  \item Are there infinitely many primes of the form \(4n+1\)? \(4n+3\)?
+	  \item Are there infinitely many primes of the form \(n^2+1\)?
+	  \item For some given natural number \(x\), how many primes are there
+		  less than or equal to \(x\)?
+	  \item Is every even number greater than or equal to \(4\) the sum of two primes?
+  \end{itemize}
+  Number theory asks many questions of equations and polynomials too. Generally
+  polynomials in number theory are considered to have integer or rational coefficients.
+  For example, the equation \(x^2-Ny^2=1\) for a natural number \(N\) that is not a perfect
+  square is known as \emph{Pell's Equation}. Amazingly, such an equation always
+  has infinitely many solutions. What's more, those solutions are related to continued fractions!
+
+  Even the simplest equations, linear equations, present difficulties because we often
+  consider them in several variables. Consider the equation \(ax-by=n\) for natural numbers
+  \(a\), \(b\), and \(n\). When does this equation have solutions in integers or natural numbers \(x\)
+  and \(y\)?
+
+  Then there are equations of a more elaborate kind, such as the equation \(y^2=x^3+17\). It's not at all
+  obvious how to solve such an equation in the integers or rationals. In fact, it is still
+  and unsolved problem in mathematics as to how to determine whether such equations (\(y^2\) equals
+  a cubic in \(x\)) have finitely many rational solutions, infinitely many rational solutions, or no rational
+  solutions at all.
+
+  We shall consider all the above types of numbers and equations in our journey through number theory.
+  \subsection*{Pythagorean triples}
+  Let's begin our exploration into number theory by starting with something
+  we already know: Pythagorean triples.
+
+  A Pythagorean triple is a triple of positive integers \((a,b,c)\) where \(a^2+b^2=c^2\). Geometrically,
+  \(c\) is the hypotenuse and \(a\) and \(b\) are the two shorter sides of a
+  right-angled triangle. A natural question is whether there are infinitely
+  many such triples. The answer is yes because if \((a,b,c)\) is a Pythagorean
+  triple, then so is \((na,nb,nc)\) for any natural number \(n\). 
+  The simple direct proof follows.
+  \[
+	  \begin{split}
+		  (na)^2+(nb)^2&=n^2(a^2+b^2)\\
+		  &=n^2c^2\\
+		  &=(nc)^2
+	  \end{split}
+  \]
+
+  Triples that are just multiples of other triples aren't very interesting, so
+  we look mainly at those triples in which \(a\), \(b\), and \(c\) share no
+  common factors. These Pythagorean triples are called \emph{primitive}. For
+  example, \((3,4,5)\) is a primitive triple, while \((6,8,10)\) is not.
+
+   \interlude{Write down as many primitive Pythagorean triples as you can and look
+  for patterns.}
+
+From our definition of primitive triples, we immediately note that one of \(a\)
+and \(b\) has to be even and the other odd. If both \(a\) and \(b\) were even, then
+\(c^2=a^2+b^2\) is even. This means \(c\) would also be even, contradicting the assumption that \(a\), \(b\), and \(c\)
+share no common factors. What happens if both \(a\) and \(b\) are odd?
+\interlude{Prove that both \(a\) and \(b\) cannot be odd.}
+
+Since either \(a\) or \(b\) can be even and the other odd, from now on we can
+assume, without loss of generality, that \(a\) is odd and \(b\) is even. Note
+that this implies \(c\) must be odd too, because \(a^2+b^2\), being
+the sum of an even and an odd number, is odd.
+
+A way to generate primitive triples would be quite a useful thing. How
+might we go about deriving a formula for \(a\), \(b\), and \(c\)?
+First we note that \(a^2=c^2-b^2\), so \(a^2=(c+b)(c-b)\). The right-hand side,
+\((c+b)(c-b)\), is a perfect square. Since \(c\) and \(b\) share no
+common factors, neither do \(c+b\) and \(c-b\). Since they share
+no common factors, both \(c+b\) and \(c-b\) have to be squares themselves.
+\interlude{To see why this is true, write down a few primitive Pythagorean
+  triples and check if both \(c+b\) and \(c-b\) are perfect squares.}
+
+Since \(c\) is odd and \(b\) is even (by assumption), both \(c-b\) and \(c+b\) are odd.
+Thus we can let \begin{equation}\label{eq:cminusb}c-b=t^2\end{equation} and \begin{equation}\label{eq:cplusb}c+b=s^2\end{equation} for odd integers \(t\) and \(s\).
+Since \(c+b>c-b\), we have \(s>t\). We can make one further deduction about
+\(t\) and \(s\); they must share no common factors, because \(c-b\) and \(c+b\)
+share no common factors.
+
+\interlude{Solve equations \eqref{eq:cminusb} and \eqref{eq:cplusb} to get \(b\) and \(c\) in
+  terms of \(t\) and \(s\).}
+
+If you done the above interlude correctly, you should have \(b=(s^2-t^2)/2\)
+and \(c=(s^2+t^2)/2\).
+Now we just need a formula for \(a\). From \(a^2=b^2-c^2\), we have
+\[ \begin{split}a&=\sqrt{(b+c)(b-c)}\\&=\sqrt{s^2t^2}.\end{split}\] This implies \(a=st\).
+
+At the end of this long voyage, we have discovered a formula for
+generating primitive Pythagorean triples:
+\[
+  (a,b,c)=\left(st,\frac{s^2-t^2}{2},\frac{s^2+t^2}{2}\right)
+\]
+where \(s>t\ge1\) and \(s\) and \(t\) are odd integers that share no common factors.
+This formula, with slight modifications, is attributed to Euclid.
+\interlude{Generate as many primitive triples as you can using
+  the above formula to make sure that it works.}
+
+\section*{Problems}
+\setcounter{questionno}{1}
+\question{Show that the formula derived above is always a solution
+to \(a^2+b^2=c^2\). If you can, prove that the formula always generates
+a primitive triple by showing that \(st\), \((s^2-t^2)/2\), and \((s^2+t^2)/2\)
+share no common factors.}
+\question{What do you notice about the even number in primitive
+Pythagorean triples? Prove that your conjecture is correct.}
+\question{Show that one of \(a\) and \(b\) must be a multiple of \(3\).}
+\question{Given a Pythagorean triple (not necessarily primitive) \((a,b,c)\), consider its \emph{product}
+to be \(abc\). Prove that one of \(a\), \(b\), and \(c\) must be divisible by \(5\), and hence
+determine the highest common factor of all products of all Pythagorean triples.}
+\question{Consider a circle of radius \(1\) centred at the origin with
+equation \(x^2+y^2=1\), and a line with a rational gradient \(m\)
+that passes through the point \((-1,0)\). Find the coordinates
+of the other point of intersection between the line and the
+circle in terms of \(m\). Hence deduce a second formula to
+generate Pythagorean triples (this one won't just generate primitive triples).}
+\question{Given that the equation \(X^4-Y^4=Z^2\) has no
+nonzero solution in integers \(X\), \(Y\), and \(Z\), show
+that if three square numbers are in an arithmetic progression,
+their difference cannot also be a square.}
+\question{Hence, or otherwise, show that a right-angled triangle
+with \emph{rational} side lengths cannot have a square area.}

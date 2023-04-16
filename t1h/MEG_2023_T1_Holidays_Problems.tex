@@ -1,0 +1,109 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+\title{MEG 2023 Term 1 Holiday Problems}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{Term 1 Holiday Problems}\\
+
+\begin{enumerate}
+\item Suppose you have \(n\) distinct
+  objects, each with an equal probability of being selected. After
+  an object is selected, it is replaced. Each selection of an object
+  is considered a ``turn.'' What is the expected value of turns that you
+  need to complete before you have selected at least one of each object?
+
+\item Your good friend Harold is about to start reading Virginia Woolf's \emph{Between the Acts}. The book
+  has \(199\) pages, which you instantly recognise as being prime.
+
+  Since Harold is much
+  smarter than you, he doesn't read books in the correct page order. He begins by choosing a random number
+  between \(1\) and \(199\)---call this number \(x\). To determine the \(n\)th
+  page that he will read, he multiplies \(n\) by \(x\), and if the number is greater than \(199\), he
+  subtracts off a multiple of \(199\) so that he has a page number that is actually in the book. He then reads
+  that page before calculating the next page he will read.
+
+  Show that not only will Harold read each page of the book, but he will also never
+  read a page more than once. 
+  
+\item Find all natural numbers $n$ such that $2^{2^n}+5$ is prime. 
+\item Let $N$ be a regular nonagon, having $O$ as the centre of its circumcircle, and let $PQ$ and $QR$ be adjacent edges of $N$. The midpoint of $PQ$ is $A$ and the midpoint of the radius perpendicular to $QR$ is $B$. Determine the angle between $AO$ and $AB$.
+\item Let $0<a<1$. Solve \[x^{a^x}=a^{x^a}\] for positive numbers $x$.
+\item Find the sum of all positive integers \(n\) for which \[n^2-19n+99\] is a perfect square.
+\item Prove that the fraction \[\frac{21n+4}{14n+3}\]
+  cannot be reduced further for all natural number values of \(n\).
+\item Show that we can colour the elements of the set $S=\{1,2,\ldots, 2007\}$ with 4 colours such that any subset of $S$ with 10 elements, whose elements form an arithmetic sequence, is not all one colour.
+\item Two points $K$ and $L$ are chosen inside triangle $ABC$ and a point $D$ is chosen on the side $AB$. Suppose that $B$, $K$, $L$, $C$ are concyclic, $\angle AKD = \angle BCK$ and $\angle ALD = \angle BCL$. Prove that $AK = AL$.
+
+\item (This is a long problem.)
+  \begin{enumerate}
+  \item Evaluate \((a+b)^2\pmod{2}\), \((a+b)^3\pmod{3}\),
+    and \((a+b)^5\pmod{5}\).
+  \item The Binomial Theorem states that
+    \[(a+b)^n=\sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^k\]
+    where
+    \[\binom{n}{k}=\frac{n!}{k!(n-k)!}.\]
+    Prove that
+    \[(a+b)^p\equiv a^p+b^p\pmod{p}\] for any prime \(p\)
+
+\item Suppose you have \(6\) different applied mathematics books that you would like place in \(3\) bins. How many
+  ways are there to distribute the books such that the first bin has \(1\) book, the second \(2\) books, and the third \(3\) books?
+\item Now suppose you have \(n\) different applied mathematics books and \(m\) bins. Someone supplies you a list of numbers whose sum is \(n\):
+  \(k_1,k_2,k_3,\ldots,k_m\). How many ways are there to distribute the books such
+  that the \(i\)th bin receives \(k_i\) books? That is, the first bin should receive \(k_1\) books, the second \(k_2\) books, and so on. Note
+  that \(k_1+k_2+k_3+\cdots+k_m=n\).
+\item If you have completed the last part correctly, you have just discovered \emph{multinomial coefficients}, which, as you might be able
+  tell by the name, generalise the venerable binomial coefficients.
+
+  Let \(n\) be a positive integer and let \(k_1,k_2,k_3,\cdots k_m\) be \(m\) positive integers that sum to \(n\). This multinomial coefficient
+  is denoted \[\binom{n}{k_1,k_2,\ldots,k_m}.\] If your answer to the previous part involved binomial coefficients, make use of a
+  telescoping product to show that \[\binom{n}{k_1,k_2,\ldots,k_m}=\frac{n!}{k_1!k_2!\cdots k_m!}.\]
+\item Expand \((a+b+c)^3\), taking note of the coefficients and the powers of \(a\), \(b\), and \(c\) in each term.
+\item By first doing some more examples if necessary, come up with a conjecture about the expansion of
+  \[(x_1+x_2+x_3+\cdots+x_m)^n\]
+  using multinomial coefficients.
+\item Prove your conjecture by induction (you will need the binomial theorem).
+\item If you have made it this far in the problem, well done.
+
+  Prove that
+  \[(x_1+x_2+x_3+\cdots+x_m)^p\equiv x_1^p+x_2^p+x_3^p+\cdots x_m^p\pmod{p}\]
+    for any prime \(p\). (You can induction, but you could also look at the definition of a multinomial coefficient directly.)
+  \item Hence, show that
+    \[ a^p\equiv a\pmod{p}\]
+    for any prime \(p\) and any positive integer \(a\).
+\end{enumerate}
+\item Find \((102^{73}+55)^{37}\) modulo \(111\).
+\item We define the Fibonacci numbers by the recurrence relation
+  \(F_n=F_{n-1}+F_{n-2}\), where \(F_0=0\) and \(F_1=1\). Earlier
+  in the term we discovered that the generating function
+  \[G(x)=F_0+F_1x+F_2x^2+F_3x^3+\cdots\]
+  has the closed form expression
+  \[\frac{x}{1-x-x^2}.\]
+  In this problem, we will use this result to derive a closed-form
+  expression for the \(n\)th Fibonacci number.
+
+  \begin{enumerate}
+\item  Begin by showing that the closed-form expression for \(G(x)\) can be
+  written \[\frac{x}{(1-\alpha x)(1-\beta x)}\]
+  where \[\alpha=\frac{1+\sqrt{5}}{2}\quad\text{and}\quad\beta=\frac{1-\sqrt{5}}{2}.\]
+\item This fraction can be split into the sum of two fractions: \[\frac{A}{1-\alpha x}+\frac{B}{1-\beta x}.\]
+  Show that \(A=1/\sqrt5\) and \(B=-1/\sqrt5\).
+\item Show that \[1+x+x^2+x^3+\cdots=\frac{1}{1-x}.\]
+  (This value makes sense for \(|x|<1\).)
+\item Hence show that \[F_n=\frac{1}{\sqrt5}\left(\left(\frac{1+\sqrt5}{2}\right)^n-\left(\frac{1-\sqrt5}{2}\right)^n\right).\]
+  This is known as \emph{Binet's Formula}.
+\end{enumerate}
+\end{enumerate}
+\end{document}

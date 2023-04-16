@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\title{Pi Day}
+\author{Maths Extension Group}
+\institute{Melbourne High School}
+\date{2023}
+
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\begin{document}
+\frame{\titlepage}
+%\section{What is \(\pi\)?}
+%\begin{frame}
+%\frametitle{What is \(\pi\)?}
+%\begin{itemize}
+%\item Ratio of a circle's circumference to its diameter?\pause
+%\item The circumference of a semicircle with unit radius?\pause
+%\item Some number around \(3\)?\pause
+%\item Just another Greek letter?\pause
+%\item A tasty lunch?
+%\end{itemize}
+%\end{frame}
+\section{Crazy Infinite Products and Sums for \(\pi\)}
+\begin{frame}
+\frametitle{Madhva-Leibniz}
+\[
+\pi=4-\frac{4}{3}+\frac{4}{5}-\frac{4}{7}+\frac{4}{9}-\frac{4}{11}+\cdots
+\]
+\end{frame}
+\begin{frame}
+\frametitle{Vi\'ete's Formula}
+\[
+\frac{2}{\pi}=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{2+\sqrt{2}}}{2}\cdot\frac{\sqrt{2+\sqrt{2+\sqrt{2}}}}{2}\cdots
+\]
+\end{frame}
+\begin{frame}
+\frametitle{Wallis (1655)}
+\[
+\frac{\pi}{2}=\frac{2\cdot2\cdot4\cdot4\cdot6\cdot6\cdots}{3\cdot3\cdot5\cdot5\cdot7\cdot7\cdots}
+\]
+\end{frame}
+\begin{frame}
+  \frametitle{Nilakantha (15th century)}
+  \[
+    \pi=3+\frac{4}{2\cdot3\cdot4}-\frac{4}{4\cdot5\cdot6}+\frac{4}{6\cdot7\cdot8}-\frac{4}{8\cdot9\cdot10}+\cdots
+  \]
+\end{frame}
+\begin{frame}
+  \frametitle{Basel Problem (Euler)}
+  \[\frac{\pi^2}{6}=\frac{1}{1^2}+\frac{1}{2^2}+\frac{1}{3^2}+\frac{1}{4^2}+\cdots\]
+\end{frame}
+\begin{frame}
+  \frametitle{A variant of the Basel problem}
+  \[\frac{\pi^4}{90}=\frac{1}{1^4}+\frac{1}{2^4}+\frac{1}{3^4}+\frac{1}{4^4}+\cdots\]
+\end{frame}
+\section{Craziest Infinite Sums for \(\pi\)}
+\begin{frame}
+  \frametitle{??}
+  \[\frac{\pi}{2}=\arctan{\frac{1}{1}}+\arctan{\frac{1}{2}}+\arctan{\frac{1}{5}}+\arctan{\frac{1}{13}}+\cdots\]
+\end{frame}
+\begin{frame}
+\frametitle{Ramanujan-Sato}
+\[\frac{1}{\pi}=\frac{2\sqrt2}{99^2}\sum_{k=0}^{\infty}\frac{(4k!)}{k!^4}\cdot\frac{26390k+1103}{396^{4k}}\]
+???
+\end{frame}
+\begin{frame}
+\frametitle{Chudnovsky formula (the craziest one)}
+\[
+\frac{1}{\pi}=\frac{\sqrt{10005}}{4270934400}\sum_{k=0}^{\infty}\frac{(6k)!}{(3k)!k!^3}\cdot\frac{13591409+545140134k}{(-640320)^{3k}}
+\]
+\end{frame}
+\section{Irrationally good approximations}
+\begin{frame}
+  \frametitle{Factorial}
+  \[n!\sim\sqrt{2\pi n}\left(\frac{n}{e}\right)^n\]
+\end{frame}
+\begin{frame}
+  \frametitle{Binomial Coefficients}
+  \[\binom{2n}{n}\sim\frac{4^n}{\sqrt{\pi n}}\]
+\end{frame}
+\begin{frame}
+  \frametitle{Your Problem (Warning: very hard)}
+  If two random real numbers \(x\) and \(y\) are chosen
+  on the interval \([0,1]\), what is the probability
+  that the closest integer to \(x/y\) is even?
+\end{frame}
+\end{document}

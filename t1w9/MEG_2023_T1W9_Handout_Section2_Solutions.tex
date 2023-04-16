@@ -1,0 +1,95 @@
+%\pagewidth 210mm
+%\pageheight 297mm
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\usepackage[a4paper]{geometry}
+\usepackage[bf,tiny]{titlesec}
+\usepackage{fancyhdr}
+
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcounter{problemno}
+\setcounter{problemno}{1}
+\newcommand{\problem}{\section*{\textbf{Problem \theproblemno}}\refstepcounter{problemno}}
+\newcounter{interludeno}
+\setcounter{interludeno}{1}
+\newcommand{\interlude}[1]{\par\noindent\\\fbox{\begin{minipage}{\linewidth}\textbf{Interlude \theinterludeno.\enspace}#1\end{minipage}}\\\refstepcounter{interludeno}}
+
+\newcounter{questionno}
+\setcounter{questionno}{1}
+\newcommand{\question}[1]{\par\noindent{\thequestionno.\enspace}#1\refstepcounter{questionno}\\}
+
+\newcommand{\thetitle}{Term 1 Week 9 Handout Solutions}
+
+\renewcommand\thesection{\S{\arabic{section}}.}
+
+\title{MEG 2023 Term 1 Week 9 Handout Solutions}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{\thetitle}\\
+\section{More combinatorics problems}
+\section{Euclid's Algorithm}
+\begin{enumerate}
+\item Let \(g=\gcd(a,b).\) First solve \[ax-by=g\] and then multiply the solution
+  by \(n/g\), for if \((x',y')\) satisfies
+  \(ax'-by'=g\) then \((x'n/g,y'n/g)\) satisfies
+  \[\frac{ax'n}{g}-\frac{by'n}{g}=n.\]
+\item \((x,y)=(5,16).\)
+\item We get a solution, but the solution is not in positive
+  integers: \((x,y)=(-10,-23).\) To get the solution in positive
+  integers, we argue generally. Suppose \(x=x'\) and \(y=y'\) are
+  the solutions we have found that are both not positive integers.
+  To make them positive integers, we need to add a number to
+  both without changing the equality sign. We note that
+  \[7200(x'+M)-3132(y'+N)=36\] if and only if
+  \(7200M=3132N\). Cancelling \(36\) from both sides
+  we get \(200M=87N\). Therefore we can take \(M=87\)
+  and \(N=200\) (this is the `smallest' solution because
+  \(200\) and \(87\) are coprime).
+
+  Our original solution was \(x'=-10\) and \(y'=-23\), so
+  our positive integer solution is \((x,y)=(77, 177)\).
+\item Let \(u=u'\) and \(v=v'\) be the integers satisfying
+  the equation \[ux+vy=\gcd(x,y).\] Therefore we have
+  \[a^{\gcd(x,y)}\equiv a^{u'x+v'y}\equiv(a^x)^u(a^y)^v\equiv1\cdot1\equiv1\pmod{n}.\]
+\item We want to show that the equations \[N=am\] and \[N+k=bn\]
+  for integers \(m\) and \(n\) are soluble. Putting the first
+  into the second we get \[am+k=bn\] which implies \[am-bn=k.\]
+  This equation is always soluble because \(a\) and \(b\)
+  are coprime.
+\item Suppose that \(p\) does not divide \(a\) (if it did we
+  have nothing to prove), Our goal now is to show that it
+  divides \(b\).
+
+  If \(p\) does not divide \(a\), then it must be coprime with
+  \(a\). Hence there exist positive integers \(x\) and \(y\) such that
+  \[ px-ay=1.\]
+  Multiplying both sides by \(b\) yields
+  \[ pbx-aby=b.\]
+  Clearly \(p\) divides \(pbx\), and by assumption \(p\) divides
+  \(ab\), so it must divide \(aby\) too. But if \(p\) divides
+  both \(pbx\) and \(aby\), it must divide their difference,
+  which is \(b\).
+
+\end{enumerate}
+\end{document}
