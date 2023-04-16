@@ -1,0 +1,10 @@
+*.xlsx
+*.scn
+*.log
+template.tex
+fta
+*.Zone.Identifier
+*.zip
+/AMC Past Papers/
+/AMC Results 2022 CLASSIFIED/
+/example/
