@@ -1,0 +1,198 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage[a4paper]{geometry}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+\title{MEG 2023 Term 1 Holiday Problems Solutions}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\begin{document}
+\noindent Melbourne High School\\
+Maths Extension Group 2023\\
+\textbf{Term 1 Holiday Problems Solutions}\\
+
+\begin{enumerate}
+\item On the first turn, it is guaranteed that we get an object we haven't selected before, so the expected number of turns needed to get the
+  first distinct object is just \(1\). After this there are only \(n-1\) objects left that we haven't gotten yet, so the probability of getting
+  a new object on the next turn is \((n-1)/n\). Therefore the expected number of turns needed to get that second new object is \(n/(n-1)\). Continuing
+  in this way we find that the total expected value is \[1+\frac{n}{n-1}+\frac{n}{n-2}+\cdots+n=n\left(\frac{1}{n}+\frac{1}{n-1}+\frac{1}{n-2}+\cdots+1\right).\]
+\item Since \(199\) is prime, the number Harold chooses to guaranteed to be coprime with \(199\). The pages that Harold reads are the numbers
+  \[ x,2x,3x,\ldots,199x\] reduced modulo \(199\). Since \(x\) is coprime with \(199\), those numbers have a one-to-one correspondence with
+  the numbers \[1,2,3,\ldots,199\] because if \(jx\equiv kx\pmod{199}\) then \(j\equiv k\) by the cancellation law. Therefore Harold is able
+  read every page of the book without reading the same page twice.
+\item Since $2^{2^n}+5>3$ and is also 0 mod 3, it is never prime.
+\item Since $\angle POQ = \angle QOR = \frac{360^{\circ}}{9}=40^{\circ}$, and $C$ is halfway in between on the circumcircle, so $\angle POC = 60^{\circ}$ and hence $\triangle OPC$ is equilateral.
+
+  Quadrilateral PABO is cyclic since $\angle PAO = \angle PBO = 90^{\circ}$. Then $\angle OPB$ and $\angle OAB$ are subtended by the same arc so $\angle OAB = \angle OPB = \frac{60^{\circ}}{2} = 30^{\circ}$. 
+\[{\includegraphics[width=2.7in, height=2in]{324243242.png}}\]
+\item Taking $\log_a$ on both sides gives us $a^x\log_a{x}=x^a$. Since $f(x)=a^x$ and $g(x)=\log_a{x}$ are decreasing and $h(x)=x^a$ is increasing for $0<a<1$, they have one unique solution.
+
+  It follows that $x=a$ is the only solution.
+\item Let \(n^2-19n+99=k^2\) for some integer \(k\). If there are solutions to this quadratic in integers, the discriminant must be a perfect square. Rearranging gets us
+  \(n^2-19n+(99-k^2)=0\). Solve using the quadratic formula:
+  \[n=\frac{19\pm\sqrt{4k^2-35}}{2}.\] Set \(4k^2-35=t^2\) and rearrange to get \((2k-t)(2k+t)=35\). Checking the factors
+  of \(35\), we find that \((2k-t,2k+t)=(1,35)\) or \((2k-t,2k+t)=(5,7)\). These give us \(k=9\) or \(k=3\). Substituting this into the quadratic formula we get
+  the solutions \(n=1,9,10,18\), the sum of which is \(38\).
+\item By the division algorithm we have \(\gcd(21n+4,14n+3)=\gcd(14n+3,7n+1)=\gcd(7n+1,1)=1\). Therefore the fraction is irreducible because the numerator
+  and the denominator share no common factors.
+\item Since arithmetic sequences are of the form $a, a+d, \ldots, a+9d$, we can find the number of 10 element arithmetic sequences by counting the pairs $(a,d)$ such that $a+9d \le 2007$. This is equivalent to $$d \le \frac{2007-a}{9}$$ If $1 \le a \le 9$, then $d \le 222$, if $10 \le a \le 18$, then $d \le 221$. Similarly every time $a$ increases by $9$, $d$ has one less possible value since the expression $2007-a$ is being divided by 9.
+
+  Continuing until $1990\le a\le 1998$, then $d\le 1$, we have $9(222+221+\cdots+1) = 9(\frac{222(1+222)}{2})=222777$ total 10 element arithmetic sequences.
+
+  Now the probability of a subset of 10 random elements in a random colouring being one colour is $1 \times (\frac{1}{4})^9 = \frac{1}{262144}$. Meaning the expected number of monochromatic arithmetic sequences of length 10 is $\frac{222777}{262144}$. Since the expected number of monochromatic arithmetic sequences of length 10 is less than 1, there must be at least 1 sequence that is not all one colour.
+
+\item Extend the segment $AK$ to the circumcircle of BKLC and call the intersection $K'$; define $L'$ similarly.
+
+  Since $\angle AL'B = \angle ACB = \angle ALD$ and $\angle AK'B = \angle BCK = \angle AKD$, we have $\triangle ALD \sim \triangle AL'B (AA)$ and $\triangle ADK \sim ABK' (AA) $.
+
+  Now considering the ratio $AK:AL$, we have $$(AK:AD):(AL:AD)$$ $$=(KK':DB):(LL':DB)$$ $$=KK':LL'$$ Since $KLL'L$ is a trapezium ($KL$ is parallel to $K'L'$ by similar triangles), and is cyclic, it is isosceles and hence $KK'=LL'$. So $AK:Al = KK':LL' = 1$ and thus $AK = AL$. 
+  \[{\includegraphics[width=2.7in, height=2.5in]{gobeeeea.png}}\]
+\item
+  \begin{enumerate}
+\item Expanding out, we get \((a+b)^2\equiv a^2+b^2\), \((a+b)^3\equiv a^3+b^3\), and \((a+b)^5\equiv a^5+b^5\) to their respective moduli.
+\item The binomial coefficient \[\binom{p}{k}=\frac{p!}{k!(p-k)!}\] is divisible by \(p\) for any prime \(p\) when both \(k\) and \(p-k\) are
+  less than \(p\). This is because in that case the denominator consists only of factors less than \(p\), so the obvious factor of \(p\) in
+  the numerator is not cancelled out. Therefore all the terms in the expansion vanish except for the first and last term with binomial coefficients
+  \(\binom{p}{0}\) and \(\binom{p}{p}\) when computed modulo \(p\).
+\item In the first bin, we have \(\binom{6}{1}\) choices. After the second bin we only have \(5\) books left, and we need to choose \(2\), so
+  there are \(\binom{5}{2}\) ways. Finally, all remaining \(3\) books must go into the third bin, so there is \(\binom{3}{3}=1\) way. Multiplying these
+  choices together, we have \[\binom{6}{1}\binom{5}{2}=6\times10=60\] ways of placing the books into the bins.
+\item Generalising what we did in the previous part the number of ways is
+  \[\binom{n}{k_1}\binom{n-k_1}{k_2}\binom{n-k_1-k_2}{k_3}\cdot\cdots\cdot\binom{n-k_1-k_2-\cdots-k_{m-2}}{k_{m-1}}\binom{k_m}{k_m}.\]
+\item Expanding the binomial coefficients we obtained in the previous part gives
+  \[
+    \begin{split}
+      \binom{n}{k_1,k_2,\ldots,k_m}=&\frac{n!}{(n-k_1)!k_1!}\cdot\frac{(n-k_1)!}{(n-k_1-k_2)!k_2!}\cdot\frac{(n-k_1-k_2)!}{(n-k_1-k_2-k_3)!k_3!}\cdot\cdots\\&\cdot\frac{(n-k_1-k_2-\cdots-k_{m-1})!}{0!k_m!}
+    \end{split}
+  \]
+  One of the factors of the denominator of each fraction, except for the last, cancels with the numerator of the next (this is the telescoping product), so we are left with
+  \[
+    \binom{n}{k_1,k_2,\ldots,k_m}=\frac{n!}{k_1!k_2!k_3!\cdots k_m!}.
+  \]
+\item \[(a+b+c)^3=a^3+3a^2b+3a^2c+3ab^2+6abc+3ac^2+b^3+3b^2c+3bc^2+c^3\]
+  The thing to note here is that all possible ways of adding up three numbers to the number \(3\) are enumerated---this corresponds to all the possible
+  ways of distributing the books among the bins. For example, the \(6abc\) term corresponds to putting \(1\) book in each bin, with the \(6\) out
+  the front being the multinomial coefficient \(\binom{6}{1,1,1}.\) The powers of \(a\), \(b\), and \(c\) correspond to the \(1\)'s.
+\item Generalising the previous example, we see that the sum is taken over all possible ways of adding \(m\) numbers \(k_1,k_2,\ldots,k_m\)
+  to get the number \(n\), and each term is the corresponding multinomial coefficient multiplied by the terms raised to the corresponding \(k\) value.
+  Putting this all together we get the multinomial theorem:
+  \[(x_1+x_2+\cdots+x_m)^n=\sum_{k_1+k_2+\cdots+k_m=n}\binom{n}{k_1,k_2,\ldots,k_m}x_1^{k_1}x_2^{k_2}\cdots x_m^{k_m}.
+    \]
+  \item This might be a bit of a nightmare in notation, so hopefully it is understandable.
+
+    We wish to prove the multinomial theorem by induction. The first step, of course, is to show that the base case is true. The case when \(m=1\)
+    is trivial, and when \(m=2\) we have the Binomial Theorem. Therefore we can move onto the inductive step. Suppose that the theorem is true
+    for \(m=p\) for some positive integer \(p\). In other words, we have a valid expansion of the sum of \(p\) terms all raised to the power of \(n\).
+    Now the trouble is to prove that the theorem is true for \(m=p+1\).
+
+    We can rewrite the \(m=p+1\) case in terms of the \(m=p\) case, which we know how to handle by the inductive hypothesis. That is, write
+    \[(x_1+x_2+\cdots+x_p+x_{p+1})^n=(x_1+x_2+\cdots+(x_p+x_{p+1}))^n.\] To make what comes next a little easier, let \(X_1=x_1\), \(X_2=x_2\), all
+    the way up to \(X_{p-1}=x_{p-1}\). Let \(X_p=(x_p+x_{p+1}).\) Thus the \(m=p+1\) case becomes \((X_1+X_2+\cdots+X_p)^n\). By the inductive hypothesis
+    we can expand this expression as
+    \[\sum_{K_1+K_2+\cdots+K_p=n}\binom{n}{K_1,K_2,\ldots,K_p}X_1^{K_1}X_2^{K_2}\cdots X_{p-1}^{K_{p-1}}X_p^{K_p}.
+    \]
+    But \(X_p^{K_p}=(x_p+x_{p+1})^{K_p}\), so we can expand the last term using the Binomial Theorem. But we can do better than this. We can actually
+    expand it as the case \(m=2\) of the Multinomial Theorem, which gives us
+    \[(x_p+x_{p+1})^{K_p}=\sum_{k_p+k_{p+1}=K_p}\binom{K_p}{k_p,k_{p+1}}x_p^{k_p}x_{p+1}^{k_{p+1}}.\]
+    Putting this into the previous equation gives us
+    \[\sum_{K_1+K_2+\cdots+K_p=n}\binom{n}{K_1,K_2,\ldots,K_p}X_1^{K_1}X_2^{K_2}\cdots X_{p-1}^{K_{p-1}}\sum_{k_p+k_{p+1}=K_p}\binom{K_p}{k_p,k_{p+1}}x_p^{k_p}x_{p+1}^{k_{p+1}}.
+    \]
+    Our final leap involves realising that
+    \[\frac{n!}{K_1!K_2!\cdots K_p!}\cdot\frac{K_p!}{k_p!k_{p+1}!}=\frac{n!}{K_1!K_2!\cdots k_p!k_{p+1}!}=\binom{n}{K_1,K_2,\ldots,k_p,k_{p+1}}.\]
+    Combining this with the merging of the two summation signs using \(K_p=k_p+k_{p+1}\) we get
+    \[
+      \sum_{K_1+K_2+\cdots+k_p+k_{p+1}=n}\binom{n}{K_1,K_2,\ldots,k_p,k_{p+1}}x_1^{K_1}x_2^{K_2}\cdots x_p^{k_p}x_{p+1}^{k_{p+1}}.
+    \]
+    The numbers \(K_1,K_2,\ldots,k_p,k_{p+1}\) don't have anything special about them except that they sum to \(n\), so we may
+    as well make everything lowercase to be a little nicer in terms of notation. Therefore replacing \(K_i\) with \(k_i\) we finally
+    reach the end of this glorious induction proof:
+    \[(x_1+x_2+\cdots+x_p+x_{p+1})^n=      \sum_{k_1+k_2+\cdots+k_p+k_{p+1}=n}\binom{n}{k_1,k_2,\ldots,k_p,k_{p+1}}x_1^{k_1}x_2^{k_2}\cdots x_p^{k_p}x_{p+1}^{k_{p+1}}.\]
+  \item Proving that all but the first and last multinomial coefficients are divisible by \(p\) works too. The proof by induction is in, in some ways, nicer,
+    and uses the same idea as the preceding proof of the multinomial theorem.
+    The base case is done, for we know that \((x_1+x_2)^2\equiv x_1^2+x_2^2\pmod{p}\) by the Binomial Theorem. Supposing the proposition is true for
+    \(m=k\), we find that
+    \[
+      \begin{split}
+        (x_1+x_2+\cdots+x_k+x_{k+1})^p&\equiv x_1^p+x_2^p+\cdots+x_{k-1}^p+(x_k+x_{k+1})^p\pmod{p}\\
+        &=x_1^p+x_2^p+\cdots+x_{k-1}^p+x_k^p+x_{k+1}^p\pmod{p}\\
+      \end{split}
+    \]
+    Hence the proposition is true for \(m=k+1\), completing the induction.
+  \item This theorem is known as \emph{Fermat's Little Theorem}.
+    \[
+      \begin{split}
+        a^p&\equiv(\underbrace{1+1+\cdots+1}_{\text{\(a\) times}})^p\\&\equiv\underbrace{1^p+1^p+\cdots+1^p}_{\text{\(a\) times}}\pmod{p}\\
+        &=a\pmod{p}.
+      \end{split}
+      \]
+
+  \end{enumerate}
+\item The way to solve this problem is to consider the expression to the modulus \(3\) and the modulus \(37\) first, since \(111=3\times37\).
+  Let \(A=(102^{73}+55)^{37}\). We find that
+\[
+    A\equiv 1\pmod{3}
+\]
+  and
+\[
+    A\equiv 9\pmod{37}.
+  \] Now we need to find some number \(x\) such
+  that \begin{equation}\label{eq:equiv1}
+    A\equiv x\pmod{3}
+  \end{equation} and
+  \begin{equation}\label{eq:equiv2}
+        A\equiv x\pmod{37},
+      \end{equation}
+      for that would mean \(A\equiv x\pmod{111}\). (Try proving this yourself---remember
+  that this only works because \(3\) and \(37\) are coprime.)
+
+  Equation \eqref{eq:equiv1} implies that \(x=1+3k\) for some integer \(k\). Substitute this into Equation \eqref{eq:equiv2} and rearrange to
+  get the linear congruence
+  \[3k\equiv8\pmod{37}.\]
+  Solving this equation yields \(k=15.\) From this we obtain \(x=1+45=46\). Therefore \(A\equiv 46\pmod{111}\).
+
+\item
+  \begin{enumerate}
+\item
+  Let \(P(x)=1-x-x^2\). Use the quadratic formula to find that the roots are \[x_1=\frac{-1+\sqrt{5}}{2}\] and \[x_2=\frac{-1-\sqrt{5}}{2}.\]
+  If \(P(x_1)=0\) and \(P(x_2)=0\), then \(P(1/\alpha)=0\) and \(P(1/\beta)=0\) if \(\alpha=1/x_1\) and \(\beta=1/x_2\). Therefore \(1/\alpha\) and \(1/\beta\)
+  are also roots; this implies \(P(x)\) can be factorised as \((1-\alpha x)(1-\beta x)\). Computing \(\alpha\) and \(\beta\), we find
+  \[\begin{split}
+      \alpha&=\frac{2}{-1+\sqrt{5}}\\&=\frac{-2-2\sqrt{5}}{1-5}\\&=\frac{1+\sqrt{5}}{2}
+      \end{split}
+    \]
+    and
+    \[
+      \begin{split}
+        \beta&=\frac{2}{-1-\sqrt{5}}\\&=\frac{-2+2\sqrt{5}}{1-5}\\&=\frac{1-\sqrt{5}}{2}.
+      \end{split}
+    \]
+  \item Multiplying the fraction out and comparing numerators yields \[A(1-\beta x)+B(1-\alpha x)=x.\]
+    Comparing coefficients, we have \(A+B=0\) and \(-A\beta -B\alpha=1.\) Solve the two equations simultaneously to get the desired result.
+  \item If \[H(x)=1+x+x^2+x^3+\cdots\] then \[xH(x)=x+x^2+x^3+\cdots=H(x)-1.\]
+    Rearrange for \(H(x)\) to find that \[H(x)=\frac{1}{1-x}.\]
+  \item At this point we know that
+    \[G(x)=\frac{1}{\sqrt{5}}\left(\frac{1}{1-\alpha x}-\frac{1}{1-\beta x}\right).\]
+    The fractions in parentheses can be expanded using the formula just derived to get
+    \[\frac{1}{1-\alpha x}=1+\alpha x+(\alpha x)^2+(\alpha x)^3+\cdots\]
+    and \[\frac{1}{1-\beta x}=1+\beta x+(\beta x)^2 +(\beta x)^3+\cdots.\]
+    Thus we have
+    \[
+      \begin{split}
+        G(x)&=\frac{1}{\sqrt5}\left(\left\{1+\alpha x+\alpha^2x^2+\alpha^3x^3+\cdots\right\}-\left\{1+\beta x+\beta^2x^2+\beta^3x^3+\cdots\right\}\right)\\
+            &=\frac{1}{\sqrt5}\left((\alpha^0-\beta^0)+(\alpha^1-\beta^1)x+(\alpha^2-\beta^2)x^2+(\alpha^3-\beta^3)x^3+(\alpha^4-\beta^4)x^4+\cdots\right)\\
+        &=\frac{1}{\sqrt5}(\alpha^0-\beta^0)+\frac{1}{\sqrt5}(\alpha^1-\beta^1)x+\frac{1}{\sqrt5}(\alpha^2-\beta^2)x^2+\frac{1}{\sqrt5}(\alpha^3-\beta^3)x^3+\cdots\\
+      \end{split}
+    \]
+    Comparing coefficients from our original definition of \(G(x)\) and substituting in the values for \(\alpha\) and \(\beta\), we derive the formula
+    \[F_n=\frac{1}{\sqrt5}\left(\left(\frac{1+\sqrt5}{2}\right)^n-\left(\frac{1-\sqrt5}{2}\right)^n\right).\]
+\end{enumerate}
+  \end{enumerate}
+\end{document}
