@@ -1,17 +1,24 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
 
+\title{Holiday Problem Solutions-ish}
+\author{Tom Yan}
+\date{April 2023}
 
 \begin{document}
 
-\section*{Problems}
-1. Find all natural numbers $n$ such that $2^{2^n}+5$ is prime. \\\\
-2. Let $N$ be a regular nonagon, having $O$ as the centre of its circumcircle, and let $PQ$ and $QR$ be adjacent edges of $N$. The midpoint of $PQ$ is $A$ and the midpoint of the radius perpendicular to $QR$ is $B$. Determine the angle between $AO$ and $AB$.\\\\
-3. Let $0<a<1$. Solve $$x^{a^x}=a^{x^a}$$ for positive numbers $x$. \\\\
-4. Show that we can colour the elements of the set $S=\{1,2,\ldots, 2007\}$ with 4 colours such that any subset of $S$ with 10 elements, whose elements form an arithmetic sequence, is not all one colour. \\\\
-5. Two points $K$ and $L$ are chosen inside triangle $ABC$ and a point $D$ is chosen on the side $AB$. Suppose that $B$, $K$, $L$, $C$ are concyclic, $\angle AKD = \angle BCK$ and $\angle ALD = \angle BCL$. Prove that $AK = AL$.
+\maketitle
 
+\section*{Solutions}
+3. Since $2^{2^n}+5>3$ and is also 0 mod 3, it is never prime.  \\\\
+4. Since $\angle POQ = \angle QOR = \frac{360^{\circ}}{9}=40^{\circ}$, and $C$ is halfway in between on the circumcircle, so $\angle POC = 60^{\circ}$ and hence $\triangle OPC$ is equilateral. \\\\ Quadrilateral PABO is cyclic since $\angle PAO = \angle PBO = 90^{\circ}$. Then $\angle OPB$ and $\angle OAB$ are subtended by the same arc so $\angle OAB = \angle OPB = \frac{60^{\circ}}{2} = 30^{\circ}$. 
+\\
 
+\centerline{\includegraphics[width=2.7in, height=2in]{324243242.png}} 
+5. Taking $\log_a$ on both sides gives us $a^x\log_a{x}=x^a$. Since $f(x)=a^x$ and $g(x)=\log_a{x}$ are decreasing and $h(x)=x^a$ is increasing for $0<a<1$, they have one unique solution. \\\\ It follows that $x=a$ is the only solution.  \\\\
+8. Since arithmetic sequences are of the form $a, a+d, \ldots, a+9d$, we can find the number of 10 element arithmetic sequences by counting the pairs $(a,d)$ such that $a+9d \le 2007$. This is equivalent to $$d \le \frac{2007-a}{9}$$ If $1 \le a \le 9$, then $d \le 222$, if $10 \le a \le 18$, then $d \le 221$. Similarly every time $a$ increases by $9$, $d$ has one less possible value since we are the expression $2007-a$ is being divided by 9. \\\\ Continuing until $1990\le a\le 1998$, then $d\le 1$, we have $9(222+221+\ldots+1) = 9(\frac{222(1+222)}{2})=222777$ total 10 element arithmetic sequences. \\\\ Now the probability of a subset of 10 random elements in a random colouring being one colour is $1 \times (\frac{1}{4})^9 = \frac{1}{262144}$. Meaning the expected number of monochromatic arithmetic sequences of length 10 is $\frac{222777}{262144}$. Since the expected number of monochromatic arithmetic sequences of length 10 is less than 1, there must be at least 1 sequence that is not all one colour. \\\\
 
-
+9. Extend the segment $AK$ to the circumcircle of BKLC and call the intersection $K'$, define $L'$ similarily. \\\\ Since $\angle AL'B = \angle ACB = \angle ALD$ and $\angle AK'B = \angle BCK = \angle AKD$, we have $\triangle ALD \sim \triangle AL'B (AA)$ and $\triangle ADK \sim ABK' (AA) $. \\\\ Now considering the ratio $AK:AL$, we have $$(AK:AD):(AL:AD)$$ $$=(KK':DB):(LL':DB)$$ $$=KK':LL'$$ Since $KLL'L$ is a trapzium ($KL$ is parallel to $K'L'$ by similar triangles), and is cyclic, it is isosceles and hence $KK'=LL'$. So $AK:Al = KK':LL' = 1$ and thus $AK = AL$. 
+\\
+\centerline{\includegraphics[width=2.7in, height=2.5in]{gobeeeea.png}} 
 \end{document}
