@@ -1,0 +1,98 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{2}
+\newcommand{\theweek}{7}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\  Handout Solutioins}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\  Handout Solutioins}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+% \newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+% \geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+% \usepackage{fancyhdr}
+\usepackage{epigraph}
+% \usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\
+\noindent Maths Extension Group 2023\\
+\noindent \textbf{\thedisplaytitle}\\
+\section*{Lagrange's Theorem}
+\begin{enumerate}
+\item In the proof, we reasoned that this factorisation
+  process eventually results in all the roots; this reasoning 
+  assumes that if \[f(x)\equiv g(x)h(x)\pmod{p}\] and \(f(r)\equiv0\)
+  then \(g(r)\equiv0\) or \(h(r)\equiv0\). This is only true when
+  the modulus is prime; the idea is the same as that of
+  Euclid's Lemma. Recall that Euclid's Lemma states if a prime divides
+  a product of two numbers, the prime must divide at least one of
+  the two numbers. In the notation of modular arithmetic, it states that
+  if \(ab\equiv0\pmod{p}\) then \(a\equiv0\) or \(b\equiv0\). Note that
+  this is not true when the modulus is composite. A simple example: \(6\)
+  divides \(12=3\times 4\), but it divides neither \(3\) nor \(4\).
+  So if the modulus was not prime in our proof of Lagrange's Theorem, at
+  the point where we have \[f(x)\equiv (x-r)g(x)\pmod{p},\] if \(p\) was
+  a composite number, there might be a root of \(f\) that is neither a root
+  of \(x-r\) or \(g(x)\), which means we have failed to count it.
+
+  When the modulus is prime, it is guaranteed that any further root
+  of \(f\) that is not \(r\) is a root of \(g\), and hence the factorisation
+  argument correctly leads to a maximum of \(d\) roots.
+\item Since \(x\equiv r_1\) is a root, write \[f(x)\equiv (x-r_1)g(x)\pmod{p}\]
+  where \(g(x)\) is some polynomial of degree \(d-1\). Since all of the roots
+  \(r_1,r_2,\ldots,r_{d+1}\) are distinct, all of \(r_2,\ldots,r_{d+1}\) must
+  be roots of \(g\) (here is where we use the assumption that \(p\) is prime).
+  This is a contradiction because it means that \(g)\) has \(d\) roots but its
+  degree is \(d-1\), and we have assumed that \(f\) is the polynomial with smallest
+  degree that has more roots that its degree. This contradiction completes the proof.
+\item
+  \begin{enumerate}
+  \item Since \(p-1=dd'\) we have \[x^{p-1}-1=x^{dd'}-1=y^{d'}-1.\] It
+    is handy to know that a polynomial of this form, \(y^{d'}-1\),
+    can be factorised as \[y^{d'}-1=(y-1)(y^{d'-1}+y^{d'-2}+\cdots+1).\]
+    The factorisation follows at once from the geometric series formula
+    \[1+a+a^2+\cdots+a^{n-1}=\frac{a^n-1}{a-1}\] by multiplying both sides
+    by \(a-1\).
+  \item The degree of \(y-1=x^d-1\) is \(d\), and the degree of \(x^{p-1}-1\)
+    is \(p-1\), so the degree we're looking for is \(p-1-d\).
+  \item Let
+    \[f(x)=y^{d'-1}+y^{d'-2}+\cdots+1.\]
+    By Lagrange's Theorem, \(x^d-1\equiv0\) has at most \(d\) solutions
+    while \(f\) has at most \(p-1-d\) solutions.
+    Since \(x^{p-1}-1\equiv0\) has exactly \(p-1\) solutions, \(x^d-1\)
+    must have at least \(p-1-(p-1-d)=d\) solutions. Hence \[x^d-1\equiv0\pmod{p}\] must have exactly \(d\) solutions.
+    
+  \end{enumerate}
+\end{enumerate}
+\end{document}
