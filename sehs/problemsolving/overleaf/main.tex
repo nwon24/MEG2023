@@ -1,0 +1,647 @@
+\documentclass[a4paper,12pt,addpoints]{exam}
+% Exam class so that we can put points next to the questions if we want them to be weighted differently.
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+% Uncomment to print document with solutions to competition quesitons.
+%\printanswers
+
+\begin{document}
+\section*{Mixed School Problem Solving Questions}
+\begin{questions}
+  \question Define the “reverse” of a number to be the same digits written backwards. For example, the reverse of 135 is 531, and the reverse of 4630 is 0364. 
+
+Prove that the sum of any four-digit number and its reverse is divisible by 11. 
+
+Hint: Represent the 4-digit number as $ABCD$. 
+    \question Suppose you have an analogue clock with an hour hand and a minute hand. If it is currently midnight, how long will it take for the two hands to form a $90^{\circ}$ angle? 
+
+    \question How many triangles are there in the image below?
+    \[  \includegraphics[scale=0.3]{how-many-triangles-do-you-see-1.png}\]
+
+      \question 
+      \begin{parts}
+         \part Find the smallest integer \(x\) such that \(1800x\) is a perfect square. 
+         \part What is the general strategy to find the smallest integer $x$ such that $N \times x$ is a perfect square for positive integer $N$?
+      \end{parts}
+
+      \question Why does the set of rational numbers on the interval \((0,1)\) not have a least element?
+
+      \question
+      \begin{parts}
+          \part Must a quadratic pass through the $x$ axis? Why or why not?
+          \part Must a cubic pass through the $x$ axis? Why or why not?
+      \end{parts}
+
+      \question  The scales at Jasper’s house only work if two people weigh themselves at
+    the same time. He has four people in his house who weigh themselves in
+    pairs obtaining 89kg, 105kg, 112kg, 113kg, 120kg and 136kg. What is the
+    difference between the weights of the heaviest and lightest people in the
+    house?
+
+      
+\end{questions}
+  
+
+    
+
+\pagebreak
+
+1. Express the four digit number as $ABCD$, then $$1000A + 100B + 10C + D + 1000D + 100C + 10B + A = 11(91A + 10B + 10C + 91D).$$ 
+2. Solve $6x-0.5x=90$ \\
+3. Counting gives 27. \\
+4. a) $x=2$ \\
+5. Let $\frac{p}{q}$ be the smallest element, then $\frac{p}{q+1} < \frac{p}{q}$ and we have a contradiction. \\
+6. a) no b) yes\\
+7. Let the weights be $a \le b \le c \le d$. Then $a + b = 89$ since it
+is the smallest sum, $b + d = 120$ since it is the second largest sum. Hence
+$d - a = b + d - (a + b) = 120 - 89 = 31kg$.
+(The possible weights are 41, 48, 64, 72 or 40.5, 48.5, 64.5, 71.5.)
+
+
+%\pagebreak
+%\section*{Competitive Problem Solving Questions}
+%\begin{questions}
+%    \question Prove it possible to pair up the numbers $0, 1, 2, 3, \ldots , 61$ in such a way that when we sum each pair, the product of the 31 numbers we get is a perfect fifth power.
+
+%    \question What is the area of the largest square that can fit inside a unit circle?
+%    \question What is the area of the largest circle that can fit inside a unit square? 
+ %   \question Find the smallest integer \(x\) such that \(1800x\) is a perfect square.
+
+ %   \question We know that \(\sqrt2\) is irrational but it is unclear whether \(\sqrt2^{\sqrt2}\) is
+%    rational or irrational. Show that there exist irrational numbers \(a\) and \(b\) such that
+ %   \(a^b\) is rational.
+  %  \question Prove that the sum of three consecutive integers is always divisible by \(3\).
+    %\question Is the sum of four consecutive integers ever divisible by \(4\)?
+% Some of these problems are to be developed further into multi parts, and require more explanation
+% and discussion than getting a solution. Might be harder to mark but will encourage more thinking.
+%\question Why does the set of rational numbers on the interval \((0,1)\) not have a least element?
+%\question Is it possible to have a biased six-sided die such that when two of them are rolled,
+%all possible sums from \(2\) to \(12\) are equally likely?
+%\question What is the area of the largest triangle that can fit inside a unit square?
+
+
+%\end{questions}
+
+%\pagebreak
+%1. Pair 0 with 1, and $k$ with $63-k$ for all $2 \leq k \leq 31 $. This would result in a product equal to $1 \times 63^{30} = (63^6)^5$ which is a perfect $5^{\text{th}}$ power.  
+
+% Ask questions more in the style of "is it possible to...?" 
+% Will reuse some of the problems between the year levels to make it a bit easier. 
+% They're going in Year 9 for now, but they'll be moved. 
+
+\pagebreak
+\section*{Year 9}
+\begin{questions}
+
+
+\question  In an AFL game, a goal is worth \(6\) points and a behind is worth \(1\) point.
+\begin{parts}
+    \part[1] How many points does a team have if they score \(4\) goals and \(8\) behinds?
+    \begin{solution}
+        \(32\)
+    \end{solution}
+    \part[2] How many different ways are there to score some number of goals and some number
+    of behinds such that the score is the product of the number of goals and the number
+    of behinds?
+    \begin{solution}
+        The problem boils down to finding solutions to the equation \(6x+y=xy\). There are \(5\) solutions for
+        nonnegative integers \(x\) and \(y\) but accept if trivial solution \((0,0)\) is not given.
+    \end{solution}
+    \part[2] By considering a graph, show that you have found all the ways that this could occur.
+    \begin{solution}
+        Rearrange the equation to get \[y=\frac{6x}{x-1}.\] Via s simple algebraic manipulation
+        we get \[y=6+\frac{6}{x-1}.\] The \(4\) solutions obtained through enumeration are
+        \((2,12)\), \((3,9)\), \((4,8)\), \((7,7)\). For \(x>7\) the denominator of the
+        fraction becomes greater than \(6\) and therfore \(y\) cannot be an integer.
+        Hence there are no solutions for \(x>7\) and thus we have found all the solutions.
+    \end{solution}
+    
+\end{parts}
+
+
+\question 
+\begin{parts}
+\part[2] What is the area of the largest square that can fit inside a unit circle?
+\begin{solution}
+    The diagonal of the square is the diameter of the circle, which is \(2\). Therefore
+    the side length of the square is \(\sqrt2\) units, meaning the area is \(2\) square units.
+\end{solution}
+\part[2] What is the area of the largest circle that can fit inside a unit square?
+\begin{solution}
+    The radius of the circle is half the side length of the square, so the radius is \(1/2\).
+    The area of the circle is therefore \(\pi(1/2)^2=\pi/4\).
+\end{solution}
+\part[3] A triangle is placed inside a unit square so that of its vertices either lie on the square's
+edges or inside the square. What areas are possible for this triangle?
+\begin{solution}
+It is possible for the triangle to have an area of \(1/2\), as that occurs when all three
+vertices are three vertices of the square. Therefore it can plainly have any area between
+\(0\) and \(1/2\). Can it have an area that is greater than \(1/2\)? The answer is no. 
+\end{solution}
+\part[2] What is the side length of the largest square that can fit inside an equilateral triangle that has side length 1 unit?
+\begin{solution}
+    Let \(x\) be the sidelength of the square. By similar triangles we can deduce that \[\frac{2x}{1-x}=\sqrt3.\]
+    Solving this equation gives \(x=2\sqrt3-3.\)
+\end{solution}
+
+\end{parts}
+
+
+\question[3] What is the volume of a regular tetrahedron with side length \(1\) unit?
+\begin{solution}
+    The volume of a pyramid is \(1/3\) multiplied by the area of its base times its height. Using
+    Pythagoras' Theorem we can deduce that the height of a unit tetrahedron is \(\sqrt{2/3}\). 
+    The area of the base of the tetrahedron is the area of an equilateral triangle with
+    sidelength \(1\), which is \((1/2)(\sqrt3/2)=\sqrt3/4\). Therefore the area of the
+    unit regular tetrahedron is \((1/3)\times(\sqrt3/4)\times\sqrt{2/3}=\sqrt2/12.\)
+\end{solution}
+
+
+\question
+\begin{parts}
+    \part[1] How many positive integer solutions are there to the equation \(2x+3y=25\)?
+    \begin{solution}
+        Enumerating the cases and counting gives \(4\) solutions.
+    \end{solution}
+    \part[2] How many integer solutions are there to the equation \(2x+3y=25\)?
+    \begin{solution}
+        There are infinitely many integer solutions.
+    \end{solution}
+    \part[2] How many integer solutions are there to the equation \(51x+24y=17\)?
+    \begin{solution}
+        There are no integer solutions because every number of the form \(51x+24y\) is a multiple
+        of the greatest common divisor of \(51\) and \(24\), which is \(3\). 
+    \end{solution}
+    \part[1] Consider the expression \(9x+15y\). Put in as many integer values of \(x\) and \(y\) as you can.
+    Which number are all the resulting numbers multiples of?
+    \begin{solution}
+        The resulting numbers are multiples of \(3\).
+    \end{solution}
+    \part[2] When does the equation \(ax+by=c\) always have integer solutions?
+    \begin{solution}
+        The equation has integer solutions only when \(c\) is a multiple of the greatest common
+        divisor of \(a\) and \(b\).
+    \end{solution}
+\end{parts}
+
+\question 
+\begin{parts}
+\part[2] When is the sum of 2 consecutive numbers divisible by 2?
+\begin{solution}
+    Never, because \(n+(n+1)=2n+1\) is odd.
+\end{solution}
+\part[2] When is the sum of 3 consecutive numbers divisible by 3?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)=3n+3.\)
+\end{solution}
+\part[2] When is the sum of 4 consecutive numbers divisible by 4?
+\begin{solution}
+    Never, as \(n+(n+1)+(n+2)+(n+3)=4n+10\equiv2\pmod{4}\).
+\end{solution}
+\part[2] When is the sum of 5 consecutive numbers divisible by 5?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)+(n+3)+(n+4)=5n+10\).
+\end{solution}
+\part[2] When is the sum of \(n\) consecutive numbers divisible by \(n\)?
+\begin{solution} 
+    The sum of \(n\) consecutive numbers starting from \(k\) is \(kn\) plus the \(n-1\)th triangular number, so it
+    is \[n\left(k+\frac{n-1}{2}\right).\] The resulting number is divisible by \(n\) if \((n-1)/2\) is an integer,
+    and that is when \(n\) is odd.
+\end{solution}
+\end{parts}
+
+
+\question
+\begin{parts}
+    \part[1] Two lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(4\)
+    \end{solution}
+    \part[1] Three lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(7\) (If you try it on paper, you will see that the third line can only intersect
+        the existing \(2\) lines in at most \(2\) places, resulting in \(3\) new regions.
+        Therefore the number of regions is \(4+3=7\).)
+    \end{solution}
+    \part[1] If we add a fourth line, what is the maximum number of intersection
+    points that line can make with the existing lines?
+    \begin{solution}
+        \(3\)
+    \end{solution}
+    \part[1] Four lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(11\)
+    \end{solution}
+    \part[3] What is the maximum number of regions that \(n\) lines can divide the plane into?
+    \begin{solution}
+        \(1+n(n+1)/2\)
+    \end{solution}
+\end{parts}
+
+
+\question[3] Prove it possible to pair up the numbers $0, 1, 2, 3, \ldots , 61$ in such a way that when we sum each pair, the product of the 31 numbers we get is a perfect fifth power.
+\begin{solution}
+    Pair 0 with 1, and $k$ with $63-k$ for all $2 \leq k \leq 31 $. This would result in a product equal to $1 \times 63^{30} = (63^6)^5$ which is a perfect $5^{\text{th}}$ power.
+\end{solution}
+
+
+\end{questions}
+
+\pagebreak
+\section*{Year 10}
+
+\begin{questions}
+
+\question 
+\begin{parts}
+\part[2] When is the sum of 2 consecutive numbers divisible by 2?
+\begin{solution}
+    Never, because \(n+(n+1)=2n+1\) is odd.
+\end{solution}
+\part[2] When is the sum of 3 consecutive numbers divisible by 3?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)=3n+3.\)
+\end{solution}
+\part[2] When is the sum of 4 consecutive numbers divisible by 4?
+\begin{solution}
+    Never, as \(n+(n+1)+(n+2)+(n+3)=4n+10\equiv2\pmod{4}\).
+\end{solution}
+\part[2] When is the sum of 5 consecutive numbers divisible by 5?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)+(n+3)+(n+4)=5n+10\).
+\end{solution}
+\part[2] When is the sum of \(n\) consecutive numbers divisible by \(n\)?
+\begin{solution} 
+    The sum of \(n\) consecutive numbers starting from \(k\) is \(kn\) plus the \(n-1\)th triangular number, so it
+    is \[n\left(k+\frac{n-1}{2}\right).\] The resulting number is divisible by \(n\) if \((n-1)/2\) is an integer,
+    and that is when \(n\) is odd.
+\end{solution}
+\end{parts}
+
+\question[3] Prove it possible to pair up the numbers $0, 1, 2, 3, \ldots , 61$ in such a way that when we sum each pair, the product of the 31 numbers we get is a perfect fifth power.
+\begin{solution}
+    Pair 0 with 1, and $k$ with $63-k$ for all $2 \leq k \leq 31 $. This would result in a product equal to $1 \times 63^{30} = (63^6)^5$ which is a perfect $5^{\text{th}}$ power.
+\end{solution}
+
+\question
+\begin{parts}
+    \part[1] Two lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(4\)
+    \end{solution}
+    \part[1] Three lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(7\) (If you try it on paper, you will see that the third line can only intersect
+        the existing \(2\) lines in at most \(2\) places, resulting in \(3\) new regions.
+        Therefore the number of regions is \(4+3=7\).)
+    \end{solution}
+    \part[1] If we add a fourth line, what is the maximum number of intersection
+    points that line can make with the existing lines?
+    \begin{solution}
+        \(3\)
+    \end{solution}
+    \part[1] Four lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(11\)
+    \end{solution}
+    \part[3] What is the maximum number of regions that \(n\) lines can divide the plane into?
+    \begin{solution}
+        \(1+n(n+1)/2\)
+    \end{solution}
+\end{parts}
+
+       \question
+\begin{parts}
+    \part[2] Is the sum or difference of two rational numbers always rational? Why or why not?
+    \begin{solution}
+        Yes, because \(a/b+c/d=(ad+bc)/bd\) and both \(ad+bc\) and \(bd\) are integers.
+    \end{solution}
+    \part[2] Is the product or quotient of two rational numbers always rational? Why or why not?
+    \begin{solution}
+        Yes, because \((a/b)(c/d)=ac/bd\) and both \(ac\) and \(bd\) are integers.
+    \end{solution}
+    \part[2] When one rational number is raised to another is the result guaranteed to be rational?
+    \begin{solution}
+        No; an example is \(2^{1/2}\). 
+    \end{solution}
+    \part[3] It is known that \(\sqrt2\) is irrational, but it is not known whether \(\sqrt2^{\sqrt2}\) is rational or irrational. 
+    Do there exist two irrational numbers such that when one is raised to the other the result is rational? Prove your conjecture.
+    \begin{solution}
+        The answer is yes.
+        Let \(A=\sqrt2^{\sqrt2}\). We don't know if \(A\) is rational or irrational, but it doesn't
+        matter. If \(A\) is rational, then it is an example of a rational number that is an
+        irrational number raised to another irrational number. If \(A\) is irrational,
+        then \(A^{\sqrt2}=\sqrt2^{2}=2\) and this number is the desired example.
+    \end{solution}
+\end{parts}
+
+
+   
+    \question 
+     \begin{parts}
+     \part[2] Prove that $x^2+y^2 \ge 2xy$ for real numbers $x,y$. 
+     \begin{solution}
+     Moving $2xy$ to the left we get $(x-y)^2 \ge 0$. Which is true. 
+\end{solution}
+     \part[2] Prove that $2a^2+b^2+c^2 \ge 2(ab+ac)$ for real numbers $a, b, c$. 
+      \begin{solution}
+     Using the result from a), we add the two following inequalities $$a^2+b^2 \ge 2ab$$ $$a^2+c^2 \ge 2ac$$ to get $$2a^2+b^2+c^2 \ge 2(ab+ac).$$ 
+\end{solution}
+     \part[2] Prove that $3(a^2+b^2+c^2+d^2) \ge 2(ab+ac+ad+bc+bd+cd)$ for real numbers $a, b, c, d$. 
+      \begin{solution}
+    Same deal as part b), just with more inequalities. We add up $$a^2+b^2 \ge 2ab$$ $$a^2+c^2 \ge 2ac$$ $$a^2+d^2 \ge 2ad$$ $$b^2+c^2 \ge 2bc$$ $$b^2+d^2\ge 2bd$$ $$c^2+d^2 \ge 2cd$$ to get $$3(a^2+b^2+c^2+d^2) \ge 2(ab+ac+ad+bc+bd+cd).$$
+\end{solution}
+     \part[3] Real numbers $a, b, c, d, e$ are linked by the two equations: $$e = 40 - a - b - c -d$$ $$e^2 = 400 - a^2 - b^2 - c^2 - d^2$$ Determine the largest value for $e$. 
+      \begin{solution}
+    From the first equation we have $$(40-e)^2=(a+b+c+d)^2=a^2+b^2+c^2+d^2+2(ab+ac+ad+bc+bd+cd)$$
+Using the result from part c), we get that $$(40-e)^2 \le 4(a^2+b^2+c^2+d^2)$$ Using the second equation we get $$(40-e)^2 \le 4(400-e^2)$$ After expanding the brackets and simplifying, it follows that $$e(80-5e) \ge 0$$ Implying that $0 \le e \le 16$. Thus the largest value for $e$ that satisfies the given equations is 16. 
+\end{solution}
+     
+     \end{parts}
+
+     
+\question
+\begin{parts}
+    \part[1] How many ways are there to create a two-element subset from the set \(\{1,2,3,4\}\)?
+    \begin{solution}
+        There are \(\binom{4}{2}=6\) ways.
+    \end{solution}
+    \part[2] How many ways are there to split the set \(\{1,2,3,4\}\) into two disjoint nonempty sets? (Disjoint means the two sets share no elements.) For example, if we had the set \(\{1,2,3\}\) a valid
+    splitting would be \(\{1,2\}\) and \(\{3\}\).
+    \begin{solution}
+        The valid ways are: \(\{1\}\) and \([\{2,3,4\}\), \(\{2\}\) and \(\{1,3,4\}\),  \(\{3\}\) and
+        \(\{1,2,4\}\), \(\{4\}\) and \(\{1,2,3\}\), \(\{1,2\}\) and \(\{3,4\}\), \(\{1,3\}\) and \(\{2,4\}\), and \(\{1,4\}\) and \(\{2,3\}\). So \(7\) ways.
+    \end{solution}
+    \part[2] How many ways are there to split the set \(\{1,2,3,4,5\}\) into two disjoint nonempty sets?
+    \begin{solution}
+        By listing all the ways again, we find that there are \(15\) ways.
+    \end{solution}
+    \part[2] Denote by \(S(n,k)\) the number of ways to split a set of \(n\) elements into \(k\) disjoint
+    nonempty sets. Suppose we know what \(S(n-1,2)\)  is. What happens when we add another element
+    to the set? What happens to each of the \(S(n-1,2)\) ways to do the partitioning?
+    \begin{solution}
+        For each way to do the partitioning, we may add the new number \(n\) to either
+        set to obtain a new partitioning. There is also one new partition that is not
+        obtained by adding \(n\) to existing one, and that is the splitting into \(\{n\}\)
+        and \(\{1,2,\ldots,n-1\}\). Therefore we have \[S(n,2)=2S(n-1,2)+1.\]
+    \end{solution}
+    \part[2] What is \(S(n,2)\)?
+    \begin{solution}
+        We have \(S(1,2)=0\), \(S(2,2)=1\), \(S(3,2)=3\), \(S(4,2)=7\), and \(S(5,2)=15\).
+        From this pattern and the recursive formula found above it is easy to prove by
+        induction that \(S(n,2)=2^{n-1}-1.\)
+    \end{solution}
+    \bonuspart[3] If there are \(S(n-1,k-1)\) ways to partition a set of \(n-1\) elements into \(k-1\) nonempty
+    disjoint sets, what is \(S(n,k)\) in terms of \(S(n-1,k)\) and \(S(n-1,k-1)\)?
+    \begin{solution}
+        We need to think about what happens when we add the \(n\)th element. Clearly we may
+        put this object into a separate set by itself and partition the other \(n-1\) objects
+        into \(k-1\) nonempty disjoint subsets, because all up there would be \(k\) sets. 
+        There are \(S(n-1,k-1)\) ways to do this. We may also take the \(n-1\) objects
+        and partition them into \(k\) sets and add the \(n\)th element to any one of them
+        to get another valid partitioning. How many ways are there to do this? In each
+        of the \(S(n-1,k)\) ways to partition \(n-1\) objects into \(k\) nonempty sets, there
+        are \(k\) different subsets we can put the \(n\)th object into. Therefore
+        in this case there are \(kS(n-1,k)\) ways. In total then we have \[S(n,k)=S(n-1,k-1)+kS(n-1,k).\]
+    \end{solution}
+\end{parts}
+ 
+
+
+
+     
+
+
+
+\end{questions}
+
+
+
+
+
+\pagebreak
+\section*{Year 11/12}
+\begin{questions}
+\question
+\begin{parts}
+    \part[1] Two lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(4\)
+    \end{solution}
+    \part[1] Three lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(7\) (If you try it on paper, you will see that the third line can only intersect
+        the existing \(2\) lines in at most \(2\) places, resulting in \(3\) new regions.
+        Therefore the number of regions is \(4+3=7\).)
+    \end{solution}
+    \part[1] If we add a fourth line, what is the maximum number of intersection
+    points that line can make with the existing lines?
+    \begin{solution}
+        \(3\)
+    \end{solution}
+    \part[1] Four lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(11\)
+    \end{solution}
+    \part[3] What is the maximum number of regions that \(n\) lines can divide the plane into?
+    \begin{solution}
+        \(1+n(n+1)/2\)
+    \end{solution}
+\end{parts}
+
+\question
+\begin{parts}
+    \part[1] How many ways are there to create a two-element subset from the set \(\{1,2,3,4\}\)?
+    \begin{solution}
+        There are \(\binom{4}{2}=6\) ways.
+    \end{solution}
+    \part[2] How many ways are there to split the set \(\{1,2,3,4\}\) into two disjoint nonempty sets? (Disjoint means the two sets share no elements.) For example, if we had the set \(\{1,2,3\}\) a valid
+    splitting would be \(\{1,2\}\) and \(\{3\}\).
+    \begin{solution}
+        The valid ways are: \(\{1\}\) and \([\{2,3,4\}\), \(\{2\}\) and \(\{1,3,4\}\),  \(\{3\}\) and
+        \(\{1,2,4\}\), \(\{4\}\) and \(\{1,2,3\}\), \(\{1,2\}\) and \(\{3,4\}\), \(\{1,3\}\) and \(\{2,4\}\), and \(\{1,4\}\) and \(\{2,3\}\). So \(7\) ways.
+    \end{solution}
+    \part[2] How many ways are there to split the set \(\{1,2,3,4,5\}\) into two disjoint nonempty sets?
+    \begin{solution}
+        By listing all the ways again, we find that there are \(15\) ways.
+    \end{solution}
+    \part[2] Denote by \(S(n,k)\) the number of ways to split a set of \(n\) elements into \(k\) disjoint
+    nonempty sets. Suppose we know what \(S(n-1,2)\)  is. What happens when we add another element
+    to the set? What happens to each of the \(S(n-1,2)\) ways to do the partitioning?
+    \begin{solution}
+        For each way to do the partitioning, we may add the new number \(n\) to either
+        set to obtain a new partitioning. There is also one new partition that is not
+        obtained by adding \(n\) to existing one, and that is the splitting into \(\{n\}\)
+        and \(\{1,2,\ldots,n-1\}\). Therefore we have \[S(n,2)=2S(n-1,2)+1.\]
+    \end{solution}
+    \part[2] What is \(S(n,2)\)?
+    \begin{solution}
+        We have \(S(1,2)=0\), \(S(2,2)=1\), \(S(3,2)=3\), \(S(4,2)=7\), and \(S(5,2)=15\).
+        From this pattern and the recursive formula found above it is easy to prove by
+        induction that \(S(n,2)=2^{n-1}-1.\)
+    \end{solution}
+    \bonuspart[3] If there are \(S(n-1,k-1)\) ways to partition a set of \(n-1\) elements into \(k-1\) nonempty
+    disjoint sets, what is \(S(n,k)\) in terms of \(S(n-1,k)\) and \(S(n-1,k-1)\)?
+    \begin{solution}
+        We need to think about what happens when we add the \(n\)th element. Clearly we may
+        put this object into a separate set by itself and partition the other \(n-1\) objects
+        into \(k-1\) nonempty disjoint subsets, because all up there would be \(k\) sets. 
+        There are \(S(n-1,k-1)\) ways to do this. We may also take the \(n-1\) objects
+        and partition them into \(k\) sets and add the \(n\)th element to any one of them
+        to get another valid partitioning. How many ways are there to do this? In each
+        of the \(S(n-1,k)\) ways to partition \(n-1\) objects into \(k\) nonempty sets, there
+        are \(k\) different subsets we can put the \(n\)th object into. Therefore
+        in this case there are \(kS(n-1,k)\) ways. In total then we have \[S(n,k)=S(n-1,k-1)+kS(n-1,k).\]
+    \end{solution}
+\end{parts}
+
+       \question
+\begin{parts}
+    \part[2] Is the sum or difference of two rational numbers always rational? Why or why not?
+    \begin{solution}
+        Yes, because \(a/b+c/d=(ad+bc)/bd\) and both \(ad+bc\) and \(bd\) are integers.
+    \end{solution}
+    \part[2] Is the product or quotient of two rational numbers always rational? Why or why not?
+    \begin{solution}
+        Yes, because \((a/b)(c/d)=ac/bd\) and both \(ac\) and \(bd\) are integers.
+    \end{solution}
+    \part[2] When one rational number is raised to another is the result guaranteed to be rational?
+    \begin{solution}
+        No; an example is \(2^{1/2}\). 
+    \end{solution}
+    \part[3] It is known that \(\sqrt2\) is irrational, but it is not known whether \(\sqrt2^{\sqrt2}\) is rational or irrational. 
+    Do there exist two irrational numbers such that when one is raised to the other the result is rational? Prove your conjecture.
+    \begin{solution}
+        The answer is yes.
+        Let \(A=\sqrt2^{\sqrt2}\). We don't know if \(A\) is rational or irrational, but it doesn't
+        matter. If \(A\) is rational, then it is an example of a rational number that is an
+        irrational number raised to another irrational number. If \(A\) is irrational,
+        then \(A^{\sqrt2}=\sqrt2^{2}=2\) and this number is the desired example.
+    \end{solution}
+\end{parts}
+
+    \question % OK, this is a monster problem... this'll be the last one on the senior questions.
+\begin{parts}
+\part[1] If two normal six-sided die are rolled, what is the probability that the sum of the two numbers is \(2\)?
+\begin{solution}
+    Out of the \(36\) possible pairs the only one that has a sum of \(2\) is \((1,1)\), so 
+    the probability is \(1/36\).
+\end{solution}
+\part[1] If two normal six-sided die are rolled, what is the probability that the sum of the two numbers is \(7\)?
+\begin{solution}
+    There are \(6\) ways to get a \(7\): \((1,6)\), \((2,5\), \((3,4)\), \((4,3)\), \((5,2)\), and
+    \((6,1)\). Therefore the probability is \(1/6\).
+\end{solution}
+\part[2] Consider a biased six-sided die in which the probability of rolling \(n\) is \(p_n\). This die is rigged
+so that when two of them are rolled, every possible sum of the two numbers is equally likely. What is \(p_2\) in
+terms of \(p_1\)?
+\begin{solution}
+    The probability of getting a \(3\) is \(p_2p_1+p_1p_2\), which by hypothesis is equal
+    to the probability of getting a \(2\), or \(p_1^2\). Therefore \(2p_2=p_1\), which implies
+    that \(p_2=p_1/2\).
+\end{solution}
+\part[1] What is \(p_3\) in terms of \(p_1\)?
+\begin{solution}
+    Following the previous procedure we find that \(p_3=3p_1/8\).
+\end{solution}
+\part[2] What is \(p_4\) in terms of \(p_1\)? Do you notice a pattern?
+\begin{solution}
+    \(p_4=5p_1/16\). The pattern is \(1/2\), \((1/2)(3/4)\), \((1/2)(3/4)(5/6)\), and so on.
+\end{solution}
+\part[2] Let \(p_{i}=a_{i-1}p_1\). So \(a_0=1\), \(p_2=a_1p_1\), \(p_3=a_2p_1\), \(p_4=a_3p_1\) and so on. What are
+\(a_0a_1+a_1a_0\), \(a_0a_2+a_1a_1+a_2a_0\), \(a_0a_3+a_1a_2+a_2a_1+a_3a_0\), etc. all equal to?
+\begin{solution}
+    If \(p_1p_2+p_2p_1=p_1^2\) then \[a_0p_1a_1p_1+a_0p_1a_1p_1=p_1^2\] which implies 
+    \[(a_0a_1+a_1a_0)p_1^2=p_1^2.\] Therefore \(a_0a_1+a_1a_0=1.\) Similarly the other 
+    combinations of \(a\)'s can be found to be \(1\) too.
+\end{solution}
+\part[1] Since we have a six-sided die, \[p_1+p_2+\cdots+p_6=1.\] What is \(p_1\) in terms of \(a_0,a_1,a_2,\ldots,a_5\)?
+\begin{solution}
+    Since the die is six-sided, we have \(p_1+p_2+\cdots+p_6=1\). We can express this 
+    in terms of \(p_1\): \[a_0p_1+a_1p_1+a_2p_1+\cdots+a_5p_1=1\] and hence
+    \[ p_1=\frac{1}{a_0+a_1+\cdots+a_5}.\]
+\end{solution}
+\part[2] Let \(s_i=a_0+a_1+\cdots+a_i.\) What are \(s_0,s_1,s_2\)? What is \(s_5\)?
+\begin{solution}
+    \(s_0=a_0=1\), \(s_1=a_0+a_1=3/2\), \(s_2=1+1/2+3/8=15/8\). Note that 
+    \(s_2=(3/2)(5/4)\), \(s_3=(3/2)(5/4)(7/6)\), \(s_4=(3/2)(5/4)(7/6)(9/8)\) and so on.
+    Therefore \[s_5=\frac{3\cdot5\cdot7\cdot9\cdot11}{2\cdot4\cdot6\cdot8\cdot10}=\frac{693}{256}.\]
+\end{solution}
+\part[3] Is such a six-sided die possible?
+\begin{solution}
+    From the previous part we find that \(p_1=256/693.\) This means that the probability of
+    rolling two of these dice and getting a sum of \(2,3,\ldots,12\) must all be
+    \(p_1^2=65536/480249.\) But this is impossible because there are \(11\) possible
+    sums and if they are equally likely each must have a probability of \(1/11\). Therefore
+    such a die is not possible.
+\end{solution}
+\end{parts}
+\question
+\begin{parts}
+    \part[1] What is \(1+2+3+\cdots+200\)?
+    \begin{solution}
+        \(10100\)
+    \end{solution}
+    \part[2] Find a formula for \(1+2+\cdots+n\) and prove it.
+    \begin{solution}
+        The formula is \[1+2+\cdots+n=\frac{n(n+1)}{2}.\] It is easily proved by induction.
+        When \(n=1\) we have \(1=1(1+1)/2\) so the base case is done. Now assume that
+        \[1+2+\cdots+k=\frac{k(k+1)}{2}\] for some natural number \(k\). Add \(k+1\) to
+        both sides: \[1+2+\cdots+k+(k+1)=\frac{k(k+1)}{2}+\frac{2(k+1)}{2}=\frac{(k+1)(k+2)}{2}\] 
+        and the induction is complete.
+    \end{solution}
+    \part[1] Define \[F_k(n)=1^k+2^k+\cdots+n^k.\] (So in the previous part you found a formula for
+    \(F_1(n)\).) More compactly it may be written as
+    \[F_k(n)=\sum_{i=1}^{n}i^k.\]
+    What is \[1^3+(2^3-1^3)+(3^3-2^3)+\cdots+(100^3-99^3)?\]
+    \begin{solution}
+        This sum is an example of a telescoping sum. All the terms vanish except for
+        the \(100^3\) term in the last set of parentheses, so the answer is \(100^3\).
+    \end{solution}
+    \part[2] By considering \[1^3+\sum_{i=1}^{n}((i+1)^3-i^3)\] find a formula for \(F_2(n)\).
+    \begin{solution}
+    We know that \[1^3+\sum_{i=1}^{n}((i+1)^3-i^3)=(n+1)^3.\] Expanding both sides
+    using the Binomial Theorem we get \[1^3+\sum_{i=1}^{n}(3i^2+3i+1)=n^3+3n^2+3n+1.\]
+    After removing the \(1\) from both sides, on the LHS we can break up the sum and pull out the constant factors, like so:
+    \[3\sum_{i=1}^ni^2+3\sum_{i=1}^ni+\sum_{i=1}^n1=n^3+3n^2+3n.\]
+    But note that \(\sum_{i=1}^ni^2=F_2(n)\) and \(\sum_{i=1}^ni=F_1(n)\), so we have
+    \[3F_2(n)+3F_1(n)+n=n^3+3n^2+3n.\] Then we just need to rearrange for \(F_2(n)\) after
+    substituting in \(F_1(n)=n(n+1)/2\) to
+    find that \[F_2(n)=\frac{2n^3+3n^2+n}{6}.\]
+    \end{solution}
+    \part[2] Find a formula for \(F_3(n)\).
+    \begin{solution}
+        Using the same method as above, we find that \[F_3(n)=\frac{n^4+2n^3+n^2}{4}.\]
+    \end{solution}
+    \part[1] The Binomial Theorem states that \[(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}.\] If 
+    \[(i+1)^k-i^k=\sum_{j=0}^{x}\binom{k}{j}i^j\] what is \(x\) in terms of \(k\)?
+    \begin{solution}
+        The leading term vanishes, so instead of going from \(0\) to \(k\) the loop only
+        goes up to \(k-1\). Therefore \(x=k-1.\)
+    \end{solution}
+    \part[3] By considering the general telescoping sum 
+    \[1^k+\sum_{i=1}^n((i+1)^k-i^k)=(n+1)^k\] show that 
+    \[F_{k-1}(n)=\frac{(n+1)^k-1}{k}+\frac{1}{k}\sum_{i=0}^{k-2}\binom{k}{i}F_i(n).\]
+    \begin{solution}
+        Expand the \((n+1)^k\)  term using the Binomial Theorem, applying the previous part:
+        \[(n+1)^i=1^k+\sum_{i=1}^{k}\sum_{j=0}^{k-1}\binom{k}{j}i^j.\]
+        Now expand the inner sigma notation:
+        \[(n+1)^k=1^k+\sum_{i=1}^{k}\left(\binom{k}{0}i^0+\binom{k}{1}i^1+\binom{k}{2}i^2+\cdots+\binom{k}{k-1}i^{k-1}\right).\]
+        We may take out the binomial coefficients, as they are independent of the sum variable
+        \(i\), so we have 
+        \[(n+1)^k=1^k+\binom{i}{0}\sum_{i=1}^ki^0+\binom{k}{1}\sum_{i=1}^ki^1+\binom{k}{2}\sum_{i=1}^ki^2+\cdots+\binom{k}{k-1}\sum_{i=1}^{k}i^{k-1}.\]
+        We're interested in \(F_{k-1}(n)\), so we notice that the binomial coefficient
+        \(\binom{k}{k-1}=k\) and isolate that term. The other sums are \(F_0(n)\), \(F_1(n)\),
+        \(F_2(n)\) and so on. Therefore we get
+        \[(n+1)^k=1^k+\binom{k}{0}F_0(n)+\binom{k}{1}F_1(n)+\binom{k}{2}F_2(n)+\cdots+\binom{k}{k-2}F_{k-2}(n)+kF_{k-1}(n)\]
+        or more compactly,
+        \[(n+1)^k=1+\sum_{i=0}^{k-2}\binom{k}{i}F_i(n)+kF_{k-1}(n).\]
+        Rearranging for \(F_{k-1}(n)\) we get the desired result.
+    \end{solution}
+\end{parts}
+
+\end{questions}
+
+\gradetable
+
+\end{document}

@@ -1,0 +1,183 @@
+\documentclass[a4paper,12pt,addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage[a4paper,pass]{geometry}
+\pagestyle{empty}
+\begin{document}
+\section*{Year 10}
+\begin{questions}
+
+\question 
+\begin{parts}
+\part[2] When is the sum of 2 consecutive numbers divisible by 2?
+\begin{solution}
+    Never, because \(n+(n+1)=2n+1\) is odd.
+\end{solution}
+\part[2] When is the sum of 3 consecutive numbers divisible by 3?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)=3n+3.\)
+\end{solution}
+\part[2] When is the sum of 4 consecutive numbers divisible by 4?
+\begin{solution}
+    Never, as \(n+(n+1)+(n+2)+(n+3)=4n+10\equiv2\pmod{4}\).
+\end{solution}
+\part[2] When is the sum of 5 consecutive numbers divisible by 5?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)+(n+3)+(n+4)=5n+10\).
+\end{solution}
+\part[2] When is the sum of \(n\) consecutive numbers divisible by \(n\)?
+\begin{solution} 
+    The sum of \(n\) consecutive numbers starting from \(k\) is \(kn\) plus the \(n-1\)th triangular number, so it
+    is \[n\left(k+\frac{n-1}{2}\right).\] The resulting number is divisible by \(n\) if \((n-1)/2\) is an integer,
+    and that is when \(n\) is odd.
+\end{solution}
+
+\end{parts}
+\droptotalpoints
+
+\question[3] Prove it possible to pair up the numbers $0, 1, 2, 3, \ldots , 61$ in such a way that when we sum each pair, the product of the 31 numbers we get is a perfect fifth power.
+\begin{solution}
+    Pair 0 with 1, and $k$ with $63-k$ for all $2 \leq k \leq 31 $. This would result in a product equal to $1 \times 63^{30} = (63^6)^5$ which is a perfect $5^{\text{th}}$ power.
+\end{solution}
+
+\question
+\begin{parts}
+    \part[1] Two lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(4\)
+    \end{solution}
+    \part[1] Three lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(7\) (If you try it on paper, you will see that the third line can only intersect
+        the existing \(2\) lines in at most \(2\) places, resulting in \(3\) new regions.
+        Therefore the number of regions is \(4+3=7\).)
+    \end{solution}
+    \part[1] If we add a fourth line, what is the maximum number of intersection
+    points that line can make with the existing lines?
+    \begin{solution}
+        \(3\)
+    \end{solution}
+    \part[1] Four lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(11\)
+    \end{solution}
+    \part[3] What is the maximum number of regions that \(n\) lines can divide the plane into?
+    \begin{solution}
+        \(1+n(n+1)/2\)
+    \end{solution}
+
+    \end{parts}
+\droptotalpoints
+
+       \question
+\begin{parts}
+    \part[2] Is the sum or difference of two rational numbers always rational? Why or why not?
+    \begin{solution}
+        Yes, because \(a/b+c/d=(ad+bc)/bd\) and both \(ad+bc\) and \(bd\) are integers.
+    \end{solution}
+    \part[2] Is the product or quotient of two rational numbers always rational? Why or why not?
+    \begin{solution}
+        Yes, because \((a/b)(c/d)=ac/bd\) and both \(ac\) and \(bd\) are integers.
+    \end{solution}
+    \part[2] When one rational number is raised to another is the result guaranteed to be rational?
+    \begin{solution}
+        No; an example is \(2^{1/2}\). 
+    \end{solution}
+    \part[3] It is known that \(\sqrt2\) is irrational, but it is not known whether \(\sqrt2^{\sqrt2}\) is rational or irrational. 
+    Do there exist two irrational numbers such that when one is raised to the other the result is rational? Prove your conjecture.
+    \begin{solution}
+        The answer is yes.
+        Let \(A=\sqrt2^{\sqrt2}\). We don't know if \(A\) is rational or irrational, but it doesn't
+        matter. If \(A\) is rational, then it is an example of a rational number that is an
+        irrational number raised to another irrational number. If \(A\) is irrational,
+        then \(A^{\sqrt2}=\sqrt2^{2}=2\) and this number is the desired example.
+    \end{solution}
+
+    \end{parts}
+\droptotalpoints
+
+
+   
+    \question 
+     \begin{parts}
+     \part[2] Prove that $x^2+y^2 \ge 2xy$ for real numbers $x,y$. 
+     \begin{solution}
+     Moving $2xy$ to the left we get $(x-y)^2 \ge 0$. Which is true. 
+\end{solution}
+     \part[2] Prove that $2a^2+b^2+c^2 \ge 2(ab+ac)$ for real numbers $a, b, c$. 
+      \begin{solution}
+     Using the result from a), we add the two following inequalities $$a^2+b^2 \ge 2ab$$ $$a^2+c^2 \ge 2ac$$ to get $$2a^2+b^2+c^2 \ge 2(ab+ac).$$ 
+\end{solution}
+     \part[2] Prove that $3(a^2+b^2+c^2+d^2) \ge 2(ab+ac+ad+bc+bd+cd)$ for real numbers $a, b, c, d$. 
+      \begin{solution}
+    Same deal as part b), just with more inequalities. We add up $$a^2+b^2 \ge 2ab$$ $$a^2+c^2 \ge 2ac$$ $$a^2+d^2 \ge 2ad$$ $$b^2+c^2 \ge 2bc$$ $$b^2+d^2\ge 2bd$$ $$c^2+d^2 \ge 2cd$$ to get $$3(a^2+b^2+c^2+d^2) \ge 2(ab+ac+ad+bc+bd+cd).$$
+\end{solution}
+     \part[3] Real numbers $a, b, c, d, e$ are linked by the two equations: $$e = 40 - a - b - c -d$$ $$e^2 = 400 - a^2 - b^2 - c^2 - d^2$$ Determine the largest value for $e$. 
+      \begin{solution}
+    From the first equation we have $$(40-e)^2=(a+b+c+d)^2=a^2+b^2+c^2+d^2+2(ab+ac+ad+bc+bd+cd)$$
+Using the result from part c), we get that $$(40-e)^2 \le 4(a^2+b^2+c^2+d^2)$$ Using the second equation we get $$(40-e)^2 \le 4(400-e^2)$$ After expanding the brackets and simplifying, it follows that $$e(80-5e) \ge 0$$ Implying that $0 \le e \le 16$. Thus the largest value for $e$ that satisfies the given equations is 16. 
+\end{solution}
+     
+
+\end{parts}
+\droptotalpoints
+
+     
+\question
+\begin{parts}
+    \part[1] How many ways are there to create a two-element subset from the set \(\{1,2,3,4\}\)?
+    \begin{solution}
+        There are \(\binom{4}{2}=6\) ways.
+    \end{solution}
+    \part[2] How many ways are there to split the set \(\{1,2,3,4\}\) into two disjoint nonempty sets? (Disjoint means the two sets share no elements.) For example, if we had the set \(\{1,2,3\}\) a valid
+    splitting would be \(\{1,2\}\) and \(\{3\}\).
+    \begin{solution}
+        The valid ways are: \(\{1\}\) and \([\{2,3,4\}\), \(\{2\}\) and \(\{1,3,4\}\),  \(\{3\}\) and
+        \(\{1,2,4\}\), \(\{4\}\) and \(\{1,2,3\}\), \(\{1,2\}\) and \(\{3,4\}\), \(\{1,3\}\) and \(\{2,4\}\), and \(\{1,4\}\) and \(\{2,3\}\). So \(7\) ways.
+    \end{solution}
+    \part[2] How many ways are there to split the set \(\{1,2,3,4,5\}\) into two disjoint nonempty sets?
+    \begin{solution}
+        By listing all the ways again, we find that there are \(15\) ways.
+    \end{solution}
+    \part[2] Denote by \(S(n,k)\) the number of ways to split a set of \(n\) elements into \(k\) disjoint
+    nonempty sets. Suppose we know what \(S(n-1,2)\)  is. What happens when we add another element
+    to the set? What happens to each of the \(S(n-1,2)\) ways to do the partitioning?
+    \begin{solution}
+        For each way to do the partitioning, we may add the new number \(n\) to either
+        set to obtain a new partitioning. There is also one new partition that is not
+        obtained by adding \(n\) to existing one, and that is the splitting into \(\{n\}\)
+        and \(\{1,2,\ldots,n-1\}\). Therefore we have \[S(n,2)=2S(n-1,2)+1.\]
+    \end{solution}
+    \part[2] What is \(S(n,2)\)?
+    \begin{solution}
+        We have \(S(1,2)=0\), \(S(2,2)=1\), \(S(3,2)=3\), \(S(4,2)=7\), and \(S(5,2)=15\).
+        From this pattern and the recursive formula found above it is easy to prove by
+        induction that \(S(n,2)=2^{n-1}-1.\)
+    \end{solution}
+    \bonuspart[3] If there are \(S(n-1,k-1)\) ways to partition a set of \(n-1\) elements into \(k-1\) nonempty
+    disjoint sets, what is \(S(n,k)\) in terms of \(S(n-1,k)\) and \(S(n-1,k-1)\)?
+    \begin{solution}
+        We need to think about what happens when we add the \(n\)th element. Clearly we may
+        put this object into a separate set by itself and partition the other \(n-1\) objects
+        into \(k-1\) nonempty disjoint subsets, because all up there would be \(k\) sets. 
+        There are \(S(n-1,k-1)\) ways to do this. We may also take the \(n-1\) objects
+        and partition them into \(k\) sets and add the \(n\)th element to any one of them
+        to get another valid partitioning. How many ways are there to do this? In each
+        of the \(S(n-1,k)\) ways to partition \(n-1\) objects into \(k\) nonempty sets, there
+        are \(k\) different subsets we can put the \(n\)th object into. Therefore
+        in this case there are \(kS(n-1,k)\) ways. In total then we have \[S(n,k)=S(n-1,k-1)+kS(n-1,k).\]
+    \end{solution}
+
+    \end{parts}
+\droptotalpoints
+ 
+
+
+
+     
+
+
+
+\end{questions}
+Total: \numpoints
+\end{document}

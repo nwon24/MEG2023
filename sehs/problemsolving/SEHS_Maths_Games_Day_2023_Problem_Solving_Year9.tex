@@ -1,0 +1,170 @@
+\documentclass[a4paper,12pt,addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage[a4paper,pass]{geometry}
+\begin{document}
+\pagestyle{empty}
+\section*{Year 9}
+\begin{questions}
+
+
+\question  In an AFL game, a goal is worth \(6\) points and a behind is worth \(1\) point.
+\begin{parts}
+    \part[1] How many points does a team have if they score \(4\) goals and \(8\) behinds?
+    \begin{solution}
+        \(32\)
+    \end{solution}
+    \part[2] How many different ways are there to score some number of goals and some number
+    of behinds such that the score is the product of the number of goals and the number
+    of behinds?
+    \begin{solution}
+        The problem boils down to finding solutions to the equation \(6x+y=xy\). There are \(5\) solutions for
+        nonnegative integers \(x\) and \(y\) but accept if trivial solution \((0,0)\) is not given.
+    \end{solution}
+    \part[2] By considering a graph, show that you have found all the ways that this could occur.
+    \begin{solution}
+        Rearrange the equation to get \[y=\frac{6x}{x-1}.\] Via s simple algebraic manipulation
+        we get \[y=6+\frac{6}{x-1}.\] The \(4\) solutions obtained through enumeration are
+        \((2,12)\), \((3,9)\), \((4,8)\), \((7,7)\). For \(x>7\) the denominator of the
+        fraction becomes greater than \(6\) and therefore \(y\) cannot be an integer.
+        Hence there are no solutions for \(x>7\) and thus we have found all the solutions.
+    \end{solution}
+    
+  \end{parts}
+  \droptotalpoints
+
+
+\question 
+\begin{parts}
+\part[2] What is the area of the largest square that can fit inside a unit circle?
+\begin{solution}
+    The diagonal of the square is the diameter of the circle, which is \(2\). Therefore
+    the side length of the square is \(\sqrt2\) units, meaning the area is \(2\) square units.
+\end{solution}
+\part[2] What is the area of the largest circle that can fit inside a unit square?
+\begin{solution}
+    The radius of the circle is half the side length of the square, so the radius is \(1/2\).
+    The area of the circle is therefore \(\pi(1/2)^2=\pi/4\).
+\end{solution}
+\part[3] A triangle is placed inside a unit square so that of its vertices either lie on the square's
+edges or inside the square. What areas are possible for this triangle?
+\begin{solution}
+It is possible for the triangle to have an area of \(1/2\), as that occurs when all three
+vertices are three vertices of the square. Therefore it can plainly have any area between
+\(0\) and \(1/2\). Can it have an area that is greater than \(1/2\)? The answer is no. 
+\end{solution}
+\part[2] What is the side length of the largest square that can fit inside an equilateral triangle that has side length 1 unit?
+\begin{solution}
+    Let \(x\) be the sidelength of the square. By similar triangles we can deduce that \[\frac{2x}{1-x}=\sqrt3.\]
+    Solving this equation gives \(x=2\sqrt3-3.\)
+\end{solution}
+
+\end{parts}
+\droptotalpoints
+
+
+\question[3] What is the volume of a regular tetrahedron with side length \(1\) unit?
+\begin{solution}
+    The volume of a pyramid is \(1/3\) multiplied by the area of its base times its height. Using
+    Pythagoras' Theorem we can deduce that the height of a unit tetrahedron is \(\sqrt{2/3}\). 
+    The area of the base of the tetrahedron is the area of an equilateral triangle with
+    sidelength \(1\), which is \((1/2)(\sqrt3/2)=\sqrt3/4\). Therefore the area of the
+    unit regular tetrahedron is \((1/3)\times(\sqrt3/4)\times\sqrt{2/3}=\sqrt2/12.\)
+\end{solution}
+
+
+\question
+\begin{parts}
+    \part[1] How many positive integer solutions are there to the equation \(2x+3y=25\)?
+    \begin{solution}
+        Enumerating the cases and counting gives \(4\) solutions.
+    \end{solution}
+    \part[2] How many integer solutions are there to the equation \(2x+3y=25\)?
+    \begin{solution}
+        There are infinitely many integer solutions.
+    \end{solution}
+    \part[2] How many integer solutions are there to the equation \(51x+24y=17\)?
+    \begin{solution}
+        There are no integer solutions because every number of the form \(51x+24y\) is a multiple
+        of the greatest common divisor of \(51\) and \(24\), which is \(3\). 
+    \end{solution}
+    \part[1] Consider the expression \(9x+15y\). Put in as many integer values of \(x\) and \(y\) as you can.
+    Which number are all the resulting numbers multiples of?
+    \begin{solution}
+        The resulting numbers are multiples of \(3\).
+    \end{solution}
+    \part[2] When does the equation \(ax+by=c\) always have integer solutions?
+    \begin{solution}
+        The equation has integer solutions only when \(c\) is a multiple of the greatest common
+        divisor of \(a\) and \(b\).
+    \end{solution}
+  \end{parts}
+\droptotalpoints  
+
+\question 
+\begin{parts}
+\part[2] When is the sum of 2 consecutive numbers divisible by 2?
+\begin{solution}
+    Never, because \(n+(n+1)=2n+1\) is odd.
+\end{solution}
+\part[2] When is the sum of 3 consecutive numbers divisible by 3?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)=3n+3.\)
+\end{solution}
+\part[2] When is the sum of 4 consecutive numbers divisible by 4?
+\begin{solution}
+    Never, as \(n+(n+1)+(n+2)+(n+3)=4n+10\equiv2\pmod{4}\).
+\end{solution}
+\part[2] When is the sum of 5 consecutive numbers divisible by 5?
+\begin{solution}
+    Always, as \(n+(n+1)+(n+2)+(n+3)+(n+4)=5n+10\).
+\end{solution}
+\part[2] When is the sum of \(n\) consecutive numbers divisible by \(n\)?
+\begin{solution} 
+    The sum of \(n\) consecutive numbers starting from \(k\) is \(kn\) plus the \(n-1\)th triangular number, so it
+    is \[n\left(k+\frac{n-1}{2}\right).\] The resulting number is divisible by \(n\) if \((n-1)/2\) is an integer,
+    and that is when \(n\) is odd.
+\end{solution}
+\end{parts}
+\droptotalpoints
+
+
+\question
+\begin{parts}
+    \part[1] Two lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(4\)
+    \end{solution}
+    \part[1] Three lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(7\) (If you try it on paper, you will see that the third line can only intersect
+        the existing \(2\) lines in at most \(2\) places, resulting in \(3\) new regions.
+        Therefore the number of regions is \(4+3=7\).)
+    \end{solution}
+    \part[1] If we add a fourth line, what is the maximum number of intersection
+    points that line can make with the existing lines?
+    \begin{solution}
+        \(3\)
+    \end{solution}
+    \part[1] Four lines can divide the plane into at most how many regions?
+    \begin{solution}
+        \(11\)
+    \end{solution}
+    \part[3] What is the maximum number of regions that \(n\) lines can divide the plane into?
+    \begin{solution}
+        \(1+n(n+1)/2\)
+    \end{solution}
+  \end{parts}
+\droptotalpoints  
+
+
+\question[3] Prove it possible to pair up the numbers $0, 1, 2, 3, \ldots , 61$ in such a way that when we sum each pair, the product of the 31 numbers we get is a perfect fifth power.
+\begin{solution}
+    Pair 0 with 1, and $k$ with $63-k$ for all $2 \leq k \leq 31 $. This would result in a product equal to $1 \times 63^{30} = (63^6)^5$ which is a perfect $5^{\text{th}}$ power.
+\end{solution}
+\droptotalpoints
+
+\end{questions}
+
+Total: \numpoints
+\end{document}
