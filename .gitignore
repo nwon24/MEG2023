@@ -25,3 +25,5 @@ fta
 *.toc
 *.ps
 *.png
+*.fls
+*.fdb_latexmk
