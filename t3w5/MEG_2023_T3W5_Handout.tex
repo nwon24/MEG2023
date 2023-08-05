@@ -1,0 +1,230 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{3}
+\newcommand{\theweek}{5}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\ Handout}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\myquote{Greek algebra before Diophantus was essentially rhetorical.}{T.~Dantzig, \emph{Number: The Language of Science} (1954)}
+\section*{More factorisation and Diophantine equation problems}
+\begin{enumerate}
+\item Show that for every integer $n>1$ it is possible to write $\frac{1}{n}$ as a sum of two reciprocals of distinct positive integers.  
+\item Find \marginnote{AIME 1987/5}  $3x^2 y^2$ if $x$ and $y$ are integers such that $y^2 + 3x^2 y^2 = 30x^2 + 517$. 
+\item Find all integer solutions to the equation $$(x-y)^2=x+y.$$
+\item  Tyler \marginnote{AMC Intermediate 2021/30} has a large number of square tiles, all the same size. He has four times as many blue tiles as red tiles. He builds a large rectangle using all the tiles, with the red tiles forming a boundary 1 tile wide around the blue tiles.   He then breaks up this rectangle and uses the tiles to make two smaller rectangles. Like the large rectangle, each of the smaller rectangles has four times as many blue tiles as red tiles, and the red tiles form a boundary 1 tile wide around the blue tiles. How many blue tiles does Tyler have? 
+\item Factor \marginnote{Sophie Germain's Identity} $a^4+4b^4$.
+\end{enumerate}
+\pagebreak
+\myquote{\ldots knowledge of every truth is a worthy matter in itself\ldots}{L.~Euler\footnote{Translated by David Zhao from Latin, in which the title was \emph{Theoremata Circa Divisores Numerorum.}}, \emph{Theorems on Divisors of Numbers} (1748)}
+\section*{Euler's Criterion}
+Let's recap \marginnote{Refer to the previous handout for particulars.} what has been covered so far in
+the story of quadratic residues.
+A quadratic residue modulo some odd prime \(p\)
+is a nonzero number \(a\) such that the congruence
+\[x^2\equiv a\pmod{p}\]
+is solvable. 
+A number that is not a quadratic residue is a quadratic
+nonresidue, or just nonresidue for short
+if there is no chance of ambiguity.
+Among the numbers \(1,2,\ldots,p-1\) there are
+the same number of quadratic residues as nonresidues;
+there are \((p-1)/2\) of each. 
+A consequence of this fact is that quadratic residues
+and nonresidues satisfy the same multiplicative property
+as \(1\) and \(-1\). 
+That is, the product of a residue and a nonresidue is a
+nonresidue, and the product of two residues or two nonresidues
+is a residue. 
+This can be summarised using the Legendre symbol:
+\[\leg{ab}{p}=\leg{a}{p}\leg{b}{p}\]
+where
+\[\leg{a}{p}=\begin{cases}
+0&\text{if } a\equiv0\pmod{p}\\
+1&\text{if } a \text{ is a quadratic residue modulo } p\\
+-1&\text{if } a \text{ is a quadratic nonresidue modulo }p\\
+\end{cases}\]
+
+To continue our investigations, we look for a new goal.
+The most obvious one is to find a way to tell whether
+a given number is a quadratic residue of a prime. 
+In other words, is there an easy way to evaluate \(\ileg{a}{p}\)?\marginnote{As a sneak
+peek for things to come, this problem can be broken down into three stages. 
+First we need a way to evaluate \(\ileg{-1}{p}\), then \(\ileg{2}{p}\), and finally
+\(\ileg{q}{p}\) for any odd prime \(q\). Since \(\ileg{ab}{p}=\ileg{a}{p}\ileg{a}{p}\) 
+solving those three cases suffices to let us find \(\ileg{a}{p}\) for any \(a\).}
+
+Of course, the brute force approach of enumerating 
+the quadratic residues is guaranteed to give the right answer,
+but clearly the mathematician has no interest in this method.
+It is tedious, inelegant, and given the hints of beauty
+in the theory already developed, it is likely that there is
+a better way---some connection or theorem we have yet to discover.
+
+Let's go back to Fermat's Little Theorem.
+It states that
+\[ a^{p-1}\equiv1\pmod{p}\]
+for all \(a\not\equiv 0\).
+Since \(p\) is an odd prime, \(p-1\) is even, and therefore
+if we set \(P=(p-1)/2\), 
+the left-hand side can be factorised to give
+\[ (a^P-1)(a^P+1)\equiv1\pmod{p}. \]
+Since the modulus is prime, either 
+\[a^P\equiv1\pmod{p}\]
+or \[a^P\equiv-1\pmod{p}.\]
+What is the distinction between these two cases?
+Clearly some numerical data would be useful.
+Suppose that \(p=7\).
+Let's run \(a\) through the values \(1,\ldots,6\)
+and compute \(a^P\).
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\(a\)&1&2&3&4&5&6\\
+\hline
+\(a^3\pmod{7}\)&\(1\)&\(1\)&\(-1\)&\(1\)&\(-1\)&\(-1\)\\
+\hline
+\end{tabular}
+\end{center}
+One example may not be enough to establish
+the pattern, so here is another. 
+This time \(p=11\).
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\(a\)&1&2&3&4&5&6&7&8&9&10\\
+\hline
+\(a^5\pmod{11}\)&\(1\)&\(-1\)&\(1\)&\(1\)&\(1\)&\(-1\)&\(-1\)&\(-1\)&\(1\)&\(-1\)\\
+\hline
+\end{tabular}
+\end{center}
+The first thing we notice about the two examples
+is that \(-1\) and \(1\) appear the same number of times;
+there are \((p-1)/2\) of each.
+This alone is enough to suggest that there is some
+connection with quadratic residues.
+This connection is obvious if we look a little closer.
+Each \marginnote{Verify this by finding the quadratic residues by hand.
+Then try a few more values of \(p\) to convince yourself that the pattern
+does indeed continue.}
+\(1\) appears whenever \(a\) is a quadratic residue
+and each \(-1\) appears whenever \(a\) is a quadratic nonresidue.
+
+A few more examples would be enough to allow us to make a conjecture. 
+We conjecture that \(a^P\equiv1\) if \(a\) is a quadratic residue
+and \(a^p\equiv-1\) if \(a\) is a quadratic nonresidue. 
+But \(1\) and \(-1\) are exactly the possibilities of the Legendre symbol
+(excluding \(0\) because right from the beginning in using Fermat's Little
+Theorem we have taken \(a\not\equiv0\)), so our conjecture can be expressed as
+\[a^P\equiv a^{(p-1)/2}\equiv\leg{a}{p}\pmod{p}\]
+for \(a\not\equiv0\).
+In fact the conjecture is also true, albeit trivially so, when \(a\equiv0\).
+
+The result we have just discovered is known as \emph{Euler's Criterion}.
+At this point we have some intuition as to why it is true, but a proper
+proof is needed. 
+Here is that proper proof.
+
+If \(a\) is a quadratic residue, then \[a\equiv x^2\pmod{p}.\] 
+Hence \[a^P\equiv a^{(p-1)/2}\equiv x^{p-1}\equiv1\equiv\leg{a}{p}\pmod{p}\]
+by Fermat's Little Theorem.
+The first part of the proof is complete.
+
+Now consider the general congruence \[x^{(p-1)/2}-1\equiv0\pmod{p}.\]
+From Lagrange's Theorem \marginnote{Recall that Lagrange's Theorem
+guarantees that a polynomial congruence of degree \(d\) modulo a prime
+has at most \(d\) incongruent roots.} there are at most \((p-1)/2\) solutions, and we have just
+shown that if \(a\) is a quadratic residue, then it is a solution to that
+equation. 
+Since there are exactly \((p-1)/2\) quadratic residues, it follows that every
+quadratic residue is a solution to the above equation, and every solution
+to the above equation is a quadratic residue.
+The two statements are thus equivalent.
+
+For the second part of the proof, the case where \(a\) is a
+quadratic nonresidue, we have to go back to the equation
+\[(a^P-1)(a^P+1)\equiv0\pmod{p}.\]
+We know that either \(a^P-1\equiv0\) or \(a^P+1\equiv0\); but
+the former cannot be true because we have just proved that if
+that were the case, then \(a\) would be a quadratic residue.
+Thus the latter is true and \[a^P\equiv a^{(p-1)/2}\equiv-1\equiv\leg{a}{p}\pmod{p},\]
+completing the proof of the theorem.
+
+How does this help us evaluate the Legendre symbol?
+The answer is that it doesn't, at least not directly, because it is often
+inconvenient to calculate \(a^{(p-1)/2}\).
+The only value of \(a\) for which it gives us a direct solution
+to the problem is \(a=-1\), for substituting this in gives
+\[\leg{-1}{p}\equiv(-1)^{(p-1)/2}\pmod{p}.\] 
+Since both sides are equal to either \(-1\) or \(1\), we may do
+away with the congruence and write it as an equation:
+\[\leg{-1}{p}=(-1)^{(p-1)/2}.\]
+(We don't have this liberty for other values of \(a\).)
+From this equation it is clear that \(\ileg{a}{p}\) is equal to \(1\)
+or \(-1\) depending on whether \((p-1)/2\) is even or odd,
+and \((p-1)/2\) is even if \(p\equiv1\pmod{4}\) and odd if \(p\equiv3\pmod{4}\).
+Thus \(-1\) \marginnote{This is the result proved in the last exercise
+to last week's handout; the difference is that there it was proved using primitive roots.
+Euler's Criterion gives an immediate proof.} is a quadratic residue of all primes of the form \(4k+1\) and
+a nonresidue of all those of the form \(4k+3\). 
+
+Although Euler's Criterion gives us a direct way to evaluate \(\ileg{-1}{p}\) only,
+it will be needed to prove \emph{Gauss's Lemma}. And Gauss's Lemma is central
+to this entire theory and is used to prove the ultimate, beautiful, golden theorem.
+
+\section*{Problems}
+\begin{enumerate}
+\item Show that if \(p\equiv1\pmod{4}\), then the quadratic character of \(a\)
+(whether it is a residue or nonresidue) is the same as that of \(p-a\), and if
+\(p\equiv3\pmod{4}\), then the quadratic character of \(a\) is opposite that of \(p-a\).
+\item Prove Euler's Criterion using primitive roots and indices. (Hint: If \(g\)
+is a primitive root and \(g^l\equiv1\), then \(l\) must be a multiple of \(p-1\).)
+\item Use\marginnote{This is a hard problem.} Wilson's Theorem to come up with a construction for the solutions
+to the equation \[x^2+1\equiv0\pmod{p}\] when \(p\equiv1\pmod{4}\).
+\end{enumerate}
+\end{document}
