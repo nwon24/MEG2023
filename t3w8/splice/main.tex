@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+
+
+\title{Functions meg}
+\author{Tom Yan}
+\date{August 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+1. The function $f(x)=x^2$ is not invertible. However, if we let $g(x)=\sqrt{x}$ then $f(g(x))=(\sqrt{x})^2=x$. So, why isn't $f$ invertible?   \\\\
+2. (ASHME) Let $f(x)$ be a function such that $f(x+y)=x+f(y)$ for any two real numbers $x$ and $y$, and $f(0)=2$. What is the value of $f(1998)$?\\\\
+3. An involution is a function whose inverse is itself ($f(f(x)=x$ for all $x$ in the domain of $f$). Show that an  involution must be bijective. \\\\
+4. Find all solutions to the equation $$f(x+y)+f(x-y)=2x^2-2y^2.$$ 
+5. Find all functions $f: \mathbb{R} \rightarrow \mathbb{R} $ for which $$f(x+y)-2f(x-y)+f(x)-2f(y)=y-2$$ for all $x,y \in \mathbb{R}$. 
+
+\newpage 
+Solutions: \\\\
+1. For $f$ to be invertible, we need $g(f(x))=x$ for all $x$ in the domain of $f$. But $g(f(x))=\sqrt{x}=|x|$, which is not equal to $x$ when $x$ is negative. Also, $f$ is not injective because $f(a)=f(-a)$ and so the inverse does not exist. \\\\
+2. Let $y=0$, then we have $f(x)=x+f(0)=x+2$. Hence $f(1998)=1998+2=2000$. \\\\
+3. To prove injectivity, if $f(x)=f(y)$ then clearly $f(f(x))=f(f(y))$, and hence $x=y$ from the definition of an involution. \\\\ To prove surjectivity, take $z$ to be a real number in the co-domain of $f$. It suffices to show there exists $x$ such that $f(x)=z$. From $f(x)=z$ we have $f(f(x))=f(z)$ or $f(z)=x$. Thus, the $x$ we needed to show that exists is $f(z)$. \\\\
+4. Subbing in $y=0$ yields $f(x)=x^2$. Thus $f(x)=x^2$ is the only possible solution. Trying this solution in the original equation, we have $f(x+y)+f(x-y)=2x^2+2y^2$, not $2x^2-2y^2$. Thus the only possible candidate fails the test, hence there are no solutions. \\\\
+5. Subbing in $y=0$ we get $$-2f(0)=-2$$ $$f(0)=1$$ Subbing in $x=0$ we obtain $$f(y)+2f(-y)=3-y$$ and by replacing $y$ with $-y$ we obtain $$f(-y)+2f(y)=3+y$$ Solving the system of equations, treating $f(y)$ and $f(-y)$ as variables, we get $f(y)=y+1$. It is easy to verify $f(x)=x+1$ satisfies the conditions of the problem, thus it is the only solution. 
+\end{document}

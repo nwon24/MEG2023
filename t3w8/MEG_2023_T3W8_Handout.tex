@@ -1,0 +1,255 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{3}
+\newcommand{\theweek}{8}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\ Handout}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\bfloor}[1]{\left\lfloor#1\right\rfloor}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{diagbox}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\myquote{Boiling water will\marginnote{Don't ask how this is related to functional equations.} soften a potato but
+harden an egg.}{J.~Clear, \emph{Atomic Habits} (2018)}
+\section*{Problems: functions and functional equations}
+\begin{enumerate}
+\item The function $f(x)=x^2$ is not invertible. However, if we let $g(x)=\sqrt{x}$ then $f(g(x))=(\sqrt{x})^2=x$. So, why isn't $f$ invertible?   
+\item  Let \marginnote{AHSME 1998/17} $f(x)$ be a function such that $f(x+y)=x+f(y)$ for any two real numbers $x$ and $y$, and $f(0)=2$. What is the value of $f(1998)$?
+\item An involution is a function whose inverse is itself ($f(f(x)=x$ for all $x$ in the domain of $f$). Show that an  involution must be bijective. 
+\item Find all solutions to the equation $$f(x+y)+f(x-y)=2x^2-2y^2.$$ 
+\item Find all functions $f: \mathbb{R} \rightarrow \mathbb{R} $ for which $$f(x+y)-2f(x-y)+f(x)-2f(y)=y-2$$ for all $x,y \in \mathbb{R}$. 
+\end{enumerate}
+\pagebreak
+\myquote{ As a six-year-old lad I could
+easier understand a mathematical proof than I could understand why I should take my cap off in the\marginnote{Soon Mr.~Eisenstein is to play an important role in our story.}
+parlour, or why I should use a knife to cut a slice of meat rather than tearing it apart with a fork.}{G.~Eisenstein\footnote{Translated from the German by M.~Schmitz in \emph{Res.~Lett.~Inf.~Math.~Set.,} 2004, Vol.~6, pp 1--13.}, \emph{Curriculum Vitae} (c.~1843)}
+\section*{Cliffhanger}
+Let's begin by revisiting the problem of finding
+\(\ileg{2}{p}\) for odd primes \(p\). 
+We shall not leave ourselves
+on a cliffhanger this time, but our method
+of solving the problem will be different.
+The method employed here will make our transition
+to the most general case (\(\ileg{p}{q}\) for
+odd primes \(p\) and \(q\)) easier and perhaps
+more enlightening.
+
+The basis of our proof, like before,
+is Gauss's Lemma. 
+Such a venerable lemma is easy to forget, so
+here it is again: given an odd prime \(p\)
+and some number \(a\) coprime with \(p\),
+\[\leg{a}{p}=(-1)^v\]
+where \(v\) is the number of numbers in the set
+\begin{equation}\label{eq:gausslem1}
+		\left\{a, 2a, 3a,\ldots, \frac{p-1}{2}a\right\}
+\end{equation}
+that have
+least positive residues greater than \(p/2\).
+An equivalent definition of \(v\) is the number
+of negative numbers in the set formed by
+taking each element of \eqref{eq:gausslem1} and
+reducing it to be between \(-p/2\) and \(p/2\),
+for if \(ka>p/2\) then reducing it in this manner
+will make it negative.
+
+Armed with this weapon, let's introduce another.
+This one is called the \emph{floor function}; it
+is denoted by \(\floor{x}\).
+This symbol means the largest integer less than
+or equal to \(x\).
+So if \(x\) is a positive number, \(\floor{x}\)
+is the integer part of \(x\).
+\marginnote{What happens when \(x\) is negative?}
+For example, \(\floor{\pi}=3\), \(\floor{e}=2\), \(\floor{28/5}=5\).
+Using this notation we can write any number \(x\) as \[x=\floor x+y\]
+where \(0\le y<1\).
+
+Now we can turn back to the original problem.
+For our specific case where \(a=2\), we have
+to find how many numbers in the set 
+\[ \{2,4,\ldots,p-1 \}\] are greater than \(p/2\).
+Let \(u\) be the number of numbers in the set that are less
+than \(p/2\) and \(v\) be the number of numbers
+in the set that are greater than \(p/2\).
+In other words, \(u\) satisfies\marginnote{Clearly only
+strict inequality signs are needed because \(p/2\) is not an integer.}
+\[2u<\frac{p}{2}\]
+and 
+\[2(u+1)>\frac{p}{2}.\]
+Rearranging these two inequalities yields
+\[u<\frac{p}{4}\] and \[u>\frac{p}{4}-1,\]
+which is more succinctly written as
+\[ \frac{p}{4}-1<u<\frac{p}{4}.\]
+A little thought convinces us that between
+\(p/4\) and \(p/4-1\) there is one and only
+one integer, and that integer is \(\floor{p/4}\).
+Thus \(u=\floor{p/4}\).
+
+By definition,\marginnote{In the following section
+some of the calculations have been omitted for brevity;
+carry them out yourself if necessary to understand the logic.}
+\(u+v=(p-1)/2\), so \(v=(p-1)/2-\floor{p/4}.\)
+To get rid of the floor function so that we can
+collect like terms, consider two cases:
+when \(p\equiv1\pmod{4}\) and when \(p\equiv3\pmod{4}\).
+If \(p=4k+1\), then \(\floor{p/4}=\floor{k+1/4}=k\); substituting
+this into the above equation for \(v\) we get \(v=k\).
+But \(k=(p-1)/4\), so we have \[v=\frac{p-1}{4}.\]
+Similarly, if \(p=4k+3\), then \(\floor{p/4}=k\) and \(v=k+1\).
+In this case \(k=(p-3)/4\) so \[v=\frac{p+1}{4}.\]
+
+Here is the final hurdle. As shown above, when \(p=4k+1\)
+we have \(v=(p-1)/4\). If \(p-1\) is divisible by \(4\),
+then \(p-1+2=p+1\) is not divisible by \(4\), but has the same
+quotient. That is,
+\[\frac{p-1}{4}=\bfloor{\frac{p+1}{4}}\] when \(p=4k+1.\)
+If \(p=4k+3\), we have \(v=(p+1)/4\) anyway, and clearly
+\((p+1)/4=\floor{(p+1)/4}\). Therefore we have shown that
+\[v=\bfloor{\frac{p+1}{4}}\]
+regardless of whether \(p\) is \(1\) or \(3\) more than
+a multiple of \(4\).
+
+From Gauss's Lemma \[\leg{2}{p}=(-1)^v;\] substituting
+in the value of \(v\) just found gives 
+\begin{equation}\label{eq:quad2v}
+	\leg{2}{p}=(-1)^{\bfloor{\frac{p+1}{4}}}.
+\end{equation}
+
+Here is where we need numerical evidence to help
+\marginnote{If you successfully solved last week's
+problems you will know what comes next.}
+us continue; we would be lost without a rough idea
+of what we're trying to prove because it
+is not clear how to proceed. \marginnote{}
+In this case the best way is to evaluate \(\ileg{2}{p}\)
+for the first hundred primes to see if a pattern
+is apparent.
+If we do this, we find that \(\ileg{2}{p}=1\) for
+\[p=7,17,23,31,41,47,71,73,79,89,97\] and \(\ileg{2}{p}=-1\) for
+\[p=3,5,11,13,19,29,37,43,53,59,61,67,83.\]
+What is the difference between the two lists?
+If we look closely, we observe that all the numbers in
+\marginnote{In this case the pattern is so overwhelming
+as to make the conjecture obvious once it is noticed,
+but in other cases, such as the one at the end of this
+handout, many different guesses might have to made before
+the correct one is landed upon and successfully proved.}
+the first list are congruent to \(\pm1\) modulo \(8\)
+while the ones in the second are congruent to \(\pm3\)
+modulo \(8\).
+Our conjecture, therefore, is that \(\ileg{2}{p}=1\)
+if \(p\equiv\pm1\pmod{8}\) and \(\ileg{2}{p}=-1\)
+if \(p\equiv\pm3\pmod{8}\).
+
+To prove the conjecture, first put \(p=8k+1\) into Equation
+\eqref{eq:quad2v}. We get 
+\[\leg{2}{p}=(-1)^{\floor{2k+1/2}}=(-1)^{2k}=1.\]
+Similarly if \(p=8k-1\) then \(\floor{(p+1)/4}=2k\),
+which implies \(\ileg{2}{p}=(-1)^{2k}=1\) again.
+
+Now for the other case. If \(p=8k+3\) then 
+\[\leg{2}{p}=(-1)^{\floor{2k+1}}=(-1)^{2k+1}=-1.\]
+Putting \(p=8k-3\) instead yields 
+\[\leg{2}{p}=(-1)^{\floor{2k-1/2}}=(-1)^{2k-1}=-1.\]
+This proves our conjecture! Indeed it is true
+that the quadratic character of \(2\) modulo \(p\)
+depends on the the residue class of \(p\) modulo \(8\).
+
+Let's summarise what we have discovered so
+far in the quest to evaluate the Legendre symbol.
+We have solved two cases: \(a=-1\) and \(a=2\).
+In the former case \(\ileg{-1}{p}=-1\) if \(p\equiv1\pmod{4}\)
+and \(\ileg{-1}{p}=-1\) if \(p\equiv-1\pmod{4}\);
+in the latter case \(\ileg{2}{p}=1\) if \(p\equiv\pm1\pmod{8}\)
+and \(\ileg{2}{p}=-1\) if \(p\equiv\pm3\pmod{8}\).
+
+Although it may not seem like it, we are in fact
+two thirds \marginnote{Ok, maybe two thirds is an exaggeration,
+because the part left for us to discover (and prove) is much more difficult
+than what we have just done. But it's still good
+to be optimistic.}
+of the way towards evaluating any Legendre symbol.
+Suppose we want to find \(\ileg{a}{p}\). 
+Using the multiplicative property \(\ileg{ab}{p}=\ileg{a}{p}\ileg{b}{p}\),
+if we write \(a=q_1q_2\cdots q_r\), where all the \(q\)'s
+are primes, then 
+\[\leg{a}{p}=\leg{q_1}{p}\leg{q_2}{p}\cdots\leg{q_r}{p}.\]
+If \(a<0\) then stick at \(\ileg{-1}{p}\) at the front---we know
+how to evaluate that.
+So the only goal now is to evaluate \(\ileg{q}{p}\) when \(q\)
+is an odd prime.
+
+This question is much more difficult to answer
+than the two we have already tackled.
+To get started, here is a table values of \(p\), \(q\), and \(\ileg{p}{q}\).
+\begin{center}
+	\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\diagbox{\(p\)}{\(q\)}& \(3\)&\(5\)&\(7\)&\(11\)&\(13\)&\(17\)&\(19\)&\(23\)&\(29\)&\(31\)&\(37\)\\
+		\hline\hline
+		\(3\)& \(0\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(1\)\\ \hline
+		\(5\)&\(-1\)&	\(0\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)\\ \hline
+		\(7\)&\(-1\)&	\(-1\)&	\(0\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(1\)\\ \hline
+		\(11\)&\(1\)&	\(1\)&	\(-1\)&	\(0\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(1\)\\ \hline
+		\(13\)&\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(0\)&	\(1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(-1\)\\ \hline
+		\(17\)&\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(0\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)\\ \hline
+		\(19\)&\(-1\)&	\(1\)&	\(1\)&	\(1\)&	\(-1\)&	\(1\)&	\(0\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)\\ \hline
+		\(23\)&\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(0\)&	\(1\)&	\(1\)&	\(-1\)\\ \hline
+		\(29\)&\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(0\)&	\(-1\)&	\(-1\)\\ \hline
+		\(31\)&\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(0\)&	\(-1\)\\ \hline
+		\(37\)&\(1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(0\)\\ \hline
+	\end{tabular}
+\end{center}
+In the table there exists a pattern that is at the heart
+of what may be the most beautiful theorem in number theory.
+\marginnote{Admittedly I am biased.}
+But for now, the story remains to be continued.
+\section*{Problem}
+Spot as many patterns as possible in the above table.
+\end{document}
