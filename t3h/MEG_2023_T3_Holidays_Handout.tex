@@ -1,0 +1,320 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{}
+\newcommand{\theweek}{}
+\newcommand{\thepdftitle}{MEG 2023 Term 3 Holiday Handout}
+\newcommand{\thedisplaytitle}{MEG 2023 Term 3 Holiday Handout}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\bfloor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\lceil#1\rceil}
+\newcommand{\bceil}[1]{\left\lceil#1\right\rceil}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\myquote{For too much rest itself becomes a pain.}{Homer, \emph{Odyssey} (c.~8th or 7th century BC)}
+\section*{Problems}
+\begin{enumerate}
+	\item The \marginnote{AIMO 2017/1} number $x$ is $111$ when written in base $b$, but it is $212$ when written in base $b-2$. What is $x$ in base $10$? 
+	\item Find \marginnote{AIME II 2021/3} the number of permutations $x_1, x_2, x_3, x_4, x_5$ of numbers $1, 2, 3, 4, 5$ such that the sum of five products\[x_1x_2x_3 + x_2x_3x_4 + x_3x_4x_5 + x_4x_5x_1 + x_5x_1x_2\]is divisible by $3$
+	\item Let \marginnote{Simson Line} $ABC$ be a triangle and $P$ be any point on the circumcircle of $ABC$. Let $X, Y, Z$ be the feet of the perpendiculars from $P$ onto lines $BC, CA$ and $AB$. Prove that points $X, Y, Z$ are collinear.
+	\item Find all functions $f: \mathbb{R} \backslash \{-1, 1\} \rightarrow \mathbb{R} $ for which $$f\left(\frac{x-3}{x+1}\right)+f\left(\frac{3+x}{1-x}\right)=x$$ for all $x,y \in \mathbb{R} \backslash \{-1, 1\}$. 
+	\item Prove \marginnote{AMO 2022/1} that a convex pentagon with integer side lengths and an odd perimeter can have two right angles, but cannot have more than two right angles.  
+	\item Having conquered \emph{The Trial}, Harold is now reading
+		\emph{Gulliver's Travels}, a \(319\) page picture book.
+		Eager as he is to dive into
+		the travels of Gulliver, he also has a brilliant idea
+		as to how he is going to read the book. 
+		He tells you that he is going to form the set of ordered
+		pairs 
+		\[
+			\begin{split}
+				\{(1,1),(1,2),\ldots,(1,11),(2,1),(2,2),\ldots,(2,11),\\(3,1),(3,2),\ldots,(29,1),\ldots,(29,11)\}.
+			\end{split}\]
+		As he is a genius (and a good friend too), you don't doubt him.
+
+		As if that was not distressing enough, he then says that he
+		will randomly arrange those ordered pairs by giving each
+		a number. So if the above set was the arrangement, the
+		pair \((1,1)\) would be \(1\), \((1,2)\) would be \(2\),
+		and so on. To find the \(n\)th page that he reads, he
+		takes the \(n\)th ordered pair \((x_n,y_n)\) and forms
+		the number \(11x_n+29y_n\); if this number is too big
+		he subtracts off a multiple of \(319\) until he gets
+		a page in the book. He then reads that page.
+
+		Show that regardless of how Harold arranges the ordered
+		pairs, he will be able to read the entire book without
+		reading the same page twice.
+		
+\end{enumerate}
+\pagebreak
+\myquote{The king, although he be as learned a person as any in his dominions, had been educated in the study of philosophy, and particularly mathematics; yet when he observed my shape exactly, and saw me walk erect, before I began to speak, conceived I might be a piece of clock-work (which is in that country arrived to a very great perfection) contrived by some ingenious artist.}{J.~Swift, \emph{Gulliver's Travels} (1726)}
+\section*{A Golden Conjecture: Part 2}
+Easily summarised is the story so far.
+We first discovered that
+\[\leg{-1}{p}=\begin{cases}
+	1&\text{if } p\equiv1\pmod{4};\\
+	-1&\text{if } p\equiv-1\pmod{4}
+\end{cases}
+\]
+and 
+\[
+	\leg{2}{p}=\begin{cases}
+		1&\text{if } p\equiv\pm1\pmod{8};\\
+		-1&\text{if } p\equiv\pm3\pmod{8}.
+	\end{cases}
+\]
+Recall that the rule for \(\ileg{-1}{p}\) is more succinctly
+written as 
+\[
+	\leg{-1}{p}=(-1)^{(p-1)/2}.
+\]
+As a side note, \(\ileg{2}{p}\) has a succinct rule too, namely
+\marginnote{Verifying this by enumerating \(p\) shreds any incredulity.}
+\[
+	\leg{2}{p}=(-1)^{(p-1)(p+1)/8}.
+\]
+We then took a slight detour to gather more
+numerical evidence; the following two conjectures resulted:
+\begin{itemize}
+	\item The value of \(\ileg{a}{p}\) depends only
+		on the residue class of \(p\) modulo \(4a\),
+		or, equivalently, the value of \(r\) when
+		\(p\) is written as \(p=4ak+r.\)
+		In other words, if \(p\equiv q\pmod{4a}\) then \[\leg{a}{p}=\leg{a}{q}.\]
+	\item The value of \(\ileg{a}{p}\) is the same for
+		\(p=4ak+r\) as it is for \(p=4ak-r\).
+		\marginnote{Note this conjecture holds regardless
+		of whether \(r\) is positive or negative or whether
+		\(r\) is between \(-p/2\) and \(p/2\).
+		For \(\ileg{2}{p}\) it was prudent to split the residue
+		classes modulo \(8\) into \(\pm1\) and \(\pm3\); but
+		we could have chosen \(\pm7\) and \(\pm5\) instead,
+		because \(7\equiv-1\), \(-7\equiv1\), and similarly
+		for \(\pm5\).}
+		In other words, if \(p\equiv-q\pmod{4a}\) then \[\leg{a}{p}=\leg{a}{q}.\]
+\end{itemize}
+These two conjectures found firm ground in two special cases
+that were proved using Gauss's Lemma. They are
+\[
+	\leg{3}{p}=
+	\begin{cases}
+		1&\text{if } p\equiv\pm1\pmod{12};\\
+		-1&\text{if }p\equiv\pm5\pmod{12},
+	\end{cases}
+\]
+and 
+\[
+	\leg{5}{p}=
+	\begin{cases}
+		1&\text{if } p\equiv\pm1\text{ or }p\equiv\pm11\pmod{20};\\
+		-1&\text{if }p\equiv\pm3\text{ or }p\equiv\pm13\pmod{20}.
+	\end{cases}
+\]
+Euler was the first to make the two conjectures that we have also
+made; therefore from here they will be referred to as Euler's Conjectures.
+He was, however, unable to supply a proof.\marginnote{It's fairly rare
+to find a conjecture that eluded Euler, but this is one of them.}
+The problem of Gauss's Lemma not being discovered yet might have had
+something to do with it.
+
+%Before the proof, it is a good idea to review the
+%case \(a=3\). It involved finding how many multiples of \(3\)
+%lie in the interval \[\left(\frac{p}{2},p\right),\]
+%as those are the multiples of \(3\) that become negative when
+%reduced into the range \((-p/2,p/2)\). We completed
+%the proof by dividing the interval through
+%by \(3\), putting \(p=12k+r\) for \(r=\pm1,\pm5\),
+%and determining the parity of the number of numbers
+%in the interval in each case.
+
+We begin the proof of Euler's conjectures by applying Gauss's
+Lemma in full generality. Form the set 
+\[\left\{a,2a,\ldots,\frac{p-1}{2}a\right\};\] how many of those multiples
+of \(a\) become negative when reduced to be in the range \((-p/2,p/2)\)?
+Answer: all those that have least positive residues in the
+range \((p/2,p)\). This means we need to determine the parity 
+of all the multiples of \(a\) in all the intervals\marginnote{Since 
+we are assuming that \(a\) is not a multiple of \(p\) (because if it
+were the Legendre symbol, by definition, is equal to \(0\)), none of the endpoints
+of any of the intervals can be multiplies of \(a\). Therefore we don't
+have to worry about whether we need to count them or not.}
+\begin{equation}\label{eq:intervs}
+	\left(\frac{p}{2},p\right),\left(\frac{3p}{2},2p\right),\left(\frac{5p}{2},3p\right),\ldots.
+\end{equation}
+Let's take one of these intervals, say the interval
+\begin{equation}\label{eq:interv}
+	\left(\frac{(2t-1)p}{2},tp\right)
+\end{equation}
+for some positive integer \(t\). Now the question
+becomes how many numbers \(x\) satisfy the inequality
+\[\frac{(2t-1)p}{2}<ax<tp.\]
+Let this number be \(\mu\).
+
+Dividing through by \(a\) yields
+\begin{equation}\label{eq:tpint}
+	\frac{(2t-1)p}{2a}<x<\frac{tp}{a}.
+\end{equation}
+Before continuing, let's take a step back and
+think about what we want to prove.
+Our conjecture is that \(\ileg{a}{p}\)
+depends only on the residue of \(p\)
+modulo \(3a\). So let's write \(p=4ak+r\)
+for a positive integer value of \(r\).
+Substitute this into our interval above, and,
+after a cumbersome expansion and simplification,
+we get 
+\[
+	4tk+\frac{tr}{a}-2k-\frac{r}{2a}<x<4tk+\frac{tr}{a}.
+\]
+Since we are interested only in the number of
+values of \(x\) (actually we are interested in
+the \emph{parity} of that number) 
+\marginnote{Recall that we are interested only
+in the parity because of Gauss's Lemma, which
+tells us that \(\ileg{a}{p}=(-1)^v\) where \(v\)
+is the number of numbers in all the intervals in \eqref{eq:intervs}.}
+that satisfy the inequality, and
+not what those values actually are, we can manipulate
+the inequality by adding the same value to both 
+endpoints, and the number of values of \(x\) that
+satisfy it will not change. For example,
+two values of \(x\) satisfy \(3<x<6\) (\(4\) and \(5\)), but two values of \(x\) also satisfy \(5<x<8\)
+or \(1<x<4\).
+
+Therefore, we can get rid of all the terms involving \(t\)
+in the inequality, which means we are looking for
+the number of values of \(x\) that satisfy
+\[ -2k-\frac{r}{2a}<x<0.\]
+It is easier to work with positive numbers, so
+add \(2k\) and \(r/a\) to both sides to obtain
+the inequality 
+\[ \frac{r}{2a}<x<2k+\frac{r}{a}.\]
+The smallest integer greater than
+\marginnote{Note that the \(\ceil{x}\) is the
+\emph{ceiling function}; it is the smallest integer
+greater than or equal to \(x\).}
+\(r/2a\) is \(\ceil{r/2a}\) and 
+the largest integer less than \(2k+r/a\)
+is \(2k+\floor{r/a}\).
+\marginnote{Is the use of floor and ceiling functions
+here dependent on \(r\) being positive?}
+Therefore
+the number of numbers in the 
+sequence
+\[\ceil{r/2a},\ceil{r/2a}+1,\ldots,2k+\floor{r/a}\]
+is \(\mu\), the magic number we are looking
+for. Calculating \(\mu\) is very simple
+because\marginnote{If this is baffling, remember the
+example from last time. How many numbers \(x\)
+satisfy \(5\le x\le 9\)? The answer is \(9-5+1=5\).}
+\[\mu=2k+\floor{r/a}-\ceil{r/2a}+1.\]
+Since we are only interested in the parity of
+\(\mu\), we note that 
+\[2k+\floor{r/a}-\ceil{r/2a}+1\equiv\floor{r/a}-\ceil{r/2a}+1\pmod{2}\]
+and hence \(\mu\equiv\mu'\pmod{2}\) if \(\mu'\)
+is the number of integers in the interval
+\[\left(\frac{r}{2a},\frac{r}{a}\right).\]
+Take a breath. What have we shown?
+Answer: regardless of which interval in 
+\eqref{eq:intervs} we choose, the parity of the number
+of numbers in that interval is equal
+to the parity of the number of numbers in the interval \((r/2a,r/a)\).
+
+Now consider what happens if, instead of
+writing \(p=4ak+r\), we write \(p=r\) instead.
+That is, substitute \(p=r\) into \eqref{eq:tpint}.
+Expand and we get 
+\[\frac{tr}{a}-\frac{r}{2a}<x<\frac{tr}{a}.\]
+Again we can manipulate the interval like we did
+before; getting rid of the \(tr/a\) term and
+adding \(r/a\) to both sides yields
+\[\frac{r}{2a}<x<\frac{r}{a}.\]
+Bingo! This is the interval we ended up getting
+when we put \(p=4ak+r\). This means that
+for each interval in \eqref{eq:intervs}, the 
+parity of the number of numbers in that interval
+is the same when \(p=4ak+r\) and when \(p=r\);
+therefore the parity of the total number of numbers
+in all the intervals is the same in both cases.
+Thus, the glorious conclusion, after much work,
+is that \(\ileg{a}{p}\) does not depend on
+\(k\) if \(p=4ak+r\), but only on \(r\), the
+residue class of \(p\) modulo \(4a\). We have
+proved the first part of Euler's Conjecture.
+
+The second part of Euler's Conjecture is, quite
+thankfully, a little easier to prove. We need
+to show that replacing \(r\) by \(-r\) does
+not change the parity of the number of numbers
+in the intervals in \eqref{eq:intervs}.
+
+We have shown that the parity of the number of
+numbers in each of the intervals in \eqref{eq:intervs}
+is the same as the parity of the number of 
+numbers in the interval \[\left(\frac{r}{2a},\frac{r}{a}\right).\]
+If we replace \(r\) by \(-r\), we get the interval
+\[\left(\frac{-r}{a},\frac{-r}{2a}\right);\]
+note the reversal of the endpoints because \(-r\)
+is negative.
+Now just add \(3r/2a\) to both sides and we get
+the interval \((r/2a,r/a)\), which shows that
+replacing \(r\) by \(-r\) has no effect on the parity
+of the numbers in the intervals in \eqref{eq:intervs}.
+Hence the second part of the conjecture is also true.
+
+What we have proved can be thus summarised: if
+\(p\equiv r\pmod{4a}\) and \(q\equiv r\pmod{4a}\),
+or if \(p\equiv r\pmod{4a}\) and \(q\equiv-r\pmod{4a}\), 
+then \[\leg{a}{p}=\leg{a}{q}.\] 
+More succinctly:
+if \(p\equiv\pm q\pmod{4a}\) then \[\leg{a}{p}=\leg{a}{q}.\]
+Where does this leave us? It leaves us on the precipice
+of the most famous theorem in this area of number 
+theory.
+\end{document}

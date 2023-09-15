@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts} 
+\usepackage{amssymb}
+\title{Meg term 3 holiday problems}
+\author{Tom Yan}
+\date{September 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+1. (AIMO 2017/1) The number $x$ is $111$ when written in base $b$, but it is $212$ when written in base $b-2$. What is $x$ in base $10$?  \\\\
+2. (AIME II 2021/3) Find the number of permutations $x_1, x_2, x_3, x_4, x_5$ of numbers $1, 2, 3, 4, 5$ such that the sum of five products\[x_1x_2x_3 + x_2x_3x_4 + x_3x_4x_5 + x_4x_5x_1 + x_5x_1x_2\]is divisible by $3$.\\\\
+3. (Simson Line) Let $ABC$ be a triangle and $P$ be any point on the circumcircle of $ABC$. Let $X, Y, Z$ be the feet of the perpendiculars from $P$ onto lines $BC, CA$ and $AB$. Prove that points $X, Y, Z$ are collinear. \\\\
+4. Find all functions $f: \mathbb{R} \backslash \{-1, 1\} \rightarrow \mathbb{R} $ for which $$f(\frac{x-3}{x+1})+f(\frac{3+x}{1-x})=x$$ for all $x,y \in \mathbb{R} \backslash \{-1, 1\}$.  \\\\
+5. (AMO 2022/1) Prove that a convex pentagon with integer side lengths and an odd perimeter can have two right angles, but cannot have more than two right angles.  
+\newpage 
+\section{Solutions} 
+1. We have $x=b^2+b+1$ and $x=2(b-2)^2+(b-2)+b=2b^2-7b+8$. Hence $(2b^2-7b+8)-(b^2+b+1)=b^2-8b+7=(b-7)(b-1)$. Clearly $b \neq 1$, so $b=7$ and thus $x=49+7+1=57.$ \\\\
+2. Considering mod 3, WLOG let $x_1 = 3$, and thus we are left with $x_2x_3x_4 + x_3x_4x_5 = x_3x_4(x_2 + x_5).$ Clearly $3 \nmid x_3x_4$ so $3 \vert x_2+x_5$, so $(x_3,x_4)$ can be $(1,2), (1,5), (4,2), (4,5)$ and $(2,1), (5,1), (2,4), (5,4)$ thus giving 8 ways, and $x_3x_4$ can be permuted in $2$ ways after designating $x_3$ and $x_4$. So there are $5 \times 8 \times 2 = 80$ ways.\\\\
+3. Let $\angle PYZ = \theta$. Since $\angle PZA + \angle PYA = 180^{\circ}$, $PZAY$ is cyclic, so $\angle PYZ = \angle PAZ = \theta$ (subtended by same arc). Thus $\angle PAB = 180^{\circ} - \theta$, and so $PCB = \theta$. Since $\angle PYX = \angle PXC = 90^{\circ}$, $PYXC$ is cyclic. Thus $PYX = 180^{\circ}-\theta$. Since $\angle PYZ + \angle PYX = 180^{\circ}$, we are done. \\ \centerline{\includegraphics[width=3.4in, height=3.1in]{Simson line.png}}\\\\
+4. Let $t$ be real number that is not $\pm 1$, and $t=\frac{x-3}{x+1}$ thus $x=\frac{3+t}{1-t}$. Rewriting the given equation in terms of $t$ we have $$f(t)+f(\frac{t-3}{t+1})=\frac{3+t}{1-t}.$$ Similarly, let $t=\frac{3+x}{1-x}$, so then we have $x=\frac{t-3}{t+1}$ and $\frac{x-3}{x+1}=\frac{3+t}{1-t}$. Rewriting the given equation in terms of $t$ again, we have $$f(\frac{3+t}{1-t}) + f(t)=\frac{t-3}{t+1}.$$ Adding the two rewritten equations we get $$2f(t)+f(\frac{t-3}{t+1})+f(\frac{3+t}{1-t})=\frac{3+t}{1-t}+\frac{t-3}{t+1}$$ And since $f(\frac{t-3}{t+1})+f(\frac{3+t}{1-t})=t$, it implies $$2f(t)+t=\frac{8t}{1-t^2}.$$ Thus the function is $f(t)=\frac{4t}{1-t^2}-\frac{t}{2}$. It is easy to check that this satisfies the given equation.  \\\\
+5. A convex pentagon with side integer side lengths and an odd perimeter can have two right angles as a unit equilateral triangle on top of a unit square suffices. \\\\ Clearly a pentagon can't have 5 right angles. If a pentagon has 4 right angles, then the remaining angle is $540-4\times 90=180^{\circ}$ which is a contradiction. Hence we consider when a pentagon has 3 right angles. \\\\
+There are two cases, when exactly two of the right angles are adjacent, and when all three of the right angles are adjacent. \\\\ Case 1: Three of the right angles are adjacent. \\
+\centerline{\includegraphics[width=2.5in, height=2.3in]{case 1.png}} Then the perimeter is $2(x+y)+(c-a-b)$. Clearly $2(x+y)$ is even, and $c-a-b$ is even since $a^2+b^2=c^2$ implies $a+b$ has the same parity as $c$. \\\\
+Case 2: Exactly two of the right angles are adjacent. \\ \centerline{\includegraphics[width=2.5in, height=2.3in]{case 2 .png}}
+Let $x$ and $y$ be the sides of the rectangle formed with the dotted lines. Then from similar triangles we deduce the perimeter is $$2(x+y)-a-b-kb-ka+c+kc$$ $$= 2(x+y)+(c-a-b)(1+k)$$ Which is even as $2(x+y)$ and $c-a-b$ are even. \\\\ Alternatively, since $a^2+b^2=e^2=c^2+d^2$, $a+b$ has the same parity as $c+d$. Meaning $a+b+c+d$ is even. Since the perimeter is $a+b+c+d+2y$, the pentagon has an even perimeter. \\\\
+\centerline{\includegraphics[width=2.5in, height=2.3in]{case 2 alternative.png}}
+\\ Hence a pentagon with integer side lengths and odd perimeter can have at most two right angles.
+\end{document}
