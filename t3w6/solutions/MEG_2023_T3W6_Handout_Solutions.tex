@@ -1,0 +1,137 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{3}
+\newcommand{\theweek}{6}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\ Handout Solutions}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout Solutions}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\section*{Problems in solving equations}
+\begin{enumerate}
+\item If $x$ is positive we have $1<3x$ so $x>\frac{1}{3}$, if $x$ is negative $\frac{1}{3}<3$ will always be true. Meanwhile, we have $1<-4x$ so $x<-\frac{1}{4}$. Therefore, all $x$ such that $x>\frac{1}{3}$ or $x<-\frac{1}{4}$ works.
+\item Solving for $x$ and substituting it into the third equation we get $z\frac{12\sqrt{6}}{y}= 45\sqrt{3}$, we multiply this by the second equation to get $z^2=4\times 54$ so $z= \pm6\sqrt{6}$. From there, its pretty easy to sub this value back into the equations to get two sets of solutions for $(x,y,z)$, $(\pm 4\sqrt{2}, \pm 3\sqrt{3}, \pm 6\sqrt{6})$.
+\item We let $a=2^x$ and $b=3^x$. The equation becomes $\frac{a^3+b^3}{a^2b+b^2a}=\frac{7}{6}$. Which after some simplifying we get $6a^2-13ab+6b^2=0$, which is $(2a-3b)(3a-2b)=0$. Therefore $2^{x+1}=3^{x+1}$ or $2^{x-1}=3^{x-1}$, which implies $x=-1$ and $x=1$. 
+\item Mr Fat has the winning strategy, because by choosing a set of distinct rational nonzero numbers $a,b,c$, such that $a+b+c=0$ will make him win. Let $a', b', c'$ be a random permutation of $a,b,c$ and let $f(x)=a'x^2+b'x+c'$. Then $f(1)=a'+b'+c'=a+b+c=0$, and so $1$ is a solution. Since the product of two numbers is $\frac{c'}{a'}$ by Vieta's, the other solution is clearly $\frac{c'}{a'}$, which is different from $1$. Thus Mr Fat can guarantee two distinct solutions.    
+\item Official Solution: Let $x=\sqrt[3]{\sqrt[3]{2}-1}$ and $y = \sqrt[3]{2}$. So $y^3=2$ and $x=\sqrt[3]{y-1}$. Note that $$1=y^3-1=(y-1)(y^2+y+1)$$ and $$y^2+y+1=\frac{3y^2+3y+3}{3}=\frac{(y+1)^2}{3}$$ which implies that $$x^3=y-1=\frac{1}{y^2+y+1}=\frac{3}{(y+1)^3}$$ or $$x=\frac{\sqrt[3]{3}}{y+1}.$$ On the other hand $3=y^3+1=(y+1)(y^2-1+1)$ from which it follows that $$\frac{1}{y+1}=\frac{y^2-y+1}{3}.$$ Thus we have $$x=\sqrt[3]{\frac{1}{9}}(\sqrt[3]{4}-\sqrt[3]{2}+1).$$ Consequently $(a,b,c) = (\frac{4}{9}, -\frac{2}{9}, \frac{1}{9})$ is a desired triple.
+\end{enumerate}
+\pagebreak
+\section*{Gauss's Lemma}
+\begin{enumerate}
+\item In this case \(p=19, P=(19-1)/2=9, a=5.\)
+Reducing the numbers \[5,10,\ldots,45\]
+into the range \((-19/2,19/2)\) gives 
+\[5,-9,-4,1,6,-8,-3,2,7.\]
+There are \(4\) negative numbers, so
+\[\leg{5}{19}=(-1)^4=1.\]
+We verify this by observing that \(9^2\equiv5\pmod{19}.\)
+\item Some tedious work convinces us that \(\ileg{2}{p}=1\)
+	for \[p=7, 17, 23, 31, 41, 47, 71, 73, 79, 89, 97\]
+		and \(\ileg{2}{p}=-1\)
+		for \[p=3, 5, 11, 13, 19, 29, 37, 43, 53, 59, 61, 67, 83\]
+		for primes \(p\) under 100.
+\item \begin{enumerate}
+		\item Since \[2u<\frac{p}{2}\] and \[2(u+1)>\frac{p}{2}\]
+			we have \[u<\frac{p}{4}\] and \[u>\frac{p}{4}-1.\]
+			Hence \[\frac{p}{4}-1<u<\frac{p}{4}.\]
+		\item If \(p=4k+1\), then
+			\[k+\frac{1}{4}-1<u<k+\frac{1}{4}\]
+			which implies
+			\[k-\frac{3}{4}<u<k+\frac{1}{4}.\]
+			There is only one integer that satisfies this inequality, and that is \(u=k\).
+			Similarly if \(p=4k+3\) then
+			\[k+\frac{3}{4}-1<u<k+\frac{3}{4}\]
+			which implies
+			\[k-\frac{1}{4}<u<k+\frac{3}{4}.\]
+			Again there is only one integer between
+			those two bounds, and that is \(u=k\).
+		\item No; since \(v=P-u\) the parity of \(u\)
+			needs to be known to determine
+			the parity of \(v\).
+			Therefore the quadratic character of \(2\)
+			modulo \(p\) does not depend on whether
+			\(p\equiv1\) or \(p\equiv-1\) modulo \(4\).
+		\item Considering whether \(p\equiv1,3,5,7\) modulo \(8\)
+			is the idea.
+	First let \(p=8k+1\); substituting it into the inequality
+		found in the first part we get
+		\[2k-\frac{3}{4}<u<2k+\frac{1}{4}.\]
+		From this we deduce that \(u=2k\)
+		and \[v=\frac{p-1}{2}-u=4k-2k=2k\] which is even.
+		Similarly, if \(p=8k+7\) we have
+		\[2k+\frac{7}{4}-1<u<2k+\frac{7}{4}.\]
+		This means \(u=2k+1\); putting this in for \(v\)
+		yields \[v=4k+3-(2k+1)=2k+2\] 
+		which is again even. 
+		Therefore \(\ileg{2}{p}=1\) for \(p\equiv1,7\pmod{8}.\)
+		
+		The same procedure works for the other case.
+		Let \(p=8k+3\).
+		The inequality for \(u\) becomes
+		\[ 2k-\frac{1}{4}<u<2k+\frac{3}{4}.\]
+		So \(u=2k\); substituting this and \(p=8k+3\)
+		into \(v=P-u\) gives
+		\[v=4k+1-2k=2k+1,\]
+		an odd number.
+		The same works for \(p=8k+5\); now the inequality
+		is
+		\[2k+\frac{1}{4}<u<2k+\frac{5}{4}\]
+		from which it follows that \(u-2k+1\).
+		Thus
+		\[v=4k+2-(2k+1)=2k+1.\]
+	This completes the proof that
+		\[
+			\leg{2}{p}=
+			\begin{cases}
+			1&\text{ if }p\equiv1,7\pmod{8};\\
+				-1&\text{ if }p\equiv3,5\pmod{8}.
+			\end{cases}
+		\]
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
