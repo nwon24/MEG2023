@@ -173,6 +173,26 @@ something to do with it.
 %and determining the parity of the number of numbers
 %in the interval in each case.
 
+\begin{quote}
+	\textbf{Amendment, 24 September 2023:} The following proof is \textbf{wrong}. 
+The way the inequalities are simplified works only when integers are
+added to both ends. It is also not true that, as I will apparently
+prove, the parity of the number of numbers in every interval we are concerned
+with is the same as the parity of the numbers in the interval \((r/2a,r/a)\);
+for that would mean when the number of intervals is even, the parity
+of all the numbers in all the intervals is always even. This is plainly
+false, as if it were true \(5\) would be a quadratic residue modulo \(p\)
+regardless of the residue class of \(p\) modulo \(20\). 
+
+I could silently replace what follows by the correct
+proof, but I have left it to serve as an illustration that mathematics
+demands the most exacting and relentless eye, and that mistakes
+are inevitable. The correct proof is attached at the end.
+
+Be assured the conjecture itself is true. 
+The problem is in the proof, and thus the fault is mine, not Euler's.
+\end{quote}
+
 We begin the proof of Euler's conjectures by applying Gauss's
 Lemma in full generality. Form the set 
 \[\left\{a,2a,\ldots,\frac{p-1}{2}a\right\};\] how many of those multiples
@@ -317,4 +337,69 @@ if \(p\equiv\pm q\pmod{4a}\) then \[\leg{a}{p}=\leg{a}{q}.\]
 Where does this leave us? It leaves us on the precipice
 of the most famous theorem in this area of number 
 theory.
+\pagebreak
+\section*{A Golden Conjecture: Part 2 (Take 2)}
+As before, let \(p\) be an odd prime and \(a\)
+\marginnote{I very much hope this proof is correct.}
+be an integer not divisible by \(p\).
+The multiples of \(a\) (i.e., the numbers \(a,2a,\ldots,(p-1)a/2\)) can be divided into
+the intervals
+\[\left(0,\frac{p}{2}\right),\left(\frac{p}{2},p\right),\left(p,\frac{3p}{2}\right),\ldots.\]
+The multiples of \(a\) in the odd intervals are the ones
+that become negative when reduced to be in the
+range \((-p/2,p/2)\); therefore we aim to find the parity
+of the number of multiples of \(a\) in the intervals
+\[\left(\frac{p}{2},p\right),\left(\frac{3p}{2},2p\right),\left(\frac{5p}{2},3p\right)\ldots.\]
+Let \(v\) be the number of multiples of \(a\) in the above
+intervals and \(v_t\) be the number of multiples of \(a\)
+in the particular interval 
+\[
+	\left(\frac{(2t-1)p}{2},tp\right)
+\]
+for some positive integer \(t\).
+In other words, \(v_t\) is the number of values of \(x\)
+that satisfy
+\[\frac{(2t-1)p}{2}<ax<tp.\]
+Dividing through by \(a\) yields
+\[\frac{(2t-1)p}{2a}<x<\frac{tp}{a}.\]
+By substituting \(p=4ak+r\) into the above inequality
+it becomes
+\[4tk-2k+\frac{(2t-1)r}{2a}<x<4tk+\frac{tr}{a}.\]
+Here we really can ignore \(4tk\) because it is an integer;
+therefore \(v_t\) is also the number of values of \(x\)
+that satisfy
+\[-2k+\frac{(2t-1)r}{2a}<x<\frac{tr}{a}.\]
+To determine the value of \(v_t\), we observe that the
+smallest integer greater than \(-2k+(2t-1)r/2a\) is \(-2k+\ceil{(2t-1)r/2a}\),
+and the largest integer less than \(tr/a\) is \(\floor{tr/a}.\)
+Thus 
+\[-2k+\bceil{\frac{(2t-1)r}{2a}}\le x\le\bfloor{\frac{tr}{a}}.\]
+From this inequality we can calculate \(v_t\) as
+\[v_t=\bfloor{\frac{tr}{a}}-\left(-2k+\bceil{\frac{(2t-1)r}{2a}}\right)+1.\]
+Notice that \[v_t\equiv\bfloor{\frac{tr}{a}}-\bceil{\frac{(2t-1)r}{2a}}+1\pmod{2}\] because \(-2k\equiv0\pmod{2}.\)
+Hence the parity of \(v_t\) is the same as the parity of the number
+of numbers that satisfy
+\[\frac{(2t-1)r}{2a}<x<\frac{tr}{a}.\]
+But observe that this inequality can be obtained precisely
+by replacing \(p\) with \(r\) rather than \(4ak+r\), meaning
+that the parity of \(v_t\), and by extension \(v\), is the
+same for \(p=4ak+r\) as it is for \(p=r\).
+This completes the proof of the first part of the conjecture: 
+the quadratic character of \(a\) modulo \(p\) depends only
+on \(r\), the remainder when \(p\) is divided by \(4a\).
+
+If we now replace \(r\) by \(-r\) we get
+\[-\frac{tr}{a}<x<\frac{(1-2t)r}{2a}.\]
+The effect is simply that of 
+flipping the bounds; the number
+of integers that satisfy the inequality remains
+the same because both the width of the interval and
+the magnitude of the endpoints
+remain the same. Therefore
+there is no effect on \(v_t\) for every value of \(t\),
+and, consequently, there is no effect on \(v\) either.
+This completes the proof of the second part of the conjecture.
+
+Summarising, we have proved that if \(p\equiv\pm q\pmod{4a}\) 
+then \[\leg{a}{p}=\leg{a}{q}.\]
 \end{document}
