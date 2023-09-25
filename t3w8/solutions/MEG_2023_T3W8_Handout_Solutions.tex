@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{3}
+\newcommand{\theweek}{8}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\ Handout Solutions}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout Solutions}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\section*{Problems: functions and functional equations}
+\begin{enumerate}
+\item For $f$ to be invertible, we need $g(f(x))=x$ for all $x$ in the domain of $f$. But $g(f(x))=\sqrt{x}=|x|$, which is not equal to $x$ when $x$ is negative. Also, $f$ is not injective because $f(a)=f(-a)$ and so the inverse does not exist.
+\item Let $y=0$, then we have $f(x)=x+f(0)=x+2$. Hence $f(1998)=1998+2=2000$.
+\item To prove injectivity, if $f(x)=f(y)$ then clearly $f(f(x))=f(f(y))$, and hence $x=y$ from the definition of an involution. 
+
+ To prove surjectivity, take $z$ to be a real number in the co-domain of $f$. It suffices to show there exists $x$ such that $f(x)=z$. From $f(x)=z$ we have $f(f(x))=f(z)$ or $f(z)=x$. Thus, the $x$ we needed to show that exists is $f(z)$.
+\item Subbing in $y=0$ yields $f(x)=x^2$. Thus $f(x)=x^2$ is the only possible solution. Trying this solution in the original equation, we have $f(x+y)+f(x-y)=2x^2+2y^2$, not $2x^2-2y^2$. Thus the only possible candidate fails the test, hence there are no solutions.
+\item Subbing in $y=0$ we get $$-2f(0)=-2$$ $$f(0)=1$$ Subbing in $x=0$ we obtain $$f(y)+2f(-y)=3-y$$ and by replacing $y$ with $-y$ we obtain $$f(-y)+2f(y)=3+y$$ Solving the system of equations, treating $f(y)$ and $f(-y)$ as variables, we get $f(y)=y+1$. It is easy to verify $f(x)=x+1$ satisfies the conditions of the problem, thus it is the only solution. 
+\end{enumerate}
+\end{document}
+
