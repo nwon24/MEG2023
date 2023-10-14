@@ -1,0 +1,267 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{4}
+\newcommand{\theweek}{2}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\ Handout}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+\usepackage{diagbox}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\myquote{The excitement that a gambler feels when making a bet is equal
+\marginnote{Not intended to glorify gambling.} to the amount he might win times the probability of winning it.}{B.~Pascal\footnote{As quoted by N.~Rose in \emph{Mathematical Maxims and Minims} (1988).}, ?? (??)}
+\section*{Expected value problems}
+\begin{enumerate}
+\item I have 12 addressed letters to mail, and 12 corresponding pre-addressed envelopes. For some wacky reason, I decide to put the letters into envelopes at random, one letter per envelope. What is the expected number of letters that get placed into their proper envelopes?  
+\item I flip a coin 10 times. What is the expected number of pairs of consecutive tosses that comes up heads? (For example, the sequence THHTHHHTHH has 4 pairs of consecutive HH's).  
+\item At \marginnote{HMMT 2006} a nursery, 2006 babies sit in a circle. Suddenly, each baby randomly pokes either the baby to its left or to its right. What is the expected value of the number of unpoked babies?  
+\item A $10$ digit binary number with four 1's is chosen at random. What is its expected value?
+\item Let \marginnote{IMO 1987/1} $p_n(k)$ be the number of permutations of the set $\{ 1, 2 \ldots , n \} , \; n \ge 1$, which have exactly $k$ fixed points. Prove that $$\sum_{k=0}^{n} k \cdot p_n (k) = n!.$$ (A \emph{fixed point} of a permutation in this case is an element $i$ such that $i$ is in the $i^{th}$ position of the permutation. For example, the permutation $(3,2,5,4,1)$ of $\{1,2,3,4,5\}$ has two fixed points: the 2 in the $2^{nd}$ spot and the 4 in the $4^{th}$ spot)
+\end{enumerate}
+\pagebreak
+\myquote{The fundamental theorem must certainly be regarded as one of
+the most elegant of its type.}{C.~F.~Gauss\footnote{Translated from
+the Latin by A.~A.~Clarke, 1965.}, \emph{Disquisitiones Arithmeticae} (1801)}
+\section*{The Law of Quadratic Reciprocity}
+Let's cast our minds back and recall the following table, a table
+of values of odd primes \(p\) and \(q\), and the associated
+Legendre symbol \(\ileg{q}{p}\).
+\begin{center}
+	\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\diagbox{\(p\)}{\(q\)}& \(3\)&\(5\)&\(7\)&\(11\)&\(13\)&\(17\)&\(19\)&\(23\)&\(29\)&\(31\)&\(37\)\\
+		\hline\hline
+		\(3\)& \(0\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(1\)\\ \hline
+		\(5\)&\(-1\)&	\(0\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)\\ \hline
+		\(7\)&\(-1\)&	\(-1\)&	\(0\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(1\)\\ \hline
+		\(11\)&\(1\)&	\(1\)&	\(-1\)&	\(0\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(1\)&	\(1\)\\ \hline
+		\(13\)&\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(0\)&	\(1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(-1\)\\ \hline
+		\(17\)&\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(0\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)\\ \hline
+		\(19\)&\(-1\)&	\(1\)&	\(1\)&	\(1\)&	\(-1\)&	\(1\)&	\(0\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)\\ \hline
+		\(23\)&\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(0\)&	\(1\)&	\(1\)&	\(-1\)\\ \hline
+		\(29\)&\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(0\)&	\(-1\)&	\(-1\)\\ \hline
+		\(31\)&\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(0\)&	\(-1\)\\ \hline
+		\(37\)&\(1\)&	\(-1\)&	\(1\)&	\(1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(-1\)&	\(0\)\\ \hline
+	\end{tabular}
+\end{center}
+For the following discussion, ignore all the \(0\) entries in the table.
+That is, when we say ``\(p\) runs through all the odd primes'' we are
+eliding the further restriction that \(p\) does not equal the prime
+we are considering, or \(q\) in the most general case.
+
+One of the patterns is that some rows are the same as some columns.
+\marginnote{By ``the same'' we mean the same sequence of \(1\)'s
+and \(-1\)'s.}
+For example, the column \(q=5\) is the same as the row \(p=5\),
+as is the column \(q=13\) and row \(p=13\). 
+On the other hand, the row \(q=3\) is not the same as the column
+\(p=3\), and the same is true for \(q=7\) and \(p=7\).
+
+The primes in the table for which their row and column are the
+same are \(5,13,17,29,37\); the others are \(3,7,11,19,23,31.\)
+What is the distinguishing feature of these two classes of primes?
+Those in the first group are all of the form \(4k+1\) while
+those in the second are all of the form \(4k+3\).\marginnote{Splitting
+the primes into these two classes is common; for example, Fermat's
+celebrated two square theorem states that all primes of the form
+\(4k+1\) are the sum of two integer squares, while those of the form \(4k+3\)
+are not the sum of two integer squares.}
+
+Let's think about what this means. Let \(p\) be one of the primes
+in the first group, those of the form \(4k+1\). For concreteness
+suppose \(p=5\). The row \(p=5\)
+consists of \(\ileg{q}{5}\), where \(q\) runs through the odd
+primes \(3,5,7,11,\ldots\), while the column \(q=5\) consists of values of
+\(\ileg{5}{p}\), but this time it is \(p\) that runs through
+the odd primes. Since the row and column are the same, we conjecture
+that 
+\[\leg{5}{p}=\leg{p}{5}\]
+for all odd primes \(p\). 
+Similarly, since the row \(p=13\) and the column \(q=13\) are also
+the same, it seems
+that \[\leg{13}{p}=\leg{p}{13}.\]
+There is nothing special about \(5\) or \(13\), other than that 
+they are of the form \(4k+1\); therefore, we generalise our conjecture
+by hypothesising that if \(q\equiv1\pmod{4}\) then
+\[\leg{q}{p}=\leg{p}{q}.\]
+One further step: we chose \(q\) to have the condition, but we
+might as well have chosen \(p\); for if we just swap \(p\)
+and \(q\) the condition becomes \(p\equiv1\pmod{4}\)
+but the Legendre symbols don't change. 
+Hence the revised guess:
+if \(p\equiv1\pmod{4}\) or \(q\equiv1\pmod{4}\) then
+\[\leg{q}{p}=\leg{p}{q}.\]
+(Strictly speaking this tweak was not necessary, but it'll be useful
+to have this form of the conjecture in our minds.)
+
+The other case is not quite so easy. Let's take \(p=3\). Examining
+the row \(p=3\) and the column \(q=3\), we notice that sometimes
+\(\ileg{3}{p}=\ileg{p}{3}\) and sometimes \(\ileg{3}{p}=-\ileg{p}{3}\)---for
+example, \(\ileg{5}{3}=\ileg{3}{5}=1\), but \(\ileg{7}{3}=1=-\ileg{3}{7}.\)
+What is the distinction between the two cases? 
+
+Looking at the table closely, we see that \(\ileg{3}{p}=\ileg{p}{3}\)
+for \(p=5,13,17,29,37\) and \(\ileg{3}{p}=-\ileg{p}{3}\) for \(p=7,11,19,23,31\).
+Like before, the first group of primes are \(1\) modulo \(4\), the second
+\(3\) modulo \(4\).\marginnote{Again this distinction between the primes
+based on their residue class modulo \(4\) pops up.}
+Therefore it seems that if \(p\equiv3\pmod{4}\)
+then \[\leg{3}{p}=-\leg{p}{3}.\]
+
+Again, nothing was special about picking \(3\) here. We could have made the same conjecture
+for any prime from the second class of primes, those
+of the form \(4k+3\). Thus we conjecture that if
+\emph{both} \(p\) and \(q\) are of
+the form \(4k+3\) then \(\ileg{p}{q}=-\ileg{q}{p}.\) 
+Looking for other examples in the table supports the conjecture, as the 
+columns that are not the same as the rows are the columns for which
+\(q\equiv3\pmod{4}\); and the differences between the row and column
+occur only when \(p\equiv3\pmod{4}\) as well. Summarising, we have
+made the following guess at the value of the general Legendre symbol
+\(\ileg{p}{q}\) for odd primes \(p\) and \(q\):
+\[
+	\leg{p}{q}=\begin{cases}
+		\leg{q}{p}&\text{if }p\equiv1\pmod{4}\text{ or }q\equiv1\pmod{4};\\
+		-\leg{q}{p}&\text{if }p\equiv3\pmod{4}\text{ and }q\equiv3\pmod{4}.
+	\end{cases}
+\]
+What we have just discovered is \emph{The Law of Quadratic
+Reciprocity}.
+Euler and Legendre both made but were unable to prove the conjecture.
+Gauss supplied the first proof in 1801, and throughout his career he
+added over half a dozen more; since then,
+hundreds of proofs of the theorem have emerged, making quadratic
+reciprocity one of the most proved
+theorems in all of mathematics. \marginnote{Pythagoras's Theorem is
+a contender, but quadratic reciprocity is hard to beat. Of course
+the hundreds of proofs are not all completely different; indeed many are based
+on the same ideas. However, some of the proofs have shown themselves
+capable of generalisation to higher powers, showing that not all
+mathematical proofs are equal. Those that connect significant and deep
+mathematical ideas are, justifiably,
+ranked as the greater achievements.}
+
+Now for the proof (or at least one of the proofs).
+We shall, in fact, show that the law
+is a corollary of the conjecture of Euler's that we proved previously,
+namely that if \(p\equiv q\pmod{4a}\) then \[\leg{a}{p}=\leg{a}{q}.\]
+We break the proof into two cases: when \(p\equiv q\pmod{4}\), and
+when \(p\equiv -q\pmod{4}.\) One of these two cases much be true
+because \(p\) and \(q\), being odd primes, can only be congruent
+to \(1\) or \(3\) modulo \(4\), and \(3\equiv-1\pmod{4}\).
+\marginnote{We can show that Euler's conjecture can be deduced
+from quadratic reciprocity (if we supply a different proof of the
+latter, that is). Hence the two theorems are equivalent; both imply
+the other.}
+
+Suppose \(p\equiv q\pmod{4}.\) Then \(p-q=4a\) for some integer \(a\).
+Note that this implies \(p\equiv q\pmod{4a}.\) Since \(p=4a+q\) and \(q\equiv0\pmod{q}\) we have
+\[\leg{p}{q}=\leg{4a+q}{q}=\leg{4a}{q}.\]
+By the multiplicative property of the Legendre symbol \(\ileg{4a}{q}=\ileg{4}{q}\ileg{a}{q}\); but clearly \(\ileg{4}{q}=1\) because \(4=2^2\). 
+Therefore
+\[\leg{p}{q}=\leg{a}{q}.\]
+Let's apply the same process to \(\ileg{q}{p}\).
+Since \(q=p-4a\), we have 
+\[\leg{q}{p}=\leg{p-4a}{p}=\leg{-4a}{p}.\]
+Again we may ignore the \(4\); hence
+\[\leg{q}{p}=\leg{-a}{p}=\leg{-1}{p}\leg{a}{p}.\]
+Comparing \(\ileg{q}{p}\) and \(\ileg{p}{q}\) and applying the result
+\(\ileg{a}{p}=\ileg{a}{q}\) we deduce that
+\[\leg{q}{p}=\leg{-1}{p}\leg{p}{q}.\]
+We know that \(\ileg{-1}{p}=1\) if \(p\equiv1\pmod{4}\)
+and \(\ileg{-1}{p}=-1\) if \(p\equiv3\pmod{4}\); consequently
+\(\ileg{q}{p}=\ileg{p}{q}\) if \(p\equiv q\equiv1\pmod{4}\)
+and \(\ileg{q}{p}=-\ileg{p}{q}\) if \(p\equiv q\equiv3\pmod{4}\).
+This completes the first case.
+
+The second case: let \(p\equiv -q\pmod{4}\). Note that in
+this case we wish to prove \(\ileg{p}{q}=\ileg{q}{p}\), since
+one of \(p\) and \(q\) must be congruent to \(1\) modulo \(4\).
+
+If \(p\equiv-q\pmod{4}\) then
+\(p+q=4a\) for some integer \(a\), from which it follows
+that \(p\equiv-q\pmod{4a}.\) Euler's conjecture assures us
+that once again \(\ileg{a}{p}=\ileg{a}{q}\).
+
+Substitute \(p=4a-q\) into \(\ileg{p}{q}\) to obtain
+\[\leg{p}{q}=\leg{4a-q}{q}=\leg{a}{q}.\]
+Similarly, substitute \(q=4a-p\) into \(\ileg{q}{p}\) to obtain
+\[\leg{q}{p}=\leg{4a-p}{p}=\leg{a}{p}.\]
+Since \(\ileg{a}{p}=\ileg{a}{q}\)
+\[\leg{p}{q}=\leg{q}{p}\]
+and the proof is complete.
+
+%There is, in fact, a beautiful way to symbolically represent
+%quadratic reciprocity, thusly:
+%\[
+	%\leg{p}{q}\leg{q}{p}=(-1)^{\frac{p-1}{2}\frac{q-1}{2}}.
+%\]
+%The left-hand side is \(1\) whenever \(\ileg{p}{q}=\ileg{q}{p}\)
+%and the right-hand side is \(1\) whenever either \((p-1)/2\)
+%or \((q-1)/2\) is even. The left-hand side is \(-1\) whenever
+%\(\ileg{p}{q}=-\ileg{q}{p}\) and the right-hand side is \(-1\)
+%when both \((p-1)/2\) and \((q-1)/2\) are odd, and this
+%is the case only when \(p\equiv q\equiv3\pmod{4}\).
+%Most proofs of the law prove this equation directly; we shall
+%discuss one of these proofs soon.
+
+The law of reciprocity, along with what we know about
+\(\ileg{-1}{p}\) and \(\ileg{2}{p}\), allows us to evaluate
+any Legendre symbol much more easily than by brute force.
+\marginnote{Implementing the evaluation of a Legendre symbol
+as a computer program is an interesting exercise.}
+For example, consider \(\ileg{34}{97}\). Since \(34=17\times2\),
+\[\leg{34}{97}=\leg{2}{97}\leg{17}{97}.\]
+The modulus \(97\) is \(1\) modulo \(8\), so \(\ileg{2}{97}=1\).
+We can flip \(\ileg{17}{97}\) because \(17\equiv1\pmod{4}\); consequently
+\[\leg{17}{97}=\leg{97}{17}=\leg{12}{17}.\]
+Apply the same procedure for \(\ileg{12}{17}\); as \(12=3\times4\)
+we compute \(\ileg{12}{17}=\ileg{3}{17}\ileg{4}{17}=\ileg{3}{17}.\)
+Then \(\ileg{3}{17}=\ileg{17}{3}=\ileg{2}{3}=-1.\) Hence
+\[\leg{34}{97}=\leg{2}{97}\leg{17}{97}=1\times(-1)=-1.\]
+\end{document}
+

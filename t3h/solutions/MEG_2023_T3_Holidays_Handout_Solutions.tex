@@ -1,0 +1,129 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{3}
+\newcommand{\theweek}{}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Holiday Handout Solutions}
+\newcommand{\thedisplaytitle}{Term \theterm\ Holiday Handout Solutions}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\usepackage{graphicx}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\section*{Problems}
+\begin{enumerate}
+	\item We have $x=b^2+b+1$ and $x=2(b-2)^2+(b-2)+b=2b^2-7b+8$. Hence $(2b^2-7b+8)-(b^2+b+1)=b^2-8b+7=(b-7)(b-1)=0$. Clearly $b \neq 1$, so $b=7$ and thus $x=49+7+1=57.$
+	\item Considering mod 3, WLOG let $x_1 = 3$, and thus we are left with $x_2x_3x_4 + x_3x_4x_5 = x_3x_4(x_2 + x_5).$ Clearly $3 \nmid x_3x_4$ so $3 \vert x_2+x_5$, so $(x_3,x_4)$ can be $(1,2), (1,5), (4,2), (4,5)$ and $(2,1), (5,1), (2,4), (5,4)$ thus giving 8 ways, and $x_3x_4$ can be permuted in $2$ ways after designating $x_3$ and $x_4$. So there are $5 \times 8 \times 2 = 80$ ways.
+	\item Let $\angle PYZ = \theta$. Since $\angle PZA + \angle PYA = 180^{\circ}$, $PZAY$ is cyclic, so $\angle PYZ = \angle PAZ = \theta$ (subtended by same arc). Thus $\angle PAB = 180^{\circ} - \theta$, and so $PCB = \theta$. Since $\angle PYX = \angle PXC = 90^{\circ}$, $PYXC$ is cyclic. Thus $PYX = 180^{\circ}-\theta$. Since $\angle PYZ + \angle PYX = 180^{\circ}$, we are done. \\ \centerline{\includegraphics[width=3.4in, height=3.1in]{Simson line.png}}
+	\item Let $t$ be real number that is not $\pm 1$, and $t=\frac{x-3}{x+1}$ thus $x=\frac{3+t}{1-t}$. Rewriting the given equation in terms of $t$ we have $$f(t)+f(\frac{t-3}{t+1})=\frac{3+t}{1-t}.$$ Similarly, let $t=\frac{3+x}{1-x}$, so then we have $x=\frac{t-3}{t+1}$ and $\frac{x-3}{x+1}=\frac{3+t}{1-t}$. Rewriting the given equation in terms of $t$ again, we have $$f(\frac{3+t}{1-t}) + f(t)=\frac{t-3}{t+1}.$$ Adding the two rewritten equations we get $$2f(t)+f(\frac{t-3}{t+1})+f(\frac{3+t}{1-t})=\frac{3+t}{1-t}+\frac{t-3}{t+1}$$ And since $f(\frac{t-3}{t+1})+f(\frac{3+t}{1-t})=t$, it implies $$2f(t)+t=\frac{8t}{1-t^2}.$$ Thus the function is $f(t)=\frac{4t}{1-t^2}-\frac{t}{2}$. It is easy to check that this satisfies the given equation. 
+	\item A convex pentagon with side integer side lengths and an odd perimeter can have two right angles as a unit equilateral triangle on top of a unit square suffices. 
+
+		Clearly a pentagon can't have 5 right angles. If a pentagon has 4 right angles, then the remaining angle is $540-4\times 90=180^{\circ}$ which is a contradiction. Hence we consider when a pentagon has 3 right angles.
+There are two cases, when exactly two of the right angles are adjacent, and when all three of the right angles are adjacent. 
+
+		Case 1: Three of the right angles are adjacent. 
+
+\centerline{\includegraphics[width=2.5in, height=2.3in]{case 1.png}}
+
+		Then the perimeter is $2(x+y)+(c-a-b)$. Clearly $2(x+y)$ is even, and $c-a-b$ is even since $a^2+b^2=c^2$ implies $a+b$ has the same parity as $c$. 
+
+Case 2: Exactly two of the right angles are adjacent. \\ \centerline{\includegraphics[width=2.5in, height=2.3in]{case 2 .png}}
+Let $x$ and $y$ be the sides of the rectangle formed with the dotted lines. Then from similar triangles we deduce the perimeter is $$2(x+y)-a-b-kb-ka+c+kc$$ $$= 2(x+y)+(c-a-b)(1+k)$$ Which is even as $2(x+y)$ and $c-a-b$ are even. 
+
+		Alternatively, since $a^2+b^2=e^2=c^2+d^2$, $a+b$ has the same parity as $c+d$. Meaning $a+b+c+d$ is even. Since the perimeter is $a+b+c+d+2y$, the pentagon has an even perimeter. 
+
+
+		{\centerline{\includegraphics[width=2.5in, height=2.3in]{case 2 alternative.png}}}
+
+ Hence a pentagon with integer side lengths and odd perimeter can have at most two right angles.
+\item The key observation is that \(11\times29=319\). This means that exactly
+	\(319\) ordered pairs, and hence \(319\) numbers
+		of the form \(11x+29y\), will be formed. 
+		So all we need to prove that those numbers are incongruent
+		to each modulo \(319\), as that would mean there is
+		a bijection between those numbers
+		and the numbers \(1,2,\ldots,319.\)
+
+		This problem is a special case of the general theorem
+		that if \(a\) runs through a complete set of residues
+		modulo \(m\) and \(a'\) runs through a complete set of
+		residues modulo \(m'\), and \(m\) and \(m'\) are coprime,
+		then the \(mm'\) numbers
+		\[am'+a'm\] form a complete set of residues modulo \(mm'\).
+		To prove it, suppose that
+		\begin{equation}\label{eq:congr}
+			a_1m'+a_1'm\equiv a_2m'+a_2'm\pmod{mm'}.
+		\end{equation}
+		Clearly the congruence also holds relative to the modulus
+		\(m\), so the terms with \(m\) in them disappear and
+		we are left with
+		\[a_1m'\equiv a_2m'\pmod{m}.\]
+		Since \(m'\) and \(m\) are coprime we can divide both sides
+		by \(m'\) and we have \[a_1\equiv a_2\pmod{m}.\]
+		Both \(a_1\) and \(a_2\) are running through the residues
+		of \(m\) and therefore both are less than \(m\); hence
+		\(a_1=a_2\).
+
+		The congruence in \eqref{eq:congr}
+		also holds relative to the modulus
+		\(m'\), so we have
+		\[a_1'm\equiv a_2'm\pmod{m'}.\]
+		Again we can deduce that
+		\(a_1'\equiv a_2'\pmod{m'}\) 
+		from which it follows that
+		\(a_1'=a_2'\).
+		Since \(a_1=a_2\) and \(a_1'=a_2'\)
+		two numbers of the
+		form \(a'm+am'\) that are congruent
+		are actually the same number,
+		and this proves the result.
+		
+		The problem is a case of the theorem where \(m=11\)
+		and \(m'=29\); clearly they are coprime so the theorem proved
+		above can be applied.
+\end{enumerate}
+\end{document}
+

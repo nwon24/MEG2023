@@ -1,0 +1,7 @@
+\begin{enumerate}
+\item I have 12 addressed letters to mail, and 12 corresponding pre-addressed envelopes. For some wacky reason, I decide to put the letters into envelopes at random, one letter per envelope. What is the expected number of letters that get placed into their proper envelopes?  
+\item I flip a coin 10 times. What is the expected number of pairs of consecutive tosses that comes up heads? (For example, the sequence THHTHHHTHH has 4 pairs of consecutive HH's).  
+\item (HMMT 2006) At a nursery, 2006 babies sit in a circle. Suddenly, each baby randomly pokes either the baby to its left or to its right. What is the expected value of the number of unpoked babies?  
+\item A $10$ digit binary number with four 1's is chosen at random. What is its expected value?
+\item (IMO 1987/1) Let $p_n(k)$ be the number of permutations of the set $\{ 1, 2 \ldots , n \} , \; n \ge 1$, which have exactly $k$ fixed points. Prove that $$\sum_{k=0}^{n} k \cdot p_n (k) = n!.$$ (A \emph{fixed point} of a permutation in this case is an element $i$ such that $i$ is in the $i^{th}$ position of the permutation. For example, the permutation $(3,2,5,4,1)$ of $\{1,2,3,4,5\}$ has two fixed points: the 2 in the $2^{nd}$ spot and the 4 in the $4^{th}$ spot)
+\end{enumerate}
