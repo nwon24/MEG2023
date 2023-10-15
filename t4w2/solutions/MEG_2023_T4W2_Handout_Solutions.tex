@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+
+\newcommand{\theterm}{4}
+\newcommand{\theweek}{2}
+\newcommand{\thepdftitle}{MEG 2023 Term \theterm\ Week \theweek\ Handout Solutions}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout Solutions}
+
+\title{{\thepdftitle}}
+\author{Nathan Wong\and Tom Yan}
+\date{2023}
+
+\newcommand{\leg}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\ileg}[2]{(#1|#2)}
+
+%\newcommand{\marginfn}[1]{\marginpar{\footnotemark}\footnotetext{#1}}
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+\pagestyle{empty}
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2023\\\
+\noindent \textbf{\thedisplaytitle}\\\
+\section*{Expected value problems}
+\begin{enumerate}
+\item Each letter has a $\frac{1}{12}$ chance of being delivered to the right envelope. So since there are 12 letters, the expected number of letters that are placed to the proper envelope is $12 \times \frac{1}{12}=1$. 
+\item Define $X_i = 1$ if coin flip $i$ and $i+1$ are heads, and $X_i=0$ otherwise.  Then we seek $E(X_1 + X_2 +\ldots + X_9)$ Note that the chance that any pair of consecutive coin flips is $(\frac{1}{2})^2=\frac{1}{4}$, so $E(X_i)=\frac{1}{4}$ and $$E(X_1)+E(X_2)+\ldots+E(X_9)=9 \times \frac{1}{4}=\frac{9}{4}.$$
+\item Number the babies $1,2, \ldots, 2006$. Define $X_i = 1$ if baby $i$ is poked and $X_i=0$ otherwise. Then we seek $E(X_1 + X_2 + \ldots X_{2006})$. Any baby has $\frac{1}{4}$ chance of being unpoked (if both its neighbours miss). Hence $E(X_i)=\frac{1}{4}$ for each $i$ and $$E(X_1 + X_2 + \ldots + X_{2006}) = E(X_1) + E(X_2) + \ldots E(X_{2006}) = 2006 \times \frac{1}{4} = \frac{1003}{2}. $$
+\item Clearly the first digit has to be 1. Then each other digit has a $\frac{3}{9}=\frac{1}{3}$ chance of being 1. So the expected value is $2^9 + \frac{1}{3}(2^8+2^7+\ldots+1) = 2^9+\frac{1}{3}(2^9-1)=\frac{2047}{3}.$ 
+\item We expect there to be $\frac{1}{n} \times n = 1$ fixed point on average. But also, a permutation with $k$ fixed points occurs with chance of $\frac{p_n (k)}{n!}$ and such a permutation has $k$ fixed points, so the expected number of fixed points is $$\sum_{k=0}^{n} \frac{k \cdot p_n (k)}{n!}.$$ Which is also equal to 1. Thus $$\sum_{k=0}^{n} \frac{k \cdot p_n (k)}{n!}=1.$$ Multiplying both sides by $n!$ gives our desired result. 
+\end{enumerate}
+
+\end{document}
