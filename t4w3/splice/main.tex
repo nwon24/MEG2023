@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\title{Pre-Exam period problems}
+\author{Tom Yan}
+\date{October 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+1. (ToT Spring 2016/1) Twenty children stand in a circle (both boys and girls are present). For each boy, his clockwise neighbour is in a blue T-shirt, and for each girl, her counterclockwise neighbour is in a red T-shirt. Is it possible to determine the precise number of boys in the circle? \\\\
+2. (ToT Fall 2019/2) Let $\omega$ be a circle with the centre $O$ and two different points $A$ and $C$ on $\omega$. For any point $P$ on $\omega$ distinct from $A$ and $C$ let $X$ and $Y$ be the midpoints of $AP$ and
+$CP$ respectively. Furthermore, let $H$ be the point where the altitudes of triangle $OXY$ meet. Prove that the position of the point $H$ does not depend on the choice of $P$. \\\\
+3. (ToT Fall 2019/3) There is a row of 100 cells each containing a token. For 1 dollar it
+is allowed to interchange two neighbouring tokens. Also it is allowed
+to interchange with no charge any two tokens such that there are
+exactly 3 tokens between them. What is the minimum price for
+arranging all the tokens in the reverse order? \\\\
+4. (ToT Fall 2015/4) In a right-angled triangle $ABC$ $(\angle C = 90^{\circ})$ points $K$, $L$ and $M$ are chosen on sides $AC$, $BC$ and $AB$ respectively so that $AK = BL = a$, $KM = LM = b$ and $∠KML = 90^{\circ}$. Prove that $a = b$. \\\\
+\newpage
+Solutions: \\\\
+1. Note that we can't have a blue boy, otherwise the whole circle would be boys. Then clearly the boys are all red and alternate, with the girls in between. Hence we can determine the precise number of boys (10 boys and 10 girls). \\\\
+2. Let $M$ be the midpoint of $AC$, then $OM \perp AC$, since $\triangle PXY$ is similar to $\triangle APC$, $XY | AC$ and hence $XY \perp OM$. Similarly, $OX \perp YM$ and $OY \perp XM$, and so $M$ coincides with $H$. Since $M$ is a fixed point, we are done. \\\\\
+3. We need a minimum of 50 dollars since the free operation does not change the parity of the number of places of the counters. Since each counter needs to change parity, we need at least 100 changes, which means 50 non-free operations. We will now show it is achievable with 50 dollars. Colour the places in the row into four colours: $abcdabcdabcd\ldots abcd$. Let us interchange all pairs $bc$ and $da$ for 49 dollars. Now move the counters 1 and 100 to the adjacent positions and then interchange them remaining 1 dollar. Now all the counters that were standing on the colour $a$ are standing on the colour $d$, and counters that were standing on colour $b$ are standing on the colour $c$ etc. Thus we can finish off rearranging them using the free operations.  \\\\
+4. Let $N$ be a point on the extension of $ML$ such that $LN=ML$. Since $KMLC$ is cyclic, we have $\angle BLN = \angle AKM$ and so $\triangle AMK \cong \triangle LBN (SAS)$. Because $\angle LBN = \angle MAK$, we have that $\angle MBN = 90^{\circ}$. Thus $L$ is the circumcentre of $\triangle MBN$ and hence $BL = ML$ since they are the radii. \\\\
+
+
+\end{document}
