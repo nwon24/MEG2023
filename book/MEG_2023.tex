@@ -1,19 +1,33 @@
-\documentclass[a4paper]{book}
+\documentclass[a4paper]{amsbook}
 
 \title{\textbf{Melbourne High School Maths Extension Group 2023 Handouts}}
 \author{Nathan Wong\and Tom Yan}
+%\dedicatory{Dedication}
 \date{As of \today}
 \usepackage[pass,a4paper]{geometry}
 \usepackage[pdfusetitle]{hyperref}
 \usepackage{pdfpages}
 \setcounter{secnumdepth}{0}
+
+\newcommand{\epigraph}[2]{%
+\newpage \vspace*{8cm}
+\thispagestyle{empty}
+  \begin{quote}
+	  {	
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}}
+  \end{quote}}
+
 \begin{document}
 \maketitle
-%\newpage \vspace*{8cm}
-%\thispagestyle{empty}
-%\begin{center}
-%	  \Large \emph{For Harold}
-%\end{center}
+\newpage \vspace*{8cm}
+\thispagestyle{empty}
+\begin{center}
+	  \emph{For Harold}
+\end{center}
+\epigraph{Thou, Nature, art my goddess. To thy law\\
+My services are bound.}{W. Shakespeare, \emph{King Lear} (1606)}
 \chapter*{Preface}
 This book is a collection of MEG's published
 materials this year. 
@@ -43,6 +57,13 @@ As such, naturally disregard any page numbers in any
 of the individual documents. The hyperlinked table of contents
 provides easy access to each section of the book.
 \tableofcontents
+\epigraph{ When I have clarified and exhausted a subject,
+then I turn away from it, in order to go into darkness again;
+the never-satisfied man is so strange if he has completed a structure,
+then it is not in order to dwell in it peacefully, but in order to begin another.
+I imagine the world conqueror must feel thus, who,
+after one kingdom is scarcely conquered, stretches out his arms for others.}{%
+	C.~F.~Gauss}
 \part{Weekly handouts}
 
 \phantomsection\addcontentsline{toc}{chapter}{Term 1}
@@ -110,7 +131,14 @@ provides easy access to each section of the book.
 \includepdf[pages=-]{../handouts/solutions/MEG_2023_T3W9_Handout_Solutions.pdf}
 \includepdf[pages=-]{../handouts/solutions/MEG_2023_T3_Holidays_Handout_Solutions.pdf}
 \includepdf[pages=-]{../handouts/solutions/MEG_2023_T4W2_Handout_Solutions.pdf}
-
+\includepdf[pages=-]{../handouts/solutions/MEG_2023_T4W3_Handout_Solutions.pdf}
+\epigraph{The case for my life, then, or for that of any one else
+who has been a mathematician in the same sense in which I have been one,
+is this: that I have added something to knowledge, and helped others to add more;
+and that these somethings have a value which differs in degree only, and not
+in kind, from that of the creations of the greatest mathematicians, or
+of any of the other artists, great or small, who have left some kind
+of memorial behind them.}{G.~H.~Hardy}
 \part{SEHS Maths Games Day}
 \phantomsection\addcontentsline{toc}{chapter}{Problem Solving}
 \phantomsection\addcontentsline{toc}{section}{Problems}
@@ -121,4 +149,5 @@ provides easy access to each section of the book.
 \includepdf[pages=-]{../sehs_final/SEHS_Maths_Games_Day_2023_Running_Race_Problems.pdf}
 % \phantomsection\addcontentsline{toc}{chapter}{Experimental and Creative Mathematics: Appendix}
 % \includepdf[pages=-]{../sehs_final/SEHS_Maths_Games_Day_2023_Experimental_and_Creative_Mathematics_Appendix.pdf}
+
 \end{document}
