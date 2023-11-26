@@ -9,6 +9,9 @@
 \usepackage{pdfpages}
 \setcounter{secnumdepth}{0}
 
+\newif\ifded
+\dedfalse
+
 \newcommand{\epigraph}[2]{%
 \newpage \vspace*{8cm}
 \thispagestyle{empty}
@@ -21,11 +24,13 @@
 
 \begin{document}
 \maketitle
+\ifded
 \newpage \vspace*{8cm}
 \thispagestyle{empty}
 \begin{center}
 	  \emph{For Harold}
 \end{center}
+\fi
 \epigraph{Thou, Nature, art my goddess. To thy law\\
 My services are bound.}{W. Shakespeare, \emph{King Lear} (1606)}
 \chapter*{Preface}
@@ -33,16 +38,16 @@ This book is a collection of MEG's published
 materials this year. 
 It is divided into two parts.
 The first consists of MEG's weekly handouts
-that were usually given out each meeting.
-Each handout is hyperlinked in the table of contents.
+that were usually given out each meeting, with each
+handout hyperlinked in the table of contents.
 All solutions that were published are
 at the end of the section; however, the individual
 solution documents have not been linked from the table
 of contents. Moreover, solutions are not provided
 for every problem that appears in the handouts,
-as many have come from past competitions, and the official
-solutions can be consulted.
-When a problem is from a past competition, it is indicated
+as many have come from past competitions; consult the official
+solutions if required.
+When a problem is from a past competition, it is indicated so
 next to the question number for handouts from term 1, in the margin
 for handouts from term 2 and onwards.
 
@@ -69,7 +74,7 @@ after one kingdom is scarcely conquered, stretches out his arms for others.}{%
 \phantomsection\addcontentsline{toc}{chapter}{Term 1}
 \phantomsection\addcontentsline{toc}{section}{Term 1 Week 5: First Meeting}
 \includepdf[pages=-]{../handouts/MEG_2023_First_Meeting_Intro.pdf}
-\includepdf[pages=-]{../handouts/MEG_2023_First_Meeting_problems.pdf}
+\includepdf[pages=-]{../handouts/MEG_2023_First_Meeting_Problems.pdf}
 \phantomsection\addcontentsline{toc}{section}{Term 1 Week 7}
 \includepdf[pages=-]{../handouts/ppt/MEG_2023_T1W7_Combinatorics_ppt.pdf}
 \includepdf[pages=-]{../handouts/MEG_2023_T1W7_Handout.pdf}
