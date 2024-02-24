@@ -1,0 +1,83 @@
+% MEG handout template
+\documentclass[a4paper]{article}
+
+% Put the term and week here; this should appear in both the title
+% at the top of the first page and in the PDF title.
+\newcommand{\theterm}{}
+\newcommand{\theweek}{}
+
+% If writing a solution document, you might want to append 'Solutions' to the titles here.
+\newcommand{\thepdftitle}{MEG 2024 Term \theterm\ Week \theweek\ Handout}
+\newcommand{\thedisplaytitle}{Term \theterm\ Week \theweek\ Handout}
+
+\title{{\thepdftitle}}
+% Author(s) will appear only in the PDF properties.
+\author{}
+\date{2024}
+
+% These two macros put notes and footnotes in the margin - most of the time
+% I only used \marginnote.
+\newcommand{\marginnote}[1]{\marginpar{\footnotesize{#1}}}
+\newcommand{\marginfnote}[1]{\footnotemark\marginpar{\footnotemark[\value{footnote}]\footnotesize{#1}}}
+
+% Don't touch this bit as it defines the layout of the page.
+\usepackage{geometry}
+%\geometry{a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\geometry{a4paper,left=1in,top=1in,bottom=1in,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\usepackage[bf,tiny]{titlesec}
+%\usepackage{fancyhdr}
+% The epigraph package is included but usually I used my own macro to set
+% the quotations.
+\usepackage{epigraph}
+%\usepackage[indent=0pt,skip=10pt]{parskip}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\mathbbalt\mathbb
+
+% Comment the next two lines unless using the LuaTeX or XeTeX engine as
+% the normal pdfLaTeX engine can't handle the kind of fonts these two packages pull in.
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\let\mathbb\mathbbalt
+
+% Just in case these are needed - I prefer the traditional letters for
+% the number sets; by default LaTeX just puts them in bold.
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\integers}{\mathbb{Z}}
+
+% This sets the PDF properties from the document properties.
+\usepackage[pdfusetitle]{hyperref}
+
+% Macro to set the quotation at the start of each handout.
+% The second argument is set flush right after a long dash, so is
+% used for the attribution; the actual quote goes in the first argument.
+% e.g., \myquote{To be or not to be}{Hamlet (c. 1600)}
+\newcommand{\myquote}[2]{%
+  \begin{quote}
+    \emph{#1}
+    \begin{flushright}---{#2}
+    \end{flushright}
+  \end{quote}}
+
+% This just gets rid of page numbers, which aren't really needed.
+\pagestyle{empty}
+
+\begin{document}
+\noindent Melbourne High School\\\
+\noindent Maths Extension Group 2024\\\
+\noindent \textbf{\thedisplaytitle}\\\
+
+% Put stuff here. Use \section* to get unnumbered sections. If there
+% are multiple sections I recommend using \newpage to separate them.
+% I would recommend 4 pages maximum to save paper printing, but you might
+% need a lot more for the first few meetings.
+
+% Best practice here would be to write each section (if there are multiple
+% coordinated) in their own files, and then just \input them here.
+
+\end{document}
